@@ -1,0 +1,21 @@
+//Styles du menu
+
+.header{
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+}
+
+
+@include media-breakpoint-up(md) {
+
+  .nav{
+    &__list{
+      margin-left: auto;
+
+      &__link{
+        padding: 1.5rem 0;
+      }
+
+    }
+  }
+
+}

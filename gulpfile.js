@@ -21,6 +21,7 @@ const paths = {
       srcBootstrap : 'node_modules/bootstrap/scss/*.scss',
       srcBootstrapComposants : 'node_modules/bootstrap/scss/**/*.scss',
       srcCustomCss : 'src/scss/*.scss',
+      srcCustomComposantsCss : 'src/scss/**/*.scss',
 
       srcJs: 'src/js/*.js',
       srcBootstrapJs: 'node_modules/bootstrap/dist/js/*.js',
@@ -40,7 +41,7 @@ function clean(){
 //BrowserSync, création d'un serveur local
 function gulpBrowserSync(){
      browserSync.init({
-        proxy: 'http://localhost/AlexGraphicDesigner/', // URL ici
+        proxy: 'http://gravalextheme.ddev.local', // URL ici
         ghostMode: false,
         open: false,
         notify: false
@@ -82,7 +83,7 @@ function gulpJS(done){
 
 //On écoute les modifications de fichiers pour rechargement de la page automatique
 function gulpWatch(){
-  watch([paths.srcBootstrap, paths.srcBootstrapComposants, paths.srcCustomCss], series(gulpSass, gulpReload));
+  watch([paths.srcBootstrap, paths.srcBootstrapComposants, paths.srcCustomCss, paths.srcCustomComposantsCss], series(gulpSass, gulpReload));
   watch([paths.srcBootstrapJs, paths.srcJs], series(gulpJS, gulpReload));
 }
 

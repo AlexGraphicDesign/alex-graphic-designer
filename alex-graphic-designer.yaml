@@ -1,3 +1,24 @@
 enabled: true
 dropdown:
   enabled: true
+footer-social:
+  -
+    socialIconClass: 'fa fa-facebook-square'
+    socialIconText: Facebook
+    socialIconLink: 'https://www.facebook.com/'
+  -
+    socialIconClass: 'fa fa-twitter'
+    socialIconText: Twitter
+    socialIconLink: 'https://twitter.com/'
+  -
+    socialIconClass: 'fa fa-instagram'
+    socialIconText: Instagram
+    socialIconLink: '#0'
+  -
+    socialIconClass: 'fa fa-behance'
+    socialIconText: Behance
+    socialIconLink: '#0'
+  -
+    socialIconClass: 'fa fa-pinterest'
+    socialIconText: Pinterest
+    socialIconLink: '#0'

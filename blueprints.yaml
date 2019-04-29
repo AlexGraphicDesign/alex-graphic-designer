@@ -7,21 +7,26 @@ author:
   email: alexdesignergraphique@gmail.com
 homepage: https://github.com/AlexGraphicDesign/grav-theme-alex-graphic-designer
 demo: http://demo.yoursite.com
-keywords: grav, theme, etc
+keywords: grav, theme, alexgraphicdesigner, html5, css3, twig, gulp4, responsive, bootstrap
 bugs: https://github.com/AlexGraphicDesign/grav-theme-alex-graphic-designer/issues
 readme: https://github.com/AlexGraphicDesign/grav-theme-alex-graphic-designer/blob/develop/README.md
 license: MIT
 
 form:
   validation: loose
+
   fields:
-    dropdown.enabled:
-        type: toggle
-        label: Dropdown in Menu
-        highlight: 1
-        default: 1
-        options:
-          1: PLUGIN_ADMIN.ENABLED
-          0: PLUGIN_ADMIN.DISABLED
-        validate:
-          type: bool
+    footer-social:
+      type: list
+      label: Social icons
+      style: vertical
+      fields:
+        .socialIconClass:
+          type: text
+          label: Icon Class
+        .socialIconText:
+          type: text
+          label: Icon Name
+        .socialIconLink:
+          type: text
+          label: Url
