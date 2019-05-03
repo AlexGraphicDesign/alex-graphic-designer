@@ -1,6 +1,7 @@
 enabled: true
 dropdown:
   enabled: true
+footer-text: '&copy; 2019 Alex Graphic Designer. Tous droits réservés.'
 footer-social:
   -
     socialIconClass: 'fa fa-facebook-square'
@@ -19,6 +20,6 @@ footer-social:
     socialIconText: Behance
     socialIconLink: '#0'
   -
-    socialIconClass: 'fa fa-pinterest'
-    socialIconText: Pinterest
+    socialIconClass: 'fa fa-github'
+    socialIconText: GitHub
     socialIconLink: '#0'

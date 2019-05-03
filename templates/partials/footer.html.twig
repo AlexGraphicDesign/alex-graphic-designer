@@ -3,16 +3,35 @@
 <footer class="footer">
     <div class="container">
       <div class="row">
-        <div class="col-sm-6">
+      <div class="col-sm-3">
 
+      </div>
+      <div class="col-sm-3">
+
+      </div>
+      <div class="col-sm-3">
+
+      </div>
+        <div class="col-sm-3">
+          <ul class="mb-0">
+            {% for page in pages.children %}
+              {% if page.visible == false %}
+                <li>
+                  <a href="{{ page.url }}">
+                      {{ page.menu }}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
         </div>
       </div>
       <div class="row align-items-center">
         <div class="col-sm-6">
-          <ul class="footer__social">
+          <ul class="footer__social mb-0">
             {% for item in theme_var('footer-social') %}
             <li class="footer__social__item">
-                <a class="footer__social__link" href="{{ item.socialIconLink }}" title="{{ item.socialIconText }}">
+                <a class="footer__social__link" href="{{ item.socialIconLink }}" title="{{ item.socialIconText }}" target="_blank">
                     <i class="{{ item.socialIconClass }}" aria-hidden="true"></i>
                 </a>
             </li>
@@ -20,7 +39,7 @@
           </ul>
         </div>
         <div class="col-sm-6 text-sm-right">
-          <p><a href="http://getgrav.org">Grav</a> was <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by <a href="http://www.rockettheme.com">RocketTheme</a>.</p>
+          <p class="footer__legal mb-0">{{ theme_var('footer-text') }}</p>
         </div>
       </div>
     </div>

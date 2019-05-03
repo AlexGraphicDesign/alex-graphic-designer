@@ -16,6 +16,15 @@ form:
   validation: loose
 
   fields:
+    footer_section:
+      type: section
+      title: Footer Defaults
+      underline: true
+
+    footer-text:
+      type: text
+      label: Copyright Bottom Message
+      
     footer-social:
       type: list
       label: Social icons

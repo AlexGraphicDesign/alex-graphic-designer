@@ -3,8 +3,17 @@
 $primary-color: blue;
 $secondary-color: red;
 
+$font-size-base: 1rem;
+
 $white: #fff;
 $black: #000;
+
+//header
+$header-bg: $white;
+
+//Footer
+$footer-border-top: 1px solid lighten($black, 95%);
+$font-size-legal: $font-size-base * 0.8;
 
 //Liens
 $link-color: $black;

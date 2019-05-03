@@ -1,8 +1,11 @@
-//Styles footer
+//Styles généraux footer
 
 .footer{
-  &__social{
+  background: $white;
+  border-top: $footer-border-top;
 
+  //Réseaux sociaux
+  &__social{
     &__item{
       display: inline-block;
 
@@ -11,6 +14,17 @@
       }
 
     }
+  }
 
+  //Mentions Légales
+  &__legal{
+    font-size: $font-size-legal;
+  }
+}
+
+//Styles Desktop et tablette
+@include media-breakpoint-up(md) {
+  .footer{
+    padding: 4rem 0 2rem 0;
   }
 }
