@@ -5,11 +5,18 @@
   box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
 }
 
+.nav{
+  .navbar-brand{
+    img{
+      height: 70px;
+    }
+  }
+}
 
 @include media-breakpoint-up(md) {
 
   .nav{
-    height: 70px;
+    //height: 70px;
 
     &__list{
       margin-left: auto;

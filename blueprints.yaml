@@ -16,15 +16,32 @@ form:
   validation: loose
 
   fields:
+
+    header_section:
+      type: section
+      title: Logo
+      underline: true
+
+    custom_logo:
+      type: file
+      label: Custom Logo
+      size: large
+      destination: 'theme://images'
+      multiple: false
+      markdown: true
+      description: Va être utilisé à la place du logo par défaut se trouvant à l'emplacement `theme://images/logo.png`
+      accept:
+        - image/*
+
     footer_section:
       type: section
-      title: Footer Defaults
+      title: Footer
       underline: true
 
     footer-text:
       type: text
       label: Copyright Bottom Message
-      
+
     footer-social:
       type: list
       label: Social icons

@@ -3,9 +3,21 @@
 .footer{
   background: $white;
   border-top: $footer-border-top;
+  padding: 2rem 0 2rem 0;
+
+  //Logo Footer
+  &__logo{
+    img{
+      width: 100%;
+      max-width: 80px;
+    }
+  }
 
   //Réseaux sociaux
   &__social{
+    text-align: right;
+    padding-left: 0;
+
     &__item{
       display: inline-block;
 
@@ -19,12 +31,30 @@
   //Mentions Légales
   &__legal{
     font-size: $font-size-legal;
+
+    &__list{
+      text-align: right;
+      list-style: none;
+      padding-left: 0;
+
+      &__item{
+        display: inline-block;
+
+        &:not(:first-child) {
+          &:before{
+            content: "|";
+            padding:0 1em;
+          }
+        }
+
+      }
+    }
   }
 }
 
 //Styles Desktop et tablette
 @include media-breakpoint-up(md) {
   .footer{
-    padding: 4rem 0 2rem 0;
+    //padding: 2rem 0 2rem 0;
   }
 }

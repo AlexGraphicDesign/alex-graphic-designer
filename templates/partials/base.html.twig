@@ -32,18 +32,27 @@
 </head>
 <body id="top" class="{{ page.header.body_classes }}">
 
+<!-- header ================================================== -->
 {% block header %}
     <header class="header">
-          {% block header_navigation %}
+      <!-- nav ================================================== -->
+      {% block header_navigation %}
           <nav class="navbar navbar-expand-lg navbar-light nav">
-              {% include 'partials/logo.html.twig' %}
+            <div class="container">
+              <a class="navbar-brand" href="{{ base_url == '' ? '/' : base_url }}" title="{{ config.site.title }}">
+                {% include 'partials/logo.html.twig' %}
+              </a>
 
-              {% include 'partials/navigation.html.twig' %}
+                {% include 'partials/navigation.html.twig' %}
+            </div>
           </nav>
-          {% endblock %}
+      {% endblock %}
+      <!-- fin nav ================================================== -->
     </header>
 {% endblock %}
+<!-- Fin header ================================================== -->
 
+<!-- body ================================================== -->
 {% block body %}
     <main id="content" role="main">
         <div class="container">
@@ -51,14 +60,19 @@
         </div>
     </main>
 {% endblock %}
+<!-- Fin body ================================================== -->
 
+<!-- footer ================================================== -->
 {% block footer %}
     {% include 'partials/footer.html.twig' %}
 {% endblock %}
+<!-- fin footer ================================================== -->
 
+<!-- scripts ================================================== -->
 {% block bottom %}
     {{ assets.js('bottom') }}
 {% endblock %}
+<!-- fin scripts ================================================== -->
 
 </body>
 </html>

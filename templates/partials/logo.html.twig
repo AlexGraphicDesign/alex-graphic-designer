@@ -1,5 +1,8 @@
 {# Logo site #}
-<a class="navbar-brand" href="{{ base_url == '' ? '/' : base_url }}">
-    <i class="fa fa-rebel"></i>
-    {{ config.site.title }}
-</a>
+{% set logo = theme_var('custom_logo') %}
+{% if logo %}
+    {% set logo_file = (logo|first).name %}
+    <img src="{{ url('theme://images/' ~ logo_file) }}" alt="{{ base_url }}"/>
+{% else %}
+    {% include('@images/logo.png') %}
+{% endif %}

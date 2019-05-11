@@ -41,7 +41,7 @@ function clean(){
 //BrowserSync, création d'un serveur local
 function gulpBrowserSync(){
      browserSync.init({
-        proxy: 'http://gravalextheme.ddev.local', // URL ici
+        proxy: 'http://localhost/AlexGraphicDesigner/', // URL ici
         ghostMode: false,
         open: false,
         notify: false

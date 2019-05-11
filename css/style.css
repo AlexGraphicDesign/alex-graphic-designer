@@ -12879,11 +12879,11 @@ a:hover, a:focus {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
 
-@media (min-width: 768px) {
-  .nav {
-    height: 70px;
-  }
+.nav .navbar-brand img {
+  height: 70px;
+}
 
+@media (min-width: 768px) {
   .nav__list {
     margin-left: auto;
   }
@@ -12892,6 +12892,17 @@ a:hover, a:focus {
 .footer {
   background: #fff;
   border-top: 1px solid #f2f2f2;
+  padding: 2rem 0 2rem 0;
+}
+
+.footer__logo img {
+  width: 100%;
+  max-width: 80px;
+}
+
+.footer__social {
+  text-align: right;
+  padding-left: 0;
 }
 
 .footer__social__item {
@@ -12906,9 +12917,18 @@ a:hover, a:focus {
   font-size: 0.8rem;
 }
 
-@media (min-width: 768px) {
-  .footer {
-    padding: 4rem 0 2rem 0;
-  }
+.footer__legal__list {
+  text-align: right;
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer__legal__list__item {
+  display: inline-block;
+}
+
+.footer__legal__list__item:not(:first-child):before {
+  content: "|";
+  padding: 0 1em;
 }
 /*# sourceMappingURL=style.css.map */
