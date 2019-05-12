@@ -3,16 +3,13 @@
 <footer class="footer">
     <div class="container">
       <div class="row align-items-center mb-4">
-        <div class="col-sm-3">
-            <a class="footer__logo" href="{{ base_url == '' ? '/' : base_url }}" title="{{ config.site.title }}">{% include 'partials/logo.html.twig' %}</a>
+        <div class="col-sm-4">
+            <div class="footer__logo">{% include 'partials/logo.html.twig' %}</div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-4">
 
         </div>
-        <div class="col-sm-3">
-
-        </div>
-        <div class="col-sm-3">
+        <div class="col-sm-4">
           <ul class="footer__social mb-0">
             {% for item in theme_var('footer-social') %}
             <li class="footer__social__item">
@@ -29,10 +26,10 @@
             <p class="footer__legal__text mb-0">{{ theme_var('footer-text') }}</p>
         </div>
         <div class="col-sm-6">
-          {% if theme.footer.links|length > 0 %}
+          {% if theme_var('footer-links')|length > 0 %}
             <ul class="footer__legal__list mb-0">
-              {% for item in theme.footer.links %}
-              <li class="footer__legal__list__item"><a href="{{ item.url }}">{{ item.text }}</a></li>
+              {% for item in theme_var('footer-links') %}
+              <li class="footer__legal__list__item"><a href="{{ item.url }}" title="{{ item.text }}">{{ item.text }}</a></li>
               {% endfor %}
             </ul>
           {% endif %}

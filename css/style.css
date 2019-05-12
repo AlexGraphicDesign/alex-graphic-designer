@@ -12883,6 +12883,13 @@ a:hover, a:focus {
   height: 70px;
 }
 
+.navbar-toggler {
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
 @media (min-width: 768px) {
   .nav__list {
     margin-left: auto;

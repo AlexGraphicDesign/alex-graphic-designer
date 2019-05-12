@@ -13,6 +13,12 @@
   }
 }
 
+.navbar-toggler{
+  border: none;
+  border-radius: 0;
+}
+
+
 @include media-breakpoint-up(md) {
 
   .nav{

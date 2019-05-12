@@ -42,6 +42,18 @@ form:
       type: text
       label: Copyright Bottom Message
 
+    footer-links:
+      type: list
+      label: Liens mentions légales
+      style: vertical
+      fields:
+        .text:
+          type: text
+          label: Label Lien
+        .url:
+          type: text
+          label: URL
+
     footer-social:
       type: list
       label: Social icons

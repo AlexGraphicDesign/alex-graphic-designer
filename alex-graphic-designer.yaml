@@ -7,13 +7,12 @@ custom_logo:
     type: image/png
     size: 5238
     path: user/themes/alex-graphic-designer/images/logo.png
-footer:
-  links:
-    - text: Terms &amp; Conditions
-      url: "#"
-    - text: Legals
-      url: "#"
 footer-text: '&copy; 2019 Alex Graphic Designer. Tous droits réservés.'
+footer-links:
+  - text: CGV
+    url: '#'
+  - text: Mentions légales
+    url: '#'
 footer-social:
   -
     socialIconClass: 'fa fa-facebook-square'
