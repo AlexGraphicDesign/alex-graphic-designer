@@ -12872,7 +12872,7 @@ a:hover, a:focus {
   color: #000;
 }
 
-.header {
+.nav {
   background: #fff;
   -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   -moz-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
@@ -12880,7 +12880,7 @@ a:hover, a:focus {
 }
 
 .nav .navbar-brand img {
-  height: 70px;
+  max-height: 4rem;
 }
 
 .navbar-toggler {
@@ -12891,20 +12891,52 @@ a:hover, a:focus {
 }
 
 @media (min-width: 768px) {
+  .header.fixed-top .nav {
+    -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    height: 4rem;
+  }
+
+  .header.fixed-top .nav .navbar-brand img {
+    max-height: 3.2rem;
+  }
+
+  .nav {
+    background: #fff;
+    height: 5rem;
+    padding: 0 1rem;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+  }
+
   .nav__list {
     margin-left: auto;
+  }
+
+  .nav .navbar-brand img {
+    max-height: 4rem;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
   }
 }
 
 .footer {
   background: #fff;
   border-top: 1px solid #f2f2f2;
-  padding: 2rem 0 2rem 0;
+  padding: 1rem 0;
 }
 
 .footer__logo img {
   width: 100%;
-  max-width: 80px;
+  max-width: 35px;
 }
 
 .footer__social__list {
@@ -12927,7 +12959,7 @@ a:hover, a:focus {
 .footer__legal__list {
   text-align: right;
   list-style: none;
-  padding-left: 1em;
+  padding-left: 0.5em;
 }
 
 .footer__legal__list__item {
@@ -12940,6 +12972,10 @@ a:hover, a:focus {
 }
 
 @media (min-width: 768px) {
+  .footer__logo {
+    padding-right: 1em;
+  }
+
   .footer__legal {
     display: -webkit-box;
     display: -webkit-flex;

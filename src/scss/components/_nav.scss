@@ -1,14 +1,11 @@
 //Styles du menu
 
-.header{
+.nav{
   background: $header-bg;
   box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
-}
-
-.nav{
   .navbar-brand{
     img{
-      height: 70px;
+      max-height: $header-logo-height;
     }
   }
 }
@@ -21,17 +18,42 @@
 
 @include media-breakpoint-up(md) {
 
-  .nav{
-    //height: 70px;
+  .header{
+    &.fixed-top{
 
-    &__list{
-      margin-left: auto;
+      .nav{
+        box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+        height: $header-height * 0.8;
 
-      &__link{
-        //padding: 1.5rem 0;
+        .navbar-brand{
+          img{
+            max-height: $header-logo-height * 0.8;
+          }
+        }
+
       }
 
     }
+  }
+
+  .nav{
+    background: $header-bg;
+    height: $header-height;
+    padding: 0 1rem;
+    box-shadow: none;
+    transition: all .5s ease;
+
+    &__list{
+      margin-left: auto;
+    }
+
+    .navbar-brand{
+      img{
+        max-height: $header-logo-height;
+        transition: all .5s ease;
+      }
+    }
+
   }
 
 }

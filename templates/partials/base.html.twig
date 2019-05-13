@@ -10,7 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% include 'partials/metadata.html.twig' %}
 
-    <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
+    <link rel="shortcut icon" href="{{ url('theme://images/favicon/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url('theme://images/favicon/favicon.ico') }}" type="image/x-icon">
+
     <link rel="canonical" href="{{ page.url(true, true) }}" />
 
     {% block stylesheets %}
@@ -34,7 +36,7 @@
 
 <!-- header ================================================== -->
 {% block header %}
-    <header class="header">
+    <header id="header" class="header">
       <!-- nav ================================================== -->
       {% block header_navigation %}
           <nav class="navbar navbar-expand-lg navbar-light nav">
@@ -47,10 +49,8 @@
             </div>
           </nav>
       {% endblock %}
-      <!-- fin nav ================================================== -->
     </header>
 {% endblock %}
-<!-- Fin header ================================================== -->
 
 <!-- body ================================================== -->
 {% block body %}
@@ -60,19 +60,20 @@
         </div>
     </main>
 {% endblock %}
-<!-- Fin body ================================================== -->
 
 <!-- footer ================================================== -->
 {% block footer %}
+<footer class="footer">
+    <div class="container">
     {% include 'partials/footer.html.twig' %}
+    </div>
+</footer>
 {% endblock %}
-<!-- fin footer ================================================== -->
 
 <!-- scripts ================================================== -->
 {% block bottom %}
     {{ assets.js('bottom') }}
 {% endblock %}
-<!-- fin scripts ================================================== -->
 
 </body>
 </html>

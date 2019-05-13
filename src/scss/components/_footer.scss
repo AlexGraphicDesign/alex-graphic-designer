@@ -3,13 +3,13 @@
 .footer{
   background: $white;
   border-top: $footer-border-top;
-  padding: 2rem 0 2rem 0;
+  padding: 1rem 0;
 
   //Logo Footer
   &__logo{
     img{
       width: 100%;
-      max-width: 80px;
+      max-width: 35px;
     }
   }
 
@@ -38,7 +38,7 @@
     &__list{
       text-align: right;
       list-style: none;
-      padding-left: 1em;
+      padding-left: 0.5em;
 
       &__item{
         display: inline-block;
@@ -58,7 +58,10 @@
 //Styles Desktop et tablette
 @include media-breakpoint-up(md) {
   .footer{
-    //padding: 2rem 0 2rem 0;
+    &__logo{
+      padding-right: 1em;
+    }
+
     &__legal{
       display: flex;
       flex-direction: row;
