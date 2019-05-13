@@ -15,8 +15,11 @@
 
   //Réseaux sociaux
   &__social{
-    text-align: right;
-    padding-left: 0;
+
+    &__list{
+      text-align: right;
+      padding-left: 0;
+    }
 
     &__item{
       display: inline-block;
@@ -35,7 +38,7 @@
     &__list{
       text-align: right;
       list-style: none;
-      padding-left: 0;
+      padding-left: 1em;
 
       &__item{
         display: inline-block;
@@ -43,7 +46,7 @@
         &:not(:first-child) {
           &:before{
             content: "|";
-            padding:0 1em;
+            padding:0 0.5em;
           }
         }
 
@@ -56,5 +59,11 @@
 @include media-breakpoint-up(md) {
   .footer{
     //padding: 2rem 0 2rem 0;
+    &__legal{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
   }
 }

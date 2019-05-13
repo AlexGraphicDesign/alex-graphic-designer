@@ -12907,7 +12907,7 @@ a:hover, a:focus {
   max-width: 80px;
 }
 
-.footer__social {
+.footer__social__list {
   text-align: right;
   padding-left: 0;
 }
@@ -12927,7 +12927,7 @@ a:hover, a:focus {
 .footer__legal__list {
   text-align: right;
   list-style: none;
-  padding-left: 0;
+  padding-left: 1em;
 }
 
 .footer__legal__list__item {
@@ -12936,6 +12936,28 @@ a:hover, a:focus {
 
 .footer__legal__list__item:not(:first-child):before {
   content: "|";
-  padding: 0 1em;
+  padding: 0 0.5em;
+}
+
+@media (min-width: 768px) {
+  .footer__legal {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
 }
 /*# sourceMappingURL=style.css.map */
