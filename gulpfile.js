@@ -41,10 +41,8 @@ function clean(){
 //BrowserSync, création d'un serveur local
 function gulpBrowserSync(){
      browserSync.init({
-        proxy: 'http://localhost/AlexGraphicDesigner/', // URL ici
-        ghostMode: false,
-        open: false,
-        notify: false
+        watch: true,
+        proxy: 'http://localhost/AlexGraphicDesigner/' // URL ici
      });
 }
 
