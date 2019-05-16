@@ -44,8 +44,12 @@
 
 //Utilities
 @import 'utilities/_variables';
-@import 'utilities/_links';
+@import 'utilities/_reboot';
 
 //Composants
+@import 'components/_links';
 @import 'components/_nav';
 @import 'components/_footer';
+
+//Contenu Theme
+@import 'content/_home';
