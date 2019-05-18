@@ -36,10 +36,10 @@
 
 <!-- header ================================================== -->
 {% block header %}
-    <header id="header" class="header">
+    <header id="header" class="header" role="heading">
       <!-- nav ================================================== -->
       {% block header_navigation %}
-          <nav class="navbar navbar-expand-lg navbar-light nav">
+          <nav class="navbar navbar-expand-lg navbar-light nav" role="navigation">
             <div class="container">
               <a class="navbar-brand" href="{{ base_url == '' ? '/' : base_url }}" title="{{ config.site.title }}">
                 {% include 'partials/logo.html.twig' %}

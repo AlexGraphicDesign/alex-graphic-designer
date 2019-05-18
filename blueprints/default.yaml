@@ -12,3 +12,4 @@ form:
                    fields:
                      header.body_classes:
                        markdown: true
+                       description: 'Classes disponibles : X'
