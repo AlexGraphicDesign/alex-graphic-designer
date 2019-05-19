@@ -1,1 +1,25 @@
 extends@: default
+
+form:
+  fields:
+    tabs:
+
+      fields:
+        AlexGraphicDesignerSetings:
+          type: tab
+          title: AlexGraphicDesigner
+
+          fields:
+            bannerBackground:
+              type: section
+              title: Background
+              underline: true
+            header.background:
+                type: filepicker
+                folder: '@self'
+                label: Background Image
+                description: Insérez votre image de fond ici.
+                preview_images: true
+                accept:
+                  - .png
+                  - .jpg

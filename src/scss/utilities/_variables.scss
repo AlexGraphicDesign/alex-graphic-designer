@@ -13,9 +13,24 @@ $header-bg: $white;
 $header-logo-height: 4rem;
 $header-height: 5rem;
 
+//nav
+$nav-link-color: $black;
+$nav-link-color-hover: $nav-link-color;
+
 //Footer
 $footer-border-top: 1px solid lighten($black, 95%);
 $font-size-legal: $font-size-base * 0.8;
 
 //Liens
 $link-color: $black;
+
+//Boutons
+$btn-min-width: 64px;
+$btn-height: 36px;
+$btn-radius: $btn-height / 2;
+
+//Home
+$home-content-bg: $white;
+$home-content-pad: 1.25em;
+$home-content-border: 4px;
+$home-content-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);

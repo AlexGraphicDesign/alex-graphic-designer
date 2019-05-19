@@ -1,13 +1,22 @@
 <!-- Modular 'home' ================================================== -->
-<section id="{{ page.menu|lower }}" class="home" style="background-image:url({{ url('theme://images/default.jpg') }}">
+<section id="{{ page.menu|lower }}" class="home">
 
-  <div class="container">
-    <div class="row">
+  <div data-image-src="{{ page.media[page.header.background].url() }}">
+    <div class="container">
+      <div class="row">
 
-      <div class="home__content">
-        {{ content }}
+        <div class="home__content">
+
+          <h4>Test</h4>
+          <h1>{{ content }}</h1>
+
+          <div class="home__buttons">
+            <a class="btn btn-outline-primary" href="#" role="button">Link</a>
+          </div>
+
+        </div>
+
       </div>
-
     </div>
   </div>
 

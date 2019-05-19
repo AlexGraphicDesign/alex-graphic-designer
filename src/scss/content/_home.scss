@@ -1,1 +1,13 @@
 //Style section "HOME"
+
+.home{
+  padding: 0 2em 2em 2em;
+
+  &__content{
+    background: $home-content-bg;
+    padding: $home-content-pad;
+    border-radius: $home-content-border;
+    box-shadow: $home-content-shadow;
+  }
+
+}

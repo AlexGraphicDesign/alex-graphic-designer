@@ -1,0 +1,11 @@
+//Bouton personnalisés
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-width: $btn-min-width;
+  height: $btn-height;
+  border-radius: $btn-radius;
+}
