@@ -24,8 +24,9 @@
     {{ assets.css() }}
 
     {% block javascripts %}
-        {% do assets.addJS('https://code.jquery.com/jquery-3.3.1.slim.min.js', {group:'bottom'}) %}
+        {% do assets.addJS('https://code.jquery.com/jquery-3.3.1.min.js', {group:'bottom'}) %}
         {% do assets.addJS('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', {group:'bottom'}) %}
+        {% do assets.addJS('theme://js/cookies.js', {group:'bottom'}) %}
         {% do assets.addJS('theme://js/scripts.js', {group:'bottom'}) %}
     {% endblock %}
 
@@ -67,6 +68,11 @@
     {% include 'partials/footer.html.twig' %}
     </div>
 </footer>
+{% endblock %}
+
+<!-- cookies ================================================== -->
+{% block cookies %}
+    {% include 'partials/cookies.html.twig' %}
 {% endblock %}
 
 <!-- scripts ================================================== -->
