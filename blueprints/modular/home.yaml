@@ -5,7 +5,7 @@ form:
     tabs:
 
       fields:
-        AlexGraphicDesignerSetings:
+        AlexGraphicDesignerSettings:
           type: tab
           title: AlexGraphicDesigner
 
@@ -23,3 +23,7 @@ form:
                 accept:
                   - .png
                   - .jpg
+            header.bannerOpacity:
+                type: text
+                label: Opacité incrustation
+                description: Utilisez une valeur entre 0 et 1.

@@ -12906,8 +12906,8 @@ a:hover, a:focus {
 }
 
 .btn-outline-dark:hover {
-  color: #fff;
-  background-color: #000;
+  color: #000;
+  background-color: rgba(0, 0, 0, 0.15);
   border-color: #000;
 }
 
@@ -13140,7 +13140,22 @@ a:hover, a:focus {
 }
 
 .home {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
   padding: 0 2em 2em 2em;
+}
+
+.home .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
 }
 
 .home__content {
