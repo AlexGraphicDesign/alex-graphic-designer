@@ -5,9 +5,9 @@ function scrolled(){
   var scrollVal = $(document).scrollTop();
 
   if (scrollVal > 50){
-    $('#header').addClass("fixed-top");
+    $('#header').addClass("scrolled");
   }else{
-    $('#header').removeClass("fixed-top");
+    $('#header').removeClass("scrolled");
   }
 }
 
