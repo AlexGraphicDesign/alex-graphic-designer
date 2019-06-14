@@ -7,13 +7,13 @@
         {% set current_page = (p.active or p.activeChild) ? ' active' : '' %}
         {% if p.children.visible.count > 0 %}
             <li class="nav_item nav__item dropdown {{ current_page }}">
-                <a class="nav-link dropdown-toggle" href="{{ p.url }}">
+                <a class="nav-link dropdown-toggle" href="{{ p.url }}" data-toggle="dropdown" role="button">
                     {% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
                     {{ p.menu }}
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     {{ _self.loop(p) }}
-                </ul>
+                </div>
             </li>
         {% else %}
             <li class="nav-item nav__item{{ current_page }}">

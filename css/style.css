@@ -13073,7 +13073,6 @@ a:hover, a:focus {
 
 .footer {
   background: #fff;
-  border-top: 1px solid #f2f2f2;
   padding: 1rem 0;
 }
 
@@ -13157,7 +13156,6 @@ a:hover, a:focus {
 .home {
   width: 100%;
   height: 100vh;
-  position: relative;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -13165,6 +13163,21 @@ a:hover, a:focus {
 }
 
 .home__content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.home__card {
   background: #fff;
   padding: 1.25em;
   -webkit-border-radius: 4px;
