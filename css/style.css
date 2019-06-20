@@ -12864,9 +12864,34 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+@font-face {
+  font-family: "poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-display: optional;
+  src: url("../fonts/poppins-light.eot?") format("eot"), url("../fonts/poppins-light.woff2") format("woff2"), url("../fonts/poppins-light.woff") format("woff"), url("../fonts/poppins-light.ttf") format("truetype"), url("../fonts/poppins-light.svg#poppins") format("svg");
+}
+
+@font-face {
+  font-family: "poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url("../fonts/poppins-regular.eot?") format("eot"), url("../fonts/poppins-regular.woff2") format("woff2"), url("../fonts/poppins-regular.woff") format("woff"), url("../fonts/poppins-regular.ttf") format("truetype"), url("../fonts/poppins-regular.svg#poppins") format("svg");
+}
+
+@font-face {
+  font-family: "poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+  src: url("../fonts/poppins-bold.eot?") format("eot"), url("../fonts/poppins-bold.woff2") format("woff2"), url("../fonts/poppins-bold.woff") format("woff"), url("../fonts/poppins-bold.ttf") format("truetype"), url("../fonts/poppins-bold.svg#poppins") format("svg");
+}
+
 html, body {
   width: 100%;
   height: 100%;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -13168,10 +13193,60 @@ a:hover, a:focus {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.05) 1px 2px 4px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.05) 1px 2px 4px;
+  box-shadow: rgba(0, 0, 0, 0.05) 1px 2px 4px;
   position: relative;
   z-index: 2;
+}
+
+.home__social {
+  position: absolute;
+  padding-bottom: 13%;
+  right: 25px;
+  bottom: 0;
+}
+
+.home__social:after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 10em;
+  background-color: #000;
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+
+.home__social__list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.home__social__item {
+  list-style: none;
+  padding: 5px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -27,3 +27,24 @@ form:
                 type: text
                 label: Opacité incrustation
                 description: Utilisez une valeur entre 0 et 1.
+
+            social:
+              type: section
+              title: Social Icons
+              text: Réseaux sociaux
+              underline: true
+              fields:
+                header.social:
+                  type: list
+                  label: Icones réseaux sociaux
+                  style: vertical
+                  fields:
+                    .socialIconClass:
+                      type: iconpicker
+                      label: Classe de l'icone
+                    .socialIconText:
+                      type: text
+                      label: Nom du réseau
+                    .socialIconLink:
+                      type: text
+                      label: URL

@@ -3,21 +3,38 @@
 
     <div class="overlay" style="opacity:{{ page.header.bannerOpacity }};"></div>
 
-    <div class="container">
-      <div class="row align-items-center">
+    <div class="container align-items-center">
 
-        <div class="col-lg-6">
-          <!-- Home card -->
-          <div class="home__card">
-            <h4>Test</h4>
-            <h1>{{ content }}</h1>
-            <div class="home__buttons">
-              <a class="btn btn-outline-primary" href="#" role="button">Link</a>
+        <div class="row">
+
+          <div class="col-lg-5">
+            <!-- Home card -->
+            <div class="home__card">
+              <h1>Test</h1>
+              <p>{{ content }}</p>
+              <div class="home__buttons">
+                <a class="btn btn-outline-primary" href="#" role="button">Link</a>
+              </div>
             </div>
           </div>
+
         </div>
 
-      </div>
     </div>
+
+    {% if page.header.social|length > 0 %}
+      <!-- Réseaux sociaux home -->
+      <div class="home__social">
+        <ul class="home__social__list">
+          {% for item in page.header.social %}
+          <li class="home__social__item">
+              <a class="home__social__link" href="{{ item.socialIconLink }}" title="{{ item.socialIconText }}" target="_blank">
+                  <i class="{{ item.socialIconClass }}" aria-hidden="true"></i>
+              </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
 
 </section>

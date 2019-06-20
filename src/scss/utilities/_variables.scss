@@ -12,6 +12,7 @@ $black: #000;
 $header-bg: $white;
 $header-logo-height: 4rem;
 $header-height: 5rem;
+$zindex-header: 1030;
 
 //nav
 $nav-link-color: $black;
@@ -33,4 +34,6 @@ $btn-radius: $btn-height / 2;
 $home-content-bg: $white;
 $home-content-pad: 1.25em;
 $home-content-border: 4px;
-$home-content-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+$home-content-shadow: rgba(0, 0, 0, 0.05) 1px 2px 4px;
+
+$home-social-color: $black;
