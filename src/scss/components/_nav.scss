@@ -24,7 +24,7 @@
 @include media-breakpoint-up(md) {
 
   .header{
-    
+
     //On fixe le header au scroll
     &.scrolled{
 
@@ -42,8 +42,8 @@
   }
 
   .nav{
-    background: $header-bg;
     height: $header-height;
+    background: $header-bg;
     padding: 0 1rem;
     box-shadow: none;
     transition: all .5s ease;

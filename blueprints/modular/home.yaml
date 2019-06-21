@@ -10,23 +10,19 @@ form:
           title: AlexGraphicDesigner
 
           fields:
-            bannerBackground:
+            imageBackground:
               type: section
-              title: Background
+              title: Image Background
               underline: true
-            header.background:
+            image.background:
                 type: filepicker
                 folder: '@self'
-                label: Background Image
-                description: Insérez votre image de fond ici.
+                label: Selectionnez votre image
+                description: 500px / 500px.
                 preview_images: true
                 accept:
                   - .png
                   - .jpg
-            header.bannerOpacity:
-                type: text
-                label: Opacité incrustation
-                description: Utilisez une valeur entre 0 et 1.
 
             social:
               type: section

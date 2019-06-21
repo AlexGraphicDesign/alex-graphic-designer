@@ -1,21 +1,27 @@
 <!-- Modular 'home' ================================================== -->
-<section id="{{ page.menu|lower }}" class="home" style="background-image: url({{ page.media[page.header.background].url() }})">
+<section id="{{ page.menu|lower }}" class="home">
 
-    <div class="overlay" style="opacity:{{ page.header.bannerOpacity }};"></div>
+    <div class="container">
 
-    <div class="container align-items-center">
+        <div class="row align-items-center">
 
-        <div class="row">
-
-          <div class="col-lg-5">
-            <!-- Home card -->
-            <div class="home__card">
-              <h1>Test</h1>
-              <p>{{ content }}</p>
+          <div class="col-lg-7">
+            <!-- Contenu Home -->
+            <div class="home__content">
+              <!-- Titre -->
+              <h3>Bonjour,</h3>
+              <!-- Texte -->
+              <h1>Je suis Alexandre Denys. Intégrateur ou Développeur Front-End, c'est comme vous voulez.</h1>
+              <!-- Boutons -->
               <div class="home__buttons">
-                <a class="btn btn-outline-primary" href="#" role="button">Link</a>
+                <a class="btn btn-primary" href="#" role="button">Link</a>
+                <a class="btn btn-primary" href="#" role="button">Link 2</a>
               </div>
             </div>
+          </div>
+
+          <div class="col-lg-5">
+            <img src="{{ page.media['home-vector.png'].url }}" alt="#"></img>
           </div>
 
         </div>

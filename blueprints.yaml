@@ -33,6 +33,35 @@ form:
       accept:
         - image/*
 
+    cookies_section:
+      type: section
+      title: Cookies
+      underline: true
+
+    cookie_header:
+      type: text
+      label: Header Bloc Cookies
+
+    cookie_text:
+      type: text
+      label: Texte Bloc Cookies
+
+    cookie_textlink:
+      type: text
+      label: Texte du lien
+
+    cookie_urllink:
+      type: text
+      label: URL du lien
+
+    cookie_ok:
+      type: text
+      label: Texte bouton 'Oui'
+
+    cookie_ko:
+      type: text
+      label: Texte bouton 'Non'
+
     footer_section:
       type: section
       title: Footer

@@ -20,26 +20,24 @@
   position: relative;
   background-size: cover;
 
-  &__card{
+  &__content{
     background: $home-content-bg;
     padding: $home-content-pad;
     border-radius: $home-content-border;
-    box-shadow: $home-content-shadow;
     position: relative;
-    z-index: 2;
   }
 
   //Liens réseaux sociaux HOME
   &__social{
     position: absolute;
-    padding-bottom: 13%;
+    padding-bottom: 9em;
     right: 25px;
     bottom: 0;
     &:after{
       content: "";
       display: block;
       width: 1px;
-      height: 10em;
+      height: 8em;
       background-color: $home-social-color;
       position: absolute;
       bottom: 0;

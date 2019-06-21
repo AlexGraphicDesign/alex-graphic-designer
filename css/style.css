@@ -13025,8 +13025,8 @@ a:hover, a:focus {
   }
 
   .nav {
-    background: #fff;
     height: 5rem;
+    background: #fff;
     padding: 0 1rem;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -13187,22 +13187,18 @@ a:hover, a:focus {
   background-size: cover;
 }
 
-.home__card {
+.home__content {
   background: #fff;
   padding: 1.25em;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.05) 1px 2px 4px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.05) 1px 2px 4px;
-  box-shadow: rgba(0, 0, 0, 0.05) 1px 2px 4px;
   position: relative;
-  z-index: 2;
 }
 
 .home__social {
   position: absolute;
-  padding-bottom: 13%;
+  padding-bottom: 9em;
   right: 25px;
   bottom: 0;
 }
@@ -13211,7 +13207,7 @@ a:hover, a:focus {
   content: "";
   display: block;
   width: 1px;
-  height: 10em;
+  height: 8em;
   background-color: #000;
   position: absolute;
   bottom: 0;
