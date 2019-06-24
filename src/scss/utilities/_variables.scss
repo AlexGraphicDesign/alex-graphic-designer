@@ -15,6 +15,7 @@ $header-height: 5rem;
 $zindex-header: 1030;
 
 //nav
+$nav-link-font-size: $font-size-base * 0.875;
 $nav-link-color: $black;
 $nav-link-color-hover: $nav-link-color;
 
@@ -26,14 +27,17 @@ $font-size-legal: $font-size-base * 0.8;
 $link-color: $black;
 
 //Boutons
+$btn-font-size: 1rem;
 $btn-min-width: 64px;
 $btn-height: 36px;
-$btn-radius: $btn-height / 2;
+$btn-radius: 50rem;
 
 //Home
 $home-content-bg: $white;
 $home-content-pad: 1.25em;
 $home-content-border: 4px;
 $home-content-shadow: rgba(0, 0, 0, 0.05) 1px 2px 4px;
+
+$home-text-color: lighten($black, 50%);
 
 $home-social-color: $black;
