@@ -2,7 +2,7 @@
 {% set logo = theme_var('custom_logo') %}
 {% if logo %}
     {% set logo_file = (logo|first).name %}
-    <img src="{{ url('theme://images/' ~ logo_file) }}" alt="{{ base_url }}"/>
+    <img class="img-fluid" src="{{ url('theme://images/' ~ logo_file) }}" alt="{{ base_url }}"/>
 {% else %}
     {% include('@images/logo.png') %}
 {% endif %}

@@ -13178,6 +13178,10 @@ a:hover, a:focus {
   padding-top: 5rem;
 }
 
+#default-content {
+  padding-top: 2rem;
+}
+
 .overlay {
   position: absolute;
   top: 0;
