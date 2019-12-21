@@ -30,7 +30,6 @@
 
       .nav{
         box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
-        height: $header-height * 0.8;
         .navbar-brand{
           img{
             max-height: $header-logo-height * 0.8;
@@ -42,7 +41,6 @@
   }
 
   .nav{
-    height: $header-height;
     background: $header-bg;
     padding: 0 1rem;
     box-shadow: none;
