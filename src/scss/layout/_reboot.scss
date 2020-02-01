@@ -1,4 +1,5 @@
 //Reboot CSS
+@import "../../../node_modules/bootstrap/scss/reboot";
 
 //Appel de fonts
 @include font-face('poppins', '../fonts/poppins-light', 300, normal);
