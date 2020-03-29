@@ -41,7 +41,7 @@ function clean(){
 function gulpBrowserSync(){
      browserSync.init({
         watch: true,
-        proxy: 'http://gravalextheme.ddev.local' // URL ici
+        proxy: 'http://gravalextheme.ddev.site/' // URL ici
      });
 }
 
