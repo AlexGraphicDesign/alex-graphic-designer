@@ -5,7 +5,7 @@
       {% if theme_var('footer-links')|length > 0 %}
         <ul class="footer__legal__list mb-0">
           {% for item in theme_var('footer-links') %}
-          <li class="footer__legal__list__item"><a href="{{ item.url }}" title="{{ item.text }}">{{ item.text }}</a></li>
+          <li class="footer__legal__list__item"><a href="{{ item.url }}" title="{{ item.text }} - {{ config.site.title }}">{{ item.text }}</a></li>
           {% endfor %}
         </ul>
       {% endif %}
@@ -17,7 +17,7 @@
         <ul class="footer__social__list mb-0">
           {% for item in theme_var('footer-social') %}
           <li class="footer__social__item">
-              <a class="footer__social__link" href="{{ item.socialIconLink }}" title="{{ item.socialIconText }}" target="_blank">
+              <a class="footer__social__link" href="{{ item.socialIconLink }}" title="{{ item.socialIconText }} - {{ config.site.title }}" target="_blank">
                   <i class="{{ item.socialIconClass }}" aria-hidden="true"></i>
               </a>
           </li>

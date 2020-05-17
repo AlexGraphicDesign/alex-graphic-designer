@@ -9,21 +9,22 @@
   "author": "AlexGraphicDesign",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^9.7.6",
     "browser-sync": "^2.26.7",
     "del": "^4.1.1",
     "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.2.0",
+    "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-cssbeautify": "^1.0.1",
     "gulp-plumber": "^1.2.1",
-    "gulp-sass": "^4.0.2",
-    "autoprefixer": "^9.7.4",
-    "gulp-postcss": "^8.0.0"
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.1.0"
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1",
-    "popper.js": "^1.16.1"
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
+    "tiny-slider": "^2.9.2"
   },
   "repository": {
     "type": "git",

@@ -1,37 +1,49 @@
 //Bouton personnalisés -- AlexGraphicDesigner-Theme
 
-@import "../../../node_modules/bootstrap/scss/buttons";
-@import "../../../node_modules/bootstrap/scss/button-group";
-
 .btn{
   display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  font-size: $btn-font-size;
   min-width: $btn-min-width;
-  padding: .75rem 1.75rem;
-  line-height: 1.5;
+  height: $btn-height;
+  font-size: $btn-font-size;
+  font-weight: 500;
+  letter-spacing: .0892857143em;
 
-  &--rounded{
+  &-rounded{
+    line-height: 1.5;
+    padding: 0 1rem;
     border-radius: $btn-radius;
   }
+}
 
-  &--sm{
-    padding: .5rem 1.25rem;
-    font-size: .875rem;
-    line-height: 1.5;
+.btn-outline-primary{
+  color: $btn-link-bg;
+  border-color: $btn-link-bg;
+
+  &:hover,
+  &.hover{
+    background-color: $btn-link-bg;
+    border-color: $btn-link-bg;
+    color: $white;
   }
 
-  &-outline-dark{
-    color: #000;
-    border-color: #000;
+  &:focus,
+  &.focus{
+    box-shadow: 0 0 0 0.2rem rgba(0,0,0,.2);
+  }
 
-    &:hover{
-      color: #000;
-      background-color: rgba(0,0,0, 0.15);
-      border-color: #000;
+  &:active,
+  &.active{
+    background-color: $btn-link-bg;
+    border-color: $btn-link-bg;
+    color: $white;
+
+    &:not(.disabled){
+      background-color: $btn-link-bg;
+      border-color: $btn-link-bg;
+      color: $white;
     }
   }
-
 }

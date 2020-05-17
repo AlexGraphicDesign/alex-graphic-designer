@@ -1,11 +1,29 @@
 //Contenu général
 //scss/content/_main.scss
 
-  #content{
-    position: relative;
-    padding-top: $header-height;
-  }
+//Appel de fonts
+@include font-face('poppins', '../fonts/poppins-light', 300, normal);
+@include font-face('poppins', '../fonts/poppins-regular', 400, normal);
+@include font-face('poppins', '../fonts/poppins-bold', 700, normal);
 
-  #default-content{
-    padding-top: $header-height * 0.4;
+
+html, body{
+  width: 100%;
+  height: 100%;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
+}
+
+body{
+  color: $body-color;
+}
+
+#main-content{
+  margin-top: 0;
+  transition: margin-top .4s ease-in-out;
+}
+
+.scrolled{
+  #main-content{
+    margin-top: -50px;
   }
+}

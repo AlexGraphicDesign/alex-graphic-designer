@@ -19,11 +19,13 @@ const sass = require("gulp-sass"),
 
 //Chemins fichiers sources et de destination
 const paths = {
-      srcCss : 'src/scss/*.scss',
+      srcBootstrapCss : 'src/scss/bootstrap.scss',
+      srcBootstrapJs: 'node_modules/bootstrap/dist/js/*.js',
+
+      srcStyleCss : 'src/scss/style.scss',
       srcComposantsCss : 'src/scss/**/*.scss',
 
       srcJs: 'src/js/*.js',
-      srcBootstrapJs: 'node_modules/bootstrap/dist/js/*.js',
 
       distCss : "css",
       distJs: "js"
@@ -52,8 +54,8 @@ function gulpReload(done){
 }
 
 //Compilation du SASS de developpement
-function gulpSass(done){
-  return src(paths.srcCss, {sourcemaps: true})
+function gulpStyle(done){
+  return src([paths.srcStyleCss, paths.srcBootstrapCss], {sourcemaps: true})
   .pipe(plumber())
   .pipe(sass({
     errLogToConsole: true
@@ -79,12 +81,12 @@ function gulpJS(done){
 
 //On écoute les modifications de fichiers pour rechargement de la page automatique
 function gulpWatch(){
-  watch([paths.srcCss, paths.srcComposantsCss], series(gulpSass, gulpReload));
+  watch([paths.srcBootstrapCss, paths.srcStyleCss, paths.srcComposantsCss], series(gulpStyle, gulpReload));
   watch([paths.srcBootstrapJs, paths.srcJs], series(gulpJS, gulpReload));
 }
 
 //On liste les tâches
-task("gulpSass", gulpSass);
+task("gulpStyle", gulpStyle);
 task("gulpJS", gulpJS);
-task("default", series(clean, parallel(gulpSass, gulpJS)));
+task("default", series(clean, parallel(gulpStyle, gulpJS)));
 task("build-dev", parallel(gulpBrowserSync, gulpWatch));

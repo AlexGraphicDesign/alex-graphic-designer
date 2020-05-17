@@ -1,32 +1,22 @@
 <!-- Modular 'home' ================================================== -->
-<section id="{{ page.menu|lower }}" class="home">
+<section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower }}{% endif %}" class="home">
 
-    <div class="container">
-
-        <div class="row align-items-center">
-
-          <div class="col-lg-7">
-            <!-- Contenu Home -->
-            <div class="home__content">
-              <!-- Titre -->
-              <h3 class="home__title">Bonjour,</h3>
-              <!-- Texte -->
-              <h1 class="home__text lead">Je suis Alexandre Denys. Intégrateur ou Développeur Front-End, c'est comme vous voulez.</h1>
-              <!-- Boutons -->
-              <div class="home__buttons">
-                <a class="btn btn--rounded btn-outline-primary" href="#" role="button">Link</a>
-                <a class="btn btn--rounded btn-outline-primary" href="#" role="button">Link 2</a>
+    <ul id="home-slider" class="home-slider">
+      <li>
+        <div class="home-slider__wrapper">
+          <div class="bgImg bgImg-lazy" style="background-image: url('http://gravalextheme.ddev.site/user/themes/alex-graphic-designer/images/slide_mys-1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height:100%; width: 100%;"></div>
+          <div class="home-slider__content">
+            <div class="card home-slider__card">
+              <div class="card-body">
+                <h5 class="card-title">Test</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-rounded btn-outline-primary card-link">Card link</a>
               </div>
             </div>
           </div>
-
-          <div class="col-lg-5">
-            <img class="img-fluid" src="{{ page.media['home-vector.png'].url }}" alt="#"></img>
-          </div>
-
         </div>
-
-    </div>
+      </li>
+    </ul>
 
     {% if page.header.social|length > 0 %}
       <!-- Réseaux sociaux home -->
@@ -40,3 +30,24 @@
     {% endif %}
 
 </section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+<script>
+//On déclare le Home Slider
+var slider = tns({
+  "container": "#home-slider",
+  "items": 1,
+  "lazyload": true,
+  "lazyloadSelector": ".bgImg-lazy",
+  "mouseDrag": true,
+  "swipeAngle": false,
+  "controls": false,
+  "speed": 400,
+  "nav": false,
+  "autoplay": true,
+  "center": true,
+  "autoplayHoverPause": true,
+  "autoplayTimeout": 5000,
+  "autoplayButtonOutput": false
+})
+</script>

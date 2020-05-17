@@ -17,62 +17,58 @@
 
     {% block stylesheets %}
         {# {% do assets.addCss('https://unpkg.com/purecss@1.0.0/build/pure-min.css', 100) %} #}
-
-        {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 99) %}
+        {% do assets.addCss('theme://css/bootstrap.css', 99) %}
         {% do assets.addCss('theme://css/style.css', 98) %}
+        {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 97) %}
     {% endblock %}
-    {{ assets.css() }}
 
     {% block javascripts %}
-        {% do assets.addJS('https://code.jquery.com/jquery-3.3.1.min.js', {group:'bottom'}) %}
-        {% do assets.addJS('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', {group:'bottom'}) %}
-        {% do assets.addJS('theme://js/cookies.js', {group:'bottom'}) %}
-        {% do assets.addJS('theme://js/scripts.js', {group:'bottom'}) %}
+        {% if config.system.debugger.enabled %}
+          {% do assets.addJs('https://code.jquery.com/jquery-2.1.3.min.js', 101) %}
+        {% else %}
+          {% do assets.addJS('https://code.jquery.com/jquery-3.3.1.min.js', {group:'bottom'}) %}
+        {% endif %}
+        {% do assets.addJS('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', {group:'bottom', loading: 'async'}) %}
+        {% do assets.addJS('theme://js/scripts.js', {group:'bottom', loading: 'async'}) %}
     {% endblock %}
 
+    {% block assets deferred %}
+        {{ assets.css()|raw }}
+        {{ assets.js()|raw }}
+    {% endblock %}
 
-{% endblock head%}
+{% endblock head %}
 </head>
+
 <body id="top" class="{{ page.header.body_classes }}">
 
 <!-- header ================================================== -->
 {% block header %}
-    <header id="header" class="header fixed-top" role="heading">
-
-      {% block header_navigation %}
-
-        {% include 'partials/navigation.html.twig' %}
-
-      {% endblock %}
-      
-    </header>
+  <header id="header" class="header fixed-top" role="heading">
+      {% include 'partials/navigation.html.twig' %}
+  </header>
 {% endblock %}
 
 <!-- body ================================================== -->
 {% block body %}
-    <main id="content" role="main">
-      {% block content %}
-      {% endblock %}
-    </main>
+  <main id="main-content" role="main">
+    {% block content %}
+    {% endblock %}
+  </main>
 {% endblock %}
 
 <!-- footer ================================================== -->
 {% block footer %}
-<footer class="footer">
-    <div class="container">
-    {% include 'partials/footer.html.twig' %}
-    </div>
-</footer>
-{% endblock %}
-
-<!-- cookies ================================================== -->
-{% block cookies %}
-    {% include 'partials/cookies.html.twig' %}
+  <footer id="footer" class="footer">
+      <div class="container">
+      {% include 'partials/footer.html.twig' %}
+      </div>
+  </footer>
 {% endblock %}
 
 <!-- scripts ================================================== -->
 {% block bottom %}
-    {{ assets.js('bottom') }}
+    {{ assets.js('bottom')|raw }}
 {% endblock %}
 
 </body>

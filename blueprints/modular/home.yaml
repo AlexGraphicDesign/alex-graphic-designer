@@ -12,17 +12,23 @@ form:
           fields:
             imageBackground:
               type: section
-              title: Image Background
+              title: Carousel
               underline: true
-            image.background:
-                type: filepicker
-                folder: '@self'
-                label: Selectionnez votre image
-                description: 500px / 500px.
-                preview_images: true
-                accept:
-                  - .png
-                  - .jpg
+              fields:
+                image.background:
+                    type: list
+                    label: Images
+                    style: vertical
+                    fields:
+                      .images:
+                        type: filepicker
+                        folder: '@self'
+                        description: 1920 x 1080 min.
+                        label: Image Carousel
+                        preview_images: true
+                        accept:
+                          - .png
+                          - .jpg
 
             social:
               type: section

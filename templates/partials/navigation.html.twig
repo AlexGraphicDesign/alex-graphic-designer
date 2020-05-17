@@ -2,68 +2,64 @@
 
 <nav class="navbar navbar-expand-lg navbar-light nav" role="navigation">
   <div class="container">
-  <a class="navbar-brand" href="{{ base_url == '' ? '/' : base_url }}" title="{{ config.site.title }}">
-    {% include 'partials/logo.html.twig' %}
-  </a>
+    <a class="navbar-brand" href="{{ base_url == '' ? '/' : base_url }}" title="{{ config.site.title }}">
+      {% include 'partials/logo.html.twig' %}
+    </a>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-  </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-  {% macro loop(page) %}
-      {% for p in page.children.visible %}
-          {% set current_page = (p.active or p.activeChild) ? ' active' : '' %}
-          {% if p.children.visible.count > 0 %}
-              <li class="nav_item nav__item dropdown {{ current_page }}">
-                  <a class="nav-link dropdown-toggle" href="{{ p.url }}" data-toggle="dropdown" role="button">
-                      {% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
-                      {{ p.menu }}
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    {% for child in p.children.visible %}
-                      {% set current_child = (child.active or child.activeChild) ? 'active' : '' %}
-                      <a href="{{ child.url }}" class="dropdown-item {{ current_child }}">{{ child.menu }}</a>
-                    {% endfor %}
-                  </div>
-              </li>
-          {% else %}
-            <li class="nav-item nav__item {{ current_page }}">
-              <a class="nav-link nav__link" href="{{ p.url }}">
-                  {% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
-                  {{ p.menu }}
-              </a>
-            </li>
-          {% endif %}
-      {% endfor %}
-  {% endmacro %}
-
-
-
-  <div class="navbar-collapse collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav nav__list">
-        {% if theme_config.dropdown.enabled %}
-            {{ _self.loop(pages) }}
-        {% else %}
-          {% for page in pages.children.visible %}
-              {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+    {% macro loop(page) %}
+        {% for p in page.children.visible %}
+        {% set current_page = (p.active or p.activeChild) ? 'active' : '' %}
+            {% if p.children.visible.count > 0 %}
+                <li class="nav_item nav__item dropdown">
+                    <a class="nav-link nav__link dropdown-toggle {{ current_page }}" href="{{ p.url }}" title="{{ p.menu }}" data-toggle="dropdown" role="button">
+                        {{ p.menu }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      {% for child in p.children.visible %}
+                        {% set current_child = (child.active or child.activeChild) ? 'active' : '' %}
+                        <a href="{{ child.url }}" class="dropdown-item {{ current_child }}" title="{{ child.menu }}">{{ child.menu }}</a>
+                      {% endfor %}
+                    </div>
+                </li>
+            {% else %}
               <li class="nav-item nav__item {{ current_page }}">
-                  <a class="nav-link nav__link" href="{{ page.url }}">
-                      {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"></i>{% endif %}
-                      {{ page.menu }}
+                <a class="nav-link nav__link" href="{{ p.url }}" title="{{ p.menu }}">
+                    {{ p.menu }}
+                </a>
+              </li>
+            {% endif %}
+        {% endfor %}
+    {% endmacro %}
+
+
+
+    <div class="navbar-collapse collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav nav__list">
+          {% if theme_config.dropdown.enabled %}
+              {{ _self.loop(pages) }}
+          {% else %}
+            {% for page in pages.children.visible %}
+                {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+                <li class="nav-item nav__item {{ current_page }}">
+                    <a class="nav-link nav__link" href="{{ page.url }}" title="{{ page.menu }}">
+                        {{ page.menu }}
+                    </a>
+                </li>
+            {% endfor %}
+          {% endif %}
+          {% for mitem in site.menu %}
+              <li class="nav-item nav__item">
+                  <a class="nav-link nav__link" href="{{ mitem.url }}" title="{{ mitem.text }}">
+                      {{ mitem.text }}
                   </a>
               </li>
           {% endfor %}
-        {% endif %}
-        {% for mitem in site.menu %}
-            <li class="nav-item nav__item">
-                <a class="nav-link nav__link" href="{{ mitem.url }}">
-                    {% if mitem.icon %}<i class="fa fa-{{ mitem.icon }}"></i>{% endif %}
-                    {{ mitem.text }}
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
-  </div>
+      </ul>
+    </div>
 
   </div>
 </nav>

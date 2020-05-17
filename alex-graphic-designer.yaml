@@ -7,12 +7,6 @@ custom_logo:
     type: image/png
     size: 5238
     path: user/themes/alex-graphic-designer/images/logo.png
-cookie_header: '<small>Voici</small>... Les COOKIES'
-cookie_text: 'Voulez-vous des cookies ? Vous ne savez pas ? Avant de prendre cette décision, rendez-vous ici :'
-cookie_textlink: 'En savoir plus'
-cookie_urllink: '#'
-cookie_ok: 'Ok!'
-cookie_ko: 'Non.'
 footer-text: '&copy; 2019 Alex Graphic Designer. Tous droits réservés.'
 footer-links:
   - text: CGV
