@@ -10,12 +10,12 @@ form:
           title: AlexGraphicDesigner
 
           fields:
-            imageBackground:
+            carousel:
               type: section
               title: Carousel
               underline: true
               fields:
-                image.background:
+                header.carousel:
                     type: list
                     label: Images
                     style: vertical

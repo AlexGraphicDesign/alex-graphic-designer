@@ -1,22 +1,26 @@
 <!-- Modular 'home' ================================================== -->
 <section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower }}{% endif %}" class="home">
 
-    <ul id="home-slider" class="home-slider">
-      <li>
-        <div class="home-slider__wrapper">
-          <div class="bgImg bgImg-lazy" style="background-image: url('http://gravalextheme.ddev.site/user/themes/alex-graphic-designer/images/slide_mys-1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height:100%; width: 100%;"></div>
-          <div class="home-slider__content">
-            <div class="card home-slider__card">
-              <div class="card-body">
-                <h5 class="card-title">Test</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-rounded btn-outline-primary card-link">Card link</a>
+    {% if page.header.carousel|length > 0 %}
+      <ul id="home-slider" class="home-slider">
+        {% for item in page.header.carousel %}
+        <li>
+          <div class="home-slider__wrapper">
+            <div class="bgImg bgImg-lazy" style="background-image: url('{{ page.media[item.images].url }}'); background-size: cover; background-position: center; background-repeat: no-repeat; height:100%; width: 100%;"></div>
+            <div class="home-slider__content">
+              <div class="card home-slider__card">
+                <div class="card-body">
+                  <h5 class="card-title">Test</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-rounded btn-outline-primary card-link">Card link</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </li>
-    </ul>
+        </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
 
     {% if page.header.social|length > 0 %}
       <!-- Réseaux sociaux home -->
