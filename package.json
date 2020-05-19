@@ -24,7 +24,9 @@
     "bootstrap": "^4.4.1",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
-    "tiny-slider": "^2.9.2"
+    "tiny-slider": "^2.9.2",
+    "kind-of": ">=6.0.3",
+    "lodash": ">=4.17.15"
   },
   "repository": {
     "type": "git",
