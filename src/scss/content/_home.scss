@@ -44,9 +44,8 @@
 //Card
 .home-slider{
   &__card{
+    border-radius: $home-content-card-border-radius;
     text-align: center;
-
-    
 
     .card-text{
       font-weight: 300;
@@ -63,10 +62,12 @@
 }
 
 @include media-breakpoint-up(md) {
+
   .home-slider{
     &__content{
       width: 400px;
       left: 50px;
     }
   }
+
 }
