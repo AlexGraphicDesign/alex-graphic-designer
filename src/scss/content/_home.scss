@@ -58,7 +58,7 @@
 
 .home-slider__card{
   border: 0;
-  box-shadow: 0px 23px 60px 0px rgba(0,41,158,0.3);
+  box-shadow: $home-content-card-shadow;
 }
 
 @include media-breakpoint-up(md) {

@@ -1,0 +1,26 @@
+//Retour haut de Page
+
+.back-to-top{
+  display: none;
+  position: fixed;
+  bottom: 46px;
+  right: 32px;
+  z-index: $zindex-fixed;
+
+  &__link, &__link:visited{
+    display: block;
+    text-align: center;
+    width: $back-to-top-size;
+    height: $back-to-top-size;
+    line-height: $back-to-top-size;
+    background: $back-to-top-bg;
+    color: $back-to-top-color;
+    border-radius: $back-to-top-radius;
+    box-shadow: 0px 23px 60px 0px rgba(0,41,158,0.3);
+    transition: transform .2s ease-in-out;
+
+    &:hover, &:focus{
+      transform: scale(1.2);
+    }
+  }
+}

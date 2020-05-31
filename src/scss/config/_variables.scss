@@ -6,8 +6,8 @@ $font-size-base:                                            1rem;
 $spacer-base:                                               1rem;
 $radius-base:                                               1rem;
 
-$white:                                                   #fff;
-$black:                                                   #000;
+$white:                                                     #fff;
+$black:                                                     #000;
 
 $primary-color:                                             $black;
 $secondary-color:                                           $white;
@@ -21,7 +21,7 @@ $link-hover-color:                                          darken($link-color, 
 
 //header
 $header-bg:                                                 $secondary-color;
-$header-logo-height:                                        4rem;
+$header-logo-height:                                        3rem;
 //$header-height: 5rem;
 
 //nav
@@ -42,11 +42,19 @@ $btn-height:                                                36px;
 $btn-radius:                                                $btn-height / 2;
 
 //Home
-$home-content-card-bg:                                           $white;
-$home-content-card-pad:                                          1.25rem;
-$home-content-card-border-radius:                                $radius-base;
-$home-content-card-shadow:                                     rgba(0, 0, 0, 0.05) 1px 2px 4px;
+$home-content-card-bg:                                      $white;
+$home-content-card-pad:                                     1.25rem;
+$home-content-card-border-radius:                           $radius-base;
+$home-content-card-shadow:                                  rgba(0, 0, 0, 0.05) 1px 2px 4px;
+//$home-content-card-shadow:                                  0px 23px 60px 0px rgba(0,41,158,0.3);
 
 $home-text-color:                                           lighten($primary-color, 20%);
 
 $home-social-color:                                         $primary-color;
+
+//Back to top
+$back-to-top-bg:                                            $secondary-color;
+$back-to-top-color:                                         $primary-color;
+$back-to-top-size:                                          45px;
+$back-to-top-radius:                                        50%;
+$back-to-top-zindex:                                        $zindex-fixed;

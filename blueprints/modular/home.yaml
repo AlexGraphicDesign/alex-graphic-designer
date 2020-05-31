@@ -20,7 +20,7 @@ form:
                     label: Images
                     style: vertical
                     fields:
-                      .images:
+                      .carouselImages:
                         type: filepicker
                         folder: '@self'
                         description: 1920 x 1080 min.
@@ -29,6 +29,18 @@ form:
                         accept:
                           - .png
                           - .jpg
+                      .carouselTitle:
+                        type: text
+                        label: Titre
+                      .carouselContent:
+                        type: text
+                        label: Contenu
+                      .carouselTextButton:
+                        type: text
+                        label: Texte Bouton
+                      .carouselLinkButton:
+                        type: text
+                        label: Lien Bouton
 
             social:
               type: section

@@ -6,13 +6,13 @@
         {% for item in page.header.carousel %}
         <li>
           <div class="home-slider__wrapper">
-            <div class="bgImg bgImg-lazy" style="background-image: url('{{ page.media[item.images].url }}'); background-size: cover; background-position: center; background-repeat: no-repeat; height:100%; width: 100%;"></div>
+            <div class="bgImg bgImg-lazy" style="background-image: url('{{ page.media[item.carouselImages].url }}'); background-size: cover; background-position: center; background-repeat: no-repeat; height:100%; width: 100%;"></div>
             <div class="home-slider__content">
               <div class="card home-slider__card">
                 <div class="card-body">
-                  <h5 class="card-title">Test</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-rounded btn-outline-primary card-link">Card link</a>
+                  <h5 class="card-title">{{ item.carouselTitle }}</h5>
+                  <p class="card-text">{{ item.carouselContent }}</p>
+                  <a href="{{ item.carouselLinkButton }}" title="{{ item.carouselTitle }} - {{ config.site.title }}" class="btn btn-rounded btn-outline-primary card-link">{{ item.carouselTextButton }}</a>
                 </div>
               </div>
             </div>
@@ -34,24 +34,3 @@
     {% endif %}
 
 </section>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
-<script>
-//On déclare le Home Slider
-var slider = tns({
-  "container": "#home-slider",
-  "items": 1,
-  "lazyload": true,
-  "lazyloadSelector": ".bgImg-lazy",
-  "mouseDrag": true,
-  "swipeAngle": false,
-  "controls": false,
-  "speed": 400,
-  "nav": false,
-  "autoplay": true,
-  "center": true,
-  "autoplayHoverPause": true,
-  "autoplayTimeout": 5000,
-  "autoplayButtonOutput": false
-})
-</script>
