@@ -6,6 +6,9 @@
 @import 'config/_mixins';
 @import 'config/_fontsloader';
 
+// Utilities
+@import 'utilities/_box-shadows';
+
 //Contenu Theme
 @import 'content/_main';
 @import 'content/_home';

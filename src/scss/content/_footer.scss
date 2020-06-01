@@ -9,22 +9,23 @@
   &__social{
 
     &__list{
-      text-align: right;
-      padding-left: 0;
+      text-align: center;
     }
 
     &__item{
       display: inline-block;
-
       &:not(:last-child) {
         margin-right: 1rem;
       }
-
     }
+    
   }
 
   //Mentions Légales
   &__legal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-size: $font-size-legal;
 
     &__list{
@@ -34,15 +35,14 @@
 
       &__item{
         display: inline-block;
-
         &:not(:first-child) {
           &:before{
-            content: "|";
+            content: "/";
             padding:0 0.5em;
           }
         }
-
       }
+
     }
   }
 }
@@ -50,12 +50,8 @@
 //Styles Desktop et tablette
 @include media-breakpoint-up(md) {
   .footer{
-
     &__legal{
-      display: flex;
       flex-direction: row;
-      align-items: center;
     }
-
   }
 }
