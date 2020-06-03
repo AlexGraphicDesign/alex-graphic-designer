@@ -3,29 +3,12 @@
 
 //Home
 .home{
+  position: relative;
   background: #fff;
   padding: 0 3rem 3rem 3rem;
-
-  //Liens réseaux sociaux HOME
-  // &__social{
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: center;
-  //   position: absolute;
-  //   padding-bottom: 9em;
-  //   right: 25px;
-  //   bottom: 0;
-  //
-  //   &__link{
-  //
-  //
-  //   }
-  //
-  // }
-
 }
 
-.home-slider{
+.home__slider{
   &__wrapper{
     width: 100%;
     height: 100%;
@@ -42,8 +25,10 @@
 }
 
 //Card
-.home-slider{
+.home__slider{
   &__card{
+    border: 0;
+    box-shadow: $home-content-card-shadow;
     border-radius: $home-content-card-border-radius;
     text-align: center;
 
@@ -55,15 +40,42 @@
   }
 }
 
-
-.home-slider__card{
-  border: 0;
-  box-shadow: $home-content-card-shadow;
-}
+//Liens réseaux sociaux
+.home__social{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    //padding-bottom: 9em;
+    position: absolute;
+    right: 3rem;
+    bottom: 3rem;
+    &:after{
+      content:"";
+      display: block;
+      width: 50px;
+      height: 1px;
+      background-color: #fff;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
+    &__link{
+      display: inline-block;
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      margin-right: 16px;
+      border-radius: 50%;
+      background: #fff;
+    }
+  
+  }
 
 @include media-breakpoint-up(md) {
 
-  .home-slider{
+  .home__slider{
     &__content{
       width: 400px;
       left: 50px;

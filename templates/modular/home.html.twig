@@ -2,13 +2,13 @@
 <section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower }}{% endif %}" class="home">
 
     {% if page.header.carousel|length > 0 %}
-      <ul id="home-slider" class="home-slider">
+      <ul id="home-slider" class="home__slider">
         {% for item in page.header.carousel %}
         <li>
-          <div class="home-slider__wrapper">
+          <div class="home__slider__wrapper">
             <div class="bgImg bgImg-lazy" style="background-image: url('{{ page.media[item.carouselImages].url }}'); background-size: cover; background-position: center; background-repeat: no-repeat; height:100%; width: 100%;"></div>
-            <div class="home-slider__content">
-              <div class="card home-slider__card">
+            <div class="home__slider__content">
+              <div class="card home__slider__card">
                 <div class="card-body">
                   <h5 class="card-title">{{ item.carouselTitle }}</h5>
                   <p class="card-text">{{ item.carouselContent }}</p>
@@ -24,13 +24,15 @@
 
     {% if page.header.social|length > 0 %}
       <!-- Réseaux sociaux home -->
-      <div class="home__social">
+      <ul class="home__social list-unstyled">
           {% for item in page.header.social %}
+          <li class="home__social__item">
             <a class="home__social__link" href="{{ item.socialIconLink }}" title="{{ item.socialIconText }}" target="_blank">
                 <i class="{{ item.socialIconClass }}" aria-hidden="true"></i>
             </a>
+          </li>
           {% endfor %}
-      </div>
+      </ul>
     {% endif %}
 
 </section>
