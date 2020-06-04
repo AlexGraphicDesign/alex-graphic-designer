@@ -22,10 +22,7 @@
     max-width: 100%;
     padding: 0 15px;
   }
-}
 
-//Card
-.home__slider{
   &__card{
     border: 0;
     box-shadow: $home-content-card-shadow;
@@ -45,15 +42,15 @@
     display: flex;
     align-items: center;
     position: absolute;
-    //padding-bottom: 9em;
+    padding-right: 4.5em;
     position: absolute;
     right: 3rem;
-    bottom: 3rem;
+    bottom: 4rem;
     &:after{
       content:"";
       display: block;
-      width: 50px;
-      height: 1px;
+      width: 4em;
+      height: 2px;
       background-color: #fff;
       position: absolute;
       right: 0;
@@ -66,6 +63,7 @@
       width: 45px;
       height: 45px;
       line-height: 45px;
+      text-align: center;
       margin-right: 16px;
       border-radius: 50%;
       background: #fff;
