@@ -13,7 +13,6 @@
   }
 
   &__link{
-    color: $nav-link-color;
     transition: color .3s ease-in-out;
   }
 
@@ -58,19 +57,19 @@
 
       &:before{
         content: "";
-        background: $nav-link-color-hover;
         position: absolute;
         bottom: 0;
-        left: 0;
+        left: 0px;
         width: 0;
         height: 1px;
         opacity: 0;
-        transition: opacity .3s ease-in-out, transform .3s ease-in-out, width .3s ease-in-out;
-        transform: translateX(10px);
+        transition: opacity .4s ease-in-out, transform .4s ease-in-out, width .4s ease-in-out;
+        transform: translateX(-50px);
       }
 
       &:hover{
         &:before{
+          background: $nav-link-color-hover;
           width: 100%;
           opacity: 1;
           transform: translateX(0);
@@ -84,6 +83,7 @@
         .nav__link{
           &:before{
             width: 100%;
+            background: $nav-link-color-active;
             opacity: 1;
             transform: translateX(0);
           }

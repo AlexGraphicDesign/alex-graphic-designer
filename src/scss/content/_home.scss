@@ -1,11 +1,12 @@
-//Style section "HOME"
-//scss/content/_home.scss
+//
+// Home
+//
 
-//Home
 .home{
   position: relative;
   background: #fff;
-  padding: 0 3rem 3rem 3rem;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .home__slider{
@@ -39,25 +40,25 @@
 
 //Liens réseaux sociaux
 .home__social{
-    display: flex;
+    display: none;
     align-items: center;
     position: absolute;
     padding-right: 4.5em;
     position: absolute;
     right: 3rem;
     bottom: 4rem;
-    &:after{
+    &:before, &:after{
       content:"";
       display: block;
       width: 4em;
-      height: 2px;
+      height: 1px;
       background-color: #fff;
       position: absolute;
       right: 0;
       top: 50%;
       transform: translateY(-50%);
     }
-  
+
     &__link{
       display: inline-block;
       width: 45px;
@@ -67,11 +68,24 @@
       margin-right: 16px;
       border-radius: 50%;
       background: #fff;
+      box-shadow: 0px 23px 60px 0px rgba(0,41,158,0.3);
+      transition: transform .2s ease-in-out;
+
+      &:hover, &:focus{
+        transform: scale(1.2);
+      }
     }
-  
+
   }
 
 @include media-breakpoint-up(md) {
+  .home{
+    padding: 0 3rem 3rem 3rem;
+  }
+
+  .home__social{
+    display: flex;
+  }
 
   .home__slider{
     &__content{

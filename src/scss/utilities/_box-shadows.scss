@@ -2,7 +2,5 @@
 // Exemple utilisation pour plusieurs ombres : @include box-shadow( #{ 0 0 5px #333 , inset 0 0 2px #666 } );
 
 @mixin box-shadow($params) {
-  -webkit-box-shadow : $params;
-     -moz-box-shadow : $params;
-          box-shadow : $params;
+  box-shadow : $params;
 }

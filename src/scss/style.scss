@@ -8,10 +8,12 @@
 
 // Utilities
 @import 'utilities/_box-shadows';
+@import 'utilities/_transitions';
 
 //Contenu Theme
 @import 'content/_main';
 @import 'content/_home';
+@import 'content/_about';
 @import 'content/_footer';
 
 //Components

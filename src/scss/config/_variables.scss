@@ -14,8 +14,13 @@ $secondary-color:                                           $white;
 
 $box-shadow-base:                                           0px 13px 5px 0px rgba(0,0,0,0.75);
 
+$focus-base:                                                1px dashed #000;
+
 //Body
-$body-color:                                                $primary-color;
+$body-color:                                                rgba($primary-color, .8);
+
+//Title
+$title-color:                                               $primary-color;
 
 //Liens
 $link-color:                                                $primary-color;
@@ -27,8 +32,13 @@ $header-logo-height:                                        3rem;
 
 //nav
 $nav-link-font-size:                                        $font-size-base;
-$nav-link-color:                                            $primary-color;
-$nav-link-color-hover:                                      $nav-link-color;
+$nav-link-color-hover:                                      $navbar-light-hover-color;
+$nav-link-color-active:                                     $primary-color;
+
+// $navbar-light-color:                                        rgba($primary-color, .55);
+// $navbar-light-hover-color:                                  rgba($primary-color, .7);
+// $navbar-light-active-color:                                 rgba($primary-color, .9);
+// $navbar-light-disabled-color:                               rgba($primary-color, .3);
 
 //Footer
 $footer-border-top:                                         1px solid lighten($black, 95%);
@@ -46,10 +56,10 @@ $btn-radius:                                                $btn-height / 2;
 $home-content-card-bg:                                      $white;
 $home-content-card-pad:                                     1.25rem;
 $home-content-card-border-radius:                           $radius-base;
-$home-content-card-shadow:                                  rgba(0, 0, 0, 0.05) 1px 2px 4px;
-//$home-content-card-shadow:                                  0px 23px 60px 0px rgba(0,41,158,0.3);
+//$home-content-card-shadow:                                  rgba(0, 0, 0, 0.05) 1px 2px 4px;
+$home-content-card-shadow:                                  0px 23px 60px 0px rgba(0,41,158,0.3);
 
-$home-text-color:                                           lighten($primary-color, 20%);
+$home-text-color:                                           rgba($primary-color, .8);
 
 $home-social-color:                                         $primary-color;
 
