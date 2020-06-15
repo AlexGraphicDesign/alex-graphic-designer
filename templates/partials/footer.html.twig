@@ -11,8 +11,8 @@
       {% endif %}
     </div>
   </div>
+  {% if theme_var('footer-social')|length > 0 %}
   <div class="col-lg-4 col-md-4 col-sm-12">
-    {% if theme_var('footer-social')|length > 0 %}
       <ul class="footer__social__list list-unstyled mb-0 text-md-right">
         {% for item in theme_var('footer-social') %}
         <li class="footer__social__item">
@@ -22,6 +22,6 @@
         </li>
         {% endfor %}
       </ul>
-    {% endif %}
   </div>
+  {% endif %}
 </div>
