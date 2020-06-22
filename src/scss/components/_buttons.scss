@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
   min-width: $btn-min-width;
   height: $btn-height;
   font-size: $btn-font-size;
@@ -22,7 +23,7 @@
 
   &:hover, &.hover{
     transform: translateY(-3px);
-    box-shadow: 0px 23px 60px 0px rgba(0,41,158,0.3);
+    //box-shadow: 0px 23px 60px 0px rgba(0,41,158,0.3);
   }
 }
 
