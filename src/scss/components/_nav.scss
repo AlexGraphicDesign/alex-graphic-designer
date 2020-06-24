@@ -23,6 +23,15 @@
   border-radius: 0;
 }
 
+//Dropdown
+.dropdown-menu{
+  border: 0;
+  overflow: hidden;
+}
+
+.dropdown-item{
+  font-size: .875rem;
+}
 
 @include media-breakpoint-up(md) {
 
@@ -98,6 +107,16 @@
       }
     }
 
+  }
+
+  //Dropdown
+  .dropdown-menu{
+    padding: 0;
+    @include box-shadow(0px 0px 10px 0px rgba(0, 0, 0, 0.05));
+  }
+
+  .dropdown-item{
+    padding: 0.625rem 1.25rem;
   }
 
 }
