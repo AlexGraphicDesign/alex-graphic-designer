@@ -16,8 +16,8 @@
     background: $back-to-top-bg;
     color: $back-to-top-color;
     border-radius: $back-to-top-radius;
-    box-shadow: 0px 23px 60px 0px rgba(0,41,158,0.3);
-    transition: transform .2s ease-in-out;
+    @include box-shadow(0px 23px 60px 0px rgba(0,41,158,0.3));
+    @include transitions(transform .2s ease-in-out);
 
     &:hover, &:focus{
       transform: scale(1.2);

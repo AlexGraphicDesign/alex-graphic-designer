@@ -69,11 +69,11 @@
         position: absolute;
         bottom: 0;
         left: 0px;
-        width: 0;
+        width: 80%;
         height: 1px;
         opacity: 0;
         transition: opacity .4s ease-in-out, transform .4s ease-in-out, width .4s ease-in-out;
-        transform: translateX(-50px);
+        transform: scaleX(0);
       }
 
       &:hover{
@@ -81,7 +81,7 @@
           background: $nav-link-color-hover;
           width: 100%;
           opacity: 1;
-          transform: translateX(0);
+          transform: scaleX(1);
         }
       }
 
