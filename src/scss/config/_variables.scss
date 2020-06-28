@@ -13,8 +13,11 @@ $primary-color:                                             $black;
 $secondary-color:                                           $white;
 
 $box-shadow-base:                                           0px 12px 28px 0px rgba(0,0,0,0.25);
+$transition-base:                                           all .4s ease-in-out;
 
 $focus-base:                                                1px dashed #000;
+
+$border-radius:                                             $radius-base;
 
 //Body
 $body-color:                                                rgba($primary-color, .8);

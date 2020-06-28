@@ -26,9 +26,10 @@
 
   &__card{
     border: 0;
-    box-shadow: $home-content-card-shadow;
+    //box-shadow: $home-content-card-shadow;
+    @include box-shadow;
     border-radius: $home-content-card-border-radius;
-    text-align: center;
+    //text-align: center;
 
     .card-text{
       font-weight: 300;
@@ -41,10 +42,23 @@
 //Scroll Down
 .home__scroll{
   position: absolute;
-  bottom: 0;
+  bottom: 3rem;
   left: 50%;
   transform: translate(-50%, 0);
-  padding-bottom: 3rem;
+  margin-bottom: 2rem;
+
+  &__icon{
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 1.3rem;
+  }
 }
 
 //Liens réseaux sociaux
@@ -57,17 +71,7 @@
     top: 50%;
     transform: translateY(-50%);
     padding-right: 1rem;
-    // &:before, &:after{
-    //   content:"";
-    //   display: block;
-    //   width: 1px;
-    //   height: 4em;
-    //   background-color: #fff;
-    //   position: absolute;
-    //   right: 4rem;
-    //   bottom: 0;
-    // }
-
+    
     &__item{
       margin-bottom: 16px;
       &:last-child{

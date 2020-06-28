@@ -1,5 +1,7 @@
 //Transitions
+// Exemple utilisation pour plusieurs ombres : @include box-shadow( #{ opacity .4s ease-out, transform .4s ease-out, width .4s ease-out } );
 
-@mixin transitions($params) {
+
+@mixin transitions($params: $transition-base) {
   transition : $params;
 }

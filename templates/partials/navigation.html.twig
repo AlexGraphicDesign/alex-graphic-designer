@@ -13,7 +13,7 @@
         {% set current_page = (p.active or p.activeChild) ? 'active' : '' %}
             {% if p.children.visible.count > 0 %}
                 <li class="nav_item nav__item dropdown">
-                    <a class="nav-link nav__link dropdown-toggle {{ current_page }}" href="{{ p.url }}" title="{{ p.menu }}" data-toggle="dropdown" role="button">
+                    <a class="nav-link dropdown-toggle {{ current_page }}" href="{{ p.url }}" title="{{ p.menu }}" data-toggle="dropdown" role="button">
                         {{ p.menu }}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -24,8 +24,8 @@
                     </div>
                 </li>
             {% else %}
-              <li class="nav-item nav__item {{ current_page }}">
-                <a class="nav-link nav__link" href="{{ p.url }}" title="{{ p.menu }}">
+              <li class="nav-item">
+                <a class="nav-link {{ current_page }}" href="{{ p.url }}" title="{{ p.menu }}">
                     {{ p.menu }}
                 </a>
               </li>
@@ -34,22 +34,22 @@
     {% endmacro %}
 
     <div class="navbar-collapse collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav nav__list">
+      <ul class="navbar-nav align-items-center ml-auto">
           {% if theme_config.dropdown.enabled %}
               {{ _self.loop(pages) }}
           {% else %}
             {% for page in pages.children.visible %}
                 {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
-                <li class="nav-item nav__item {{ current_page }}">
-                    <a class="nav-link nav__link" href="{{ page.url }}" title="{{ page.menu }}">
+                <li class="nav-item">
+                    <a class="nav-link {{ current_page }}" href="{{ page.url }}" title="{{ page.menu }}">
                         {{ page.menu }}
                     </a>
                 </li>
             {% endfor %}
           {% endif %}
           {% for mitem in site.menu %}
-              <li class="nav-item nav__item">
-                  <a class="nav-link nav__link" href="{{ mitem.url }}" title="{{ mitem.text }}">
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ mitem.url }}" title="{{ mitem.text }}">
                       {{ mitem.text }}
                   </a>
               </li>
