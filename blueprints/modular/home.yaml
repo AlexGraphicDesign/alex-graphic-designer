@@ -2,12 +2,15 @@ extends@: default
 
 form:
   fields:
+    
     tabs:
+      type: tabs
+      active: 1
 
       fields:
         AlexGraphicDesignerSettings:
           type: tab
-          title: AlexGraphicDesigner
+          title: Parametres Home
 
           fields:
             carousel:

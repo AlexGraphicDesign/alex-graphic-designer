@@ -2,13 +2,12 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col-sm-12 col-lg-6">
-        <h2 class="section-title text-left">About</h2>
-        {{ page.content }}
-        <!-- https://demo.createx.studio/around/about.html  -->
-        <a href="#" title="#" class="btn btn-rounded btn-outline-primary card-link">About</a>
+        <h2 class="section-title text-left">{{page.title}}</h2>
+        <p>{{ page.content|striptags }}</p>
+        <a href="{{page.header.buttonLink}}" title="{{page.header.buttonTitle}} - {{ config.site.title }}" class="btn btn-rounded btn-outline-primary">{{page.header.buttonText}}</a>
       </div>
       <div class="col-sm-12 col-lg-6">
-        <img src="user/themes/alex-graphic-designer/images/default.jpg" class="img-fluid rounded" alt="#"/>
+        <img src="{{ page.media[header.img].url }}" class="img-fluid rounded" alt="{{page.header.altImg}} - {{ config.site.title }}"/>
       </div>
     </div>
   </div>

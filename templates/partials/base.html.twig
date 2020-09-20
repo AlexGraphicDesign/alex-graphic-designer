@@ -33,9 +33,9 @@
       {% else %}
         {% do assets.addJS('https://code.jquery.com/jquery-3.3.1.min.js', {priority: 100, group:'bottom'}) %}
       {% endif %}
-      {% do assets.addJS('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', {priority: 99, group:'bottom'}) %}
-      {% do assets.addJS('https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js', {priority: 98, group:'bottom'}) %}
-      {% do assets.addJS('theme://js/scripts.js', {priority: 97, group:'bottom', loading:'async'}) %}
+        {% do assets.addJS('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', {priority: 99, group:'bottom'}) %}
+        {% do assets.addJS('https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js', {priority: 98, group:'bottom'}) %}
+        {% do assets.addJS('theme://js/scripts.js', {priority: 97, group:'bottom', loading:'async'}) %}
     {% endblock %}
 
     {% block assets deferred %}

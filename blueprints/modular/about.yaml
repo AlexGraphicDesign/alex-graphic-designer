@@ -1,0 +1,51 @@
+extends@: default
+
+form:
+  fields:
+
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: PLUGIN_ADMIN.CONTENT
+
+        AlexGraphicDesignerSettings:
+          type: tab
+          title: Parametres About
+
+          fields:
+            aboutButton:
+              type: section
+              title: Bouton About
+              underline: true
+              fields:
+                header.buttonText:
+                  type: text
+                  label: Texte bouton About
+
+                header.buttonTitle:
+                  type: text
+                  label: Title bouton About
+
+                header.buttonLink:
+                  type: text
+                  label: Lien bouton About
+
+            sectionBackground:
+              type: section
+              title: Section Background
+              underline: true
+            header.img:
+              type: filepicker
+              folder: '@self'
+              label: Image About
+              preview_images: true
+              accept:
+                - .png
+                - .jpg
+            header.altImg:
+              type: text
+              label: Texte alternatif Image About
