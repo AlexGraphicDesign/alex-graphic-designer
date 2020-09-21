@@ -4,7 +4,7 @@
       <div class="col-sm-12 col-lg-6">
         <h2 class="section-title text-left">{{page.title}}</h2>
         <p>{{ page.content|striptags }}</p>
-        {% if page.header.buttonLink or page.header.buttonTitle or page.header.buttonText is defined %}
+        {% if page.header.buttonLink or page.header.buttonTitle or page.header.buttonText %}
         <a href="{{page.header.buttonLink}}" title="{{page.header.buttonTitle}} - {{ config.site.title }}" class="btn btn-rounded btn-outline-primary">{{page.header.buttonText}}</a>
         {% endif %}
       </div>
