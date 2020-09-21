@@ -34,9 +34,9 @@ form:
                   type: text
                   label: Lien bouton About
 
-            sectionBackground:
+            aboutBackground:
               type: section
-              title: Section Background
+              title: About Background
               underline: true
             header.img:
               type: filepicker
