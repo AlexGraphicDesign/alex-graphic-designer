@@ -4,6 +4,7 @@
 
 .about{
   img{
+    @include border-radius(1em 1em 1em 4em !important);
     @include box-shadow;
   }
 }
