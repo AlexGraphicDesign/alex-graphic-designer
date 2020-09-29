@@ -55,3 +55,9 @@
     }
   }
 }
+
+button, a{
+  &:focus{
+    outline: $focus-base;
+  }
+}

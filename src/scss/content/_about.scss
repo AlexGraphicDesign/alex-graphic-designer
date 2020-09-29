@@ -3,8 +3,13 @@
 //
 
 .about{
-  img{
-    @include border-radius(1em 1em 1em 4em !important);
-    @include box-shadow;
+
+  &__img{
+
+    & > img{
+      @include border-radius(4em 4em 4em 0);
+      @include box-shadow;
+    }
+
   }
 }
