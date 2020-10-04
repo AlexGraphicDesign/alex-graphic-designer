@@ -1,7 +1,7 @@
 <div class="row align-items-center">
   <div class="col-lg-8 col-md-8 col-sm-12">
     <div class="footer__legal">
-      <p class="footer__legal__text mb-0">{{ theme_var('footer-text') }}</p>
+  <p class="footer__legal__text mb-0">&copy; {% if "now"|date("Y") > theme_var('footer-year') %} {{ theme_var('footer-year') }} -{% endif %} {{ "now"|date("Y") }} {{ config.site.title }} - {{ theme_var('footer-text') }}</p>
       {% if theme_var('footer-links')|length > 0 %}
         <ul class="footer__legal__list mb-0 list-unstyled text-md-right">
           {% for item in theme_var('footer-links') %}
