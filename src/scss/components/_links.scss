@@ -2,8 +2,9 @@
 
 a{
   color: $link-color;
-
-  &:hover, &:focus{
-    color: $link-color;
+  @include hover-focus{
+    &:hover, &:focus{
+      color: $link-color;
+    }
   }
 }
