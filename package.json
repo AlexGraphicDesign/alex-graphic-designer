@@ -9,8 +9,8 @@
   "author": "AlexGraphicDesign",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^9.8.0",
-    "browser-sync": "^2.26.7",
+    "autoprefixer": "^9.8.6",
+    "browser-sync": "^2.26.12",
     "del": "^4.1.1",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
@@ -21,12 +21,12 @@
     "gulp-sass": "^4.1.0"
   },
   "dependencies": {
-    "bootstrap": "^4.5.0",
+    "bootstrap": "^4.5.2",
     "jquery": "^3.5.1",
     "kind-of": ">=6.0.3",
-    "lodash": ">=4.17.15",
+    "lodash": "^4.17.20",
     "popper.js": "^1.16.1",
-    "tiny-slider": "^2.9.2"
+    "tiny-slider": "^2.9.3"
   },
   "repository": {
     "type": "git",

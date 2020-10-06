@@ -55,7 +55,8 @@ function gulpReload(done){
 
 //Compilation du SASS de developpement
 function gulpStyle(done){
-  return src([paths.srcStyleCss, paths.srcBootstrapCss], {sourcemaps: true})
+  //return src([paths.srcStyleCss, paths.srcBootstrapCss], {sourcemaps: true})
+  return src(paths.srcStyleCss, {sourcemaps: true})
   .pipe(plumber())
   .pipe(sass({
     errLogToConsole: true
