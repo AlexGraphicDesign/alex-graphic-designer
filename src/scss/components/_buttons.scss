@@ -32,9 +32,6 @@
   color: $btn-color;
   border-color: $btn-primary-border;
   @include transition;
-  &:hover{
-      //background: rgb(0,0,0);
-  }
 }
 
 .btn-outline-primary{

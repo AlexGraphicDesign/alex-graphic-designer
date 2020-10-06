@@ -3,7 +3,9 @@
     <div class="row align-items-center">
       <div class="col-sm-12 col-md-6">
         <div class="about__content mt-4 mb-4">
-          <h2 class="section-title text-left">{{page.title|capitalize }}</h2>
+          <div class="section__title text-left">
+            <h2 class="title">{{page.title|capitalize }}</h2>
+          </div>
           {{ page.content }}
           {% if page.header.buttonLink or page.header.buttonTitle or page.header.buttonText %}
           <a href="{{page.header.buttonLink}}" title="{{page.header.buttonTitle}} - {{ config.site.title }}" class="btn btn-rounded btn-outline-primary">{{page.header.buttonText}}</a>
