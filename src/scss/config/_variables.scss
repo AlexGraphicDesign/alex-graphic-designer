@@ -12,11 +12,18 @@ $black:                                                     #000;
 $primary-color:                                             $black;
 $secondary-color:                                           $white;
 
-// $theme-colors: (
-//   "primary": $primary-color,
-//   "secondary": $secondary-color,
-//   "danger": #ff4136
-// );
+//Surcharge variables couleurs bootstrap
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark,
+  "custom-primary": $primary-color
+);
 
 $box-shadow-base:                                           0px 12px 28px 0px rgba(0,0,0,0.25);
 $transition-base:                                           all .4s ease-in-out;
@@ -63,12 +70,7 @@ $btn-height:                                                36px;
 $btn-radius:                                                $btn-height / 2;
 $btn-color:                                                 $secondary-color;
 
-//Primary
-$btn-primary-bg:                                            $primary-color;
 $btn-primary-border:                                        transparent;
-
-//Primary-outline
-$btn-primary-outline-color:                                 $primary-color;
 
 //
 //Home
@@ -82,6 +84,10 @@ $home-content-card-shadow:                                  0px 23px 60px 0px rg
 $home-text-color:                                           rgba($primary-color, .8);
 
 $home-social-color:                                         $primary-color;
+
+//
+// Skills
+//
 
 //Back to top
 $back-to-top-bg:                                            $secondary-color;

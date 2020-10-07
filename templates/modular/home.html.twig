@@ -1,4 +1,4 @@
-<section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower }}{% endif %}" class="home">
+<section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="home">
     {% if page.header.carousel|length > 0 %}
       <ul id="home-slider" class="home__slider">
         {% for item in page.header.carousel %}
@@ -10,7 +10,7 @@
                 <div class="card-body">
                   <h3 class="card-title">{{ item.carouselTitle }}</h3>
                   <p class="card-text">{{ item.carouselContent }}</p>
-                  <a href="{{ item.carouselLinkButton }}" title="{{ item.carouselTitle }} - {{ config.site.title }}" class="btn btn-rounded btn-outline-primary card-link">{{ item.carouselTextButton }}</a>
+                  <a href="{{ item.carouselLinkButton }}" title="{{ item.carouselTitle }} - {{ config.site.title }}" class="btn btn-rounded btn-outline-custom-primary card-link">{{ item.carouselTextButton }}</a>
                 </div>
               </div>
             </div>

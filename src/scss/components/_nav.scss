@@ -37,7 +37,8 @@
 
   .scrolled{
     .header{
-      box-shadow: 0 .125rem 1.25rem rgba(0,0,0,.075);
+      //box-shadow: 0 .125rem 1.25rem rgba(0,0,0,.075);
+      box-shadow: 0 20px 50px 0 rgba(0,0,0,.05);
       .navbar-brand{
         img{
           max-height: $header-logo-height * 0.8;
