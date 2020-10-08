@@ -1,0 +1,41 @@
+<section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="home">
+    {% if page.header.carousel|length > 0 %}
+      <ul id="home-slider" class="home__slider">
+        {% for item in page.header.carousel %}
+        <li>
+          <div class="home__slider__wrapper">
+            <div class="bgImg bgImg-lazy" style="background-image: url('{{ page.media[item.carouselImages].url }}'); background-size: cover; background-position: center; background-repeat: no-repeat; height:100%; width: 100%;"></div>
+            <div class="home__slider__content">
+              <div class="card home__slider__card">
+                <div class="card-body">
+                  <h3 class="card-title">{{ item.carouselTitle }}</h3>
+                  <p class="card-text">{{ item.carouselContent }}</p>
+                  <a href="{{ item.carouselLinkButton }}" title="{{ item.carouselTitle }} - {{ config.site.title }}" class="btn btn-rounded btn-outline-custom-primary card-link">{{ item.carouselTextButton }}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <div class="home__scroll">
+      <div class="home__scroll__icon">
+        <i class="fa fa-angle-down"><span class="sr-only sr-only-focusable">Navigation vers le bas</span></i>
+      </div>
+    </div>
+
+    {% if page.header.social|length > 0 %}
+      <!-- Réseaux sociaux home -->
+      <ul class="home__social list-unstyled">
+          {% for item in page.header.social %}
+          <li class="home__social__item">
+            <a class="home__social__link" href="{{ item.socialIconLink }}" title="{{ item.socialIconText }} - {{ config.site.title }} - Nouvelle Fenêtre" target="_blank">
+                <i class="{{ item.socialIconClass }}" aria-hidden="true"></i>
+            </a>
+          </li>
+          {% endfor %}
+      </ul>
+    {% endif %}
+</section>
