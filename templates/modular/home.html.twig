@@ -1,7 +1,6 @@
 <section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="home">
-
     <div class="home__intro col-lg-9" style="margin-bottom: 2rem;">
-      <img src="{{ url('theme://images/default.jpg') }}" alt="#" class="home__img"/>
+      <img src="{{ page.media[header.imageIntro].url }}" alt="#" class="home__img"/>
       <div class="home__scroll">
         <div class="home__scroll__icon">
           <i class="fa fa-angle-down"><span class="sr-only sr-only-focusable">Navigation vers le bas</span></i>
@@ -26,7 +25,7 @@
           <div class="card" style="border-radius: 4em 4em 4em 0; box-shadow: 0 1rem 3rem rgba(31,45,61,.125)!important; border-color: transparent;">
             <div class="card-body px-5 py-5">
               <h1 class="card-title">Titre</h1>
-              <p class="card-text">Test Test Test Test Test Test Test Test Test Test</p></p>
+              <p class="card-text">{{ page.content|striptags }}</p>
               <a href="#" title="#" class="btn btn-rounded btn-outline-custom-primary card-link">En savoir plus</a>
             </div>
           </div>

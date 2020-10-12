@@ -2,7 +2,7 @@ extends@: default
 
 form:
   fields:
-    
+
     tabs:
       type: tabs
       active: 1
@@ -13,37 +13,20 @@ form:
           title: Parametres Home
 
           fields:
-            carousel:
+            intro:
               type: section
-              title: Carousel
+              title: Home intro
               underline: true
-              fields:
-                header.carousel:
-                    type: list
-                    label: Images
-                    style: vertical
-                    fields:
-                      .carouselImages:
-                        type: filepicker
-                        folder: '@self'
-                        description: 1920 x 1080 min.
-                        label: Image Carousel
-                        preview_images: true
-                        accept:
-                          - .png
-                          - .jpg
-                      .carouselTitle:
-                        type: text
-                        label: Titre
-                      .carouselContent:
-                        type: text
-                        label: Contenu
-                      .carouselTextButton:
-                        type: text
-                        label: Texte Bouton
-                      .carouselLinkButton:
-                        type: text
-                        label: Lien Bouton
+
+            header.imageIntro:
+                type: filepicker
+                folder: '@self'
+                label: Select Banner Background
+                description: Best Experience With Dimensions - 3000x2000px.
+                preview_images: true
+                accept:
+                  - .png
+                  - .jpg
 
             social:
               type: section
