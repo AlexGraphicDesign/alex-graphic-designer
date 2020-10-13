@@ -21,8 +21,8 @@ form:
             header.imageIntro:
                 type: filepicker
                 folder: '@self'
-                label: Select Banner Background
-                description: Best Experience With Dimensions - 3000x2000px.
+                label: Selectionnez l'image de fond pour la home page
+                description: Pour une meilleure qualité, choisissez une image de minimum 1920 x 1080px
                 preview_images: true
                 accept:
                   - .png

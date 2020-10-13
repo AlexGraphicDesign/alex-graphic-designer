@@ -6,7 +6,7 @@ jQuery(document).ready(function($){
   setMain();
   smoothScroll();
   setSlider();
-  setSliderHeight();
+  setHomeHeight();
   backToTop();
 
   //On execute la fonction qui doit s'executer au scroll
@@ -17,7 +17,7 @@ jQuery(document).ready(function($){
   //On appelle la/les fonction(s) qui doit s'éxécuter au resize
   $(window).resize(function(e) {
       setMain();
-      setSliderHeight();
+      setHomeHeight();
   });
 
 });
@@ -65,7 +65,7 @@ function setSlider(){
 }
 
 //On met la section du slider à 100% du viewport
-function setSliderHeight(){
+function setHomeHeight(){
   $('.home').css({
     'height' : $(window).innerHeight() - $('#header').outerHeight()
   });

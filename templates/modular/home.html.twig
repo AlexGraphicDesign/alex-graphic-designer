@@ -1,6 +1,5 @@
 <section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="home">
     <div class="home__intro col-lg-9" style="margin-bottom: 2rem;">
-      <img src="{{ page.media[header.imageIntro].url }}" alt="#" class="home__img"/>
       <div class="home__scroll">
         <div class="home__scroll__icon">
           <i class="fa fa-angle-down"><span class="sr-only sr-only-focusable">Navigation vers le bas</span></i>
@@ -18,6 +17,7 @@
             {% endfor %}
         </ul>
       {% endif %}
+      <img src="{{ page.media[header.imageIntro].url }}" alt="#" class="home__img"/>
     </div>
     <div class="container">
       <div class="row">
