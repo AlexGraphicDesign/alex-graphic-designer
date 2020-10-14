@@ -49,10 +49,6 @@ form:
       title: Footer
       underline: true
 
-    footer-year:
-      type: int
-      label: Année création
-
     footer-text:
       type: text
       label: Copyright Bottom Message

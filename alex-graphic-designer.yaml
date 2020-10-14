@@ -7,7 +7,6 @@ custom_logo:
     type: image/png
     size: 5238
     path: user/themes/alex-graphic-designer/images/logo.png
-footer-year: 2019
 footer-text: 'Tous droits réservés.'
 footer-links:
   - text: CGV
