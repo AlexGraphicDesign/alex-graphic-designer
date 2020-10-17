@@ -44,6 +44,18 @@ form:
       accept:
         - image/*
 
+    blog_section:
+      type: section
+      title: Blog Defaults
+      underline: true
+
+    blog-page:
+      type: text
+      label: Blog Page
+      help: The route to the blog page when working with blog sidebar
+      size: medium
+      default: '/blog'
+
     footer_section:
       type: section
       title: Footer

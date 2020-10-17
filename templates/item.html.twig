@@ -1,11 +1,28 @@
 {% extends 'partials/base.html.twig' %}
+{% set blog = page.find(header_var('blog_url')|defined(theme_var('blog-page'))) %}
+{% set blog_image = page.media.images[page.header.hero_image] ?: page.media.images|first %}
+
+{% block stylesheets %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+{% endblock %}
+
 
 {% block content %}
-
-  <article>
-    <div class="" style="background-image:url({{ url('theme://images/default.jpg') }})">
-      {{ page.content }}
-    </div>
-  </article>
-
+  <section id="body-wrapper" class="section blog-listing">
+      <div class="container">
+        <div class="row">
+          {% embed 'partials/layout.html.twig' %}
+            {% block item %}
+                {% include 'partials/blog-item.html.twig' %}
+            {% endblock %}
+          {% endembed %}
+        </div>
+      </div>
+  </section>
 {% endblock %}
