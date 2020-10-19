@@ -18,13 +18,18 @@
     <section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section blog-listing">
         <div class="container">
           <div class="row">
-            {% block item %}
-                <div class="bricklayer">
-                {% for child in collection %}
-                    {% include 'partials/blog-list-item.html.twig' with {blog: page, page: child} %}
-                {% endfor %}
-                </div>
-            {% endblock %}
+            {% embed 'partials/layout.html.twig' with {blog: page} %}
+              {% block item %}
+                  <div class="bricklayer">
+                  {% for child in collection %}
+                      {% include 'partials/blog-list-item.html.twig' with {blog: page, page: child} %}
+                  {% endfor %}
+                  </div>
+              {% endblock %}
+              {% block sidebar %}
+                  {% include 'partials/sidebar.html.twig' %}
+              {% endblock %}
+            {% endembed %}
           </div>
         </div>
     </section>
