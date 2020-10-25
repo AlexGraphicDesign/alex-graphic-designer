@@ -1,0 +1,44 @@
+extends@: default
+
+form:
+  fields:
+
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: PLUGIN_ADMIN.CONTENT
+
+        AlexGraphicDesignerSettings:
+          type: tab
+          title: Parametres Services
+
+          fields:
+            services:
+              type: section
+              title: Services
+              underline: true
+              fields:
+                header.services:
+                  type: list
+                  label: Liste de vos services
+                  style: vertical
+                  fields:
+                    .servicesIconClass:
+                      type: iconpicker
+                      label: Classe de l'icone
+                    .servicesTitle:
+                      type: text
+                      label: Titre du service
+                    .servicesDesc:
+                      type: text
+                      label: Description du service
+                    .servicesBtnText:
+                      type: text
+                      label: Texte du bouton
+                    .servicesURL:
+                      type: text
+                      label: URL du bouton

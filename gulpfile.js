@@ -22,7 +22,7 @@ const paths = {
       srcBootstrapCss : 'src/scss/bootstrap.scss',
       srcBootstrapJs: 'node_modules/bootstrap/dist/js/*.js',
 
-      srcStyleCss : 'src/scss/style.scss',
+      srcStyleCss : 'src/scss/*.scss',
       srcComposantsCss : 'src/scss/**/*.scss',
 
       srcJs: 'src/js/*.js',
@@ -82,7 +82,7 @@ function gulpJS(done){
 
 //On écoute les modifications de fichiers pour rechargement de la page automatique
 function gulpWatch(){
-  watch([paths.srcBootstrapCss, paths.srcStyleCss, paths.srcComposantsCss], series(gulpStyle, gulpReload));
+  watch([paths.srcStyleCss, paths.srcComposantsCss], series(gulpStyle, gulpReload));
   watch([paths.srcBootstrapJs, paths.srcJs], series(gulpJS, gulpReload));
 }
 

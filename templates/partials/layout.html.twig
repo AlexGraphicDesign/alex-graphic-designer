@@ -1,14 +1,11 @@
-{% set item_col = show_sidebar ? 'col-9 col-md-12' : 'col-12' %}
-{% set sidebar_col = show_sidebar ? 'col-3 col-md-12' : 'col-12' %}
+{% set item_col = show_sidebar ? 'col-xs-12 col-sm-12 col-md-9' : 'col-12' %}
+{% set sidebar_col = show_sidebar ? 'col-xs-12 col-sm-12 col-md-3' : 'col-12' %}
 
-<div class="columns">
-    <div id="item" class="column {{ item_col }} extra-spacing">
-        {% block item %}{% endblock %}
-    </div>
-    {% if show_sidebar %}
-    <div id="sidebar" class="column {{ sidebar_col }}">
-        {% block sidebar %}{% endblock %}
-    </div>
-    {% endif %}
+<div id="item" class="{{ item_col }}">
+    {% block item %}{% endblock %}
 </div>
-
+{% if show_sidebar %}
+<div id="sidebar" class=" {{ sidebar_col }}">
+    {% block sidebar %}{% endblock %}
+</div>
+{% endif %}

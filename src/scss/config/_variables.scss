@@ -25,6 +25,20 @@ $theme-colors: (
   "custom-primary": $primary-color
 );
 
+//Surcharge variables d'espacement Bootstrap
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer / 4,
+  2: $spacer / 2,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 4.5,
+  7: $spacer * 6,
+  8: $spacer * 7.5
+);
+
 $box-shadow-base:                                           0px 12px 28px 0px rgba(0,0,0,0.25);
 $transition-base:                                           all .4s ease-in-out;
 
@@ -51,26 +65,9 @@ $nav-link-font-size:                                        $font-size-base;
 $nav-link-color-hover:                                      $navbar-light-hover-color;
 $nav-link-color-active:                                     $primary-color;
 
-// $navbar-light-color:                                        rgba($primary-color, .55);
-// $navbar-light-hover-color:                                  rgba($primary-color, .7);
-// $navbar-light-active-color:                                 rgba($primary-color, .9);
-// $navbar-light-disabled-color:                               rgba($primary-color, .3);
-
 //Footer
 $footer-border-top:                                         1px solid lighten($black, 95%);
 $font-size-legal:                                           $font-size-base * 0.8;
-
-//
-//Boutons
-//
-//General
-$btn-font-size:                                             $font-size-base * 0.875;
-$btn-min-width:                                             64px;
-$btn-height:                                                36px;
-$btn-radius:                                                $btn-height / 2;
-$btn-color:                                                 $secondary-color;
-
-$btn-primary-border:                                        transparent;
 
 //
 //Home
@@ -85,9 +82,80 @@ $home-text-color:                                           rgba($primary-color,
 
 $home-social-color:                                         $primary-color;
 
+
 //
-// Skills
+// Cards
+// Surcharges variables Bootstrap
 //
+
+$card-spacer-y:                     $spacer !default;
+$card-spacer-x:                     $spacer !default;
+$card-title-spacer-y:               $spacer / 2 !default;
+$card-border-width:                 $border-width !default;
+$card-border-radius:                2em 2em 2em 0;
+$card-border-color:                 transparent;
+$card-box-shadow:                   0 0 30px 0 rgba(167,167,167,.16);
+$card-inner-border-radius:          subtract($card-border-radius, $card-border-width) !default;
+$card-cap-padding-y:                $card-spacer-y / 2 !default;
+$card-cap-padding-x:                $card-spacer-x !default;
+$card-cap-bg:                       rgba($black, .03) !default;
+$card-cap-color:                    null !default;
+$card-height:                       null !default;
+$card-color:                        null !default;
+$card-bg:                           $white !default;
+$card-img-overlay-padding:          $spacer !default;
+$card-group-margin:                 $grid-gutter-width / 2 !default;
+
+//
+// Buttons
+// Surcharges variables Bootstrap + variables perso
+//
+
+$btn-font-size:                                             $font-size-base * 0.875;
+$btn-min-width:                                             64px;
+$btn-height:                                                36px;
+$btn-radius:                                                $btn-height / 2;
+$btn-color:                                                 $secondary-color;
+
+$btn-primary-border:                                        transparent;
+
+$btn-padding-y:               $input-btn-padding-y !default;
+$btn-padding-x:               $input-btn-padding-x !default;
+$btn-font-family:             $input-btn-font-family !default;
+$btn-font-size:               $input-btn-font-size !default;
+$btn-line-height:             $input-btn-line-height !default;
+$btn-white-space:             null !default; // Set to `nowrap` to prevent text wrapping
+
+$btn-padding-y-sm:            $input-btn-padding-y-sm !default;
+$btn-padding-x-sm:            $input-btn-padding-x-sm !default;
+$btn-font-size-sm:            $input-btn-font-size-sm !default;
+
+$btn-padding-y-lg:            $input-btn-padding-y-lg !default;
+$btn-padding-x-lg:            $input-btn-padding-x-lg !default;
+$btn-font-size-lg:            $input-btn-font-size-lg !default;
+
+$btn-border-width:            $input-btn-border-width !default;
+
+$btn-font-weight:             $font-weight-normal !default;
+$btn-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075) !default;
+$btn-focus-width:             $input-btn-focus-width !default;
+$btn-focus-box-shadow:        $input-btn-focus-box-shadow !default;
+$btn-disabled-opacity:        .65 !default;
+$btn-active-box-shadow:       inset 0 3px 5px rgba($black, .125) !default;
+
+$btn-link-color:              $link-color !default;
+$btn-link-hover-color:        $link-hover-color !default;
+$btn-link-disabled-color:     $gray-600 !default;
+
+$btn-block-spacing-y:         .5rem !default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:           $border-radius !default;
+$btn-border-radius-sm:        $border-radius-sm !default;
+$btn-border-radius-lg:        $border-radius-lg !default;
+
+$btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+
 
 //Back to top
 $back-to-top-bg:                                            $secondary-color;

@@ -1,7 +1,7 @@
-<div class="card" style="box-shadow: 0 0 30px 0 rgba(167,167,167,.16); border:0; border-radius: 2em 2em 2em 0; overflow: hidden;">
+<div class="card">
     {% set image = page.media.images|first %}
     {% if image %}
-    <div class="card-image">
+    <div class="card-img">
         <a href="{{ page.url }}">{{ image.cropZoom(800,400).html|raw }}</a>
     </div>
     {% endif %}
@@ -10,12 +10,14 @@
     </div>
     <div class="card-body">
       {% include 'partials/blog/date.html.twig' %}
-      {% if page.summary != page.content %}
-          {{ page.summary|raw }}
-      {% else %}
-          {{ page.content|raw }}
-      {% endif %}
-      <a href="#" class="card-link">Card link</a>
+      <p class="card-text">
+        {% if page.summary != page.content %}
+            {{ page.summary|striptags }}
+        {% else %}
+            {{ page.content|striptags }}
+        {% endif %}
+      </p>
+      <a href="{{ page.url }}" title="card link" class="card-link">Card link</a>
     </div>
     <div class="card-footer">
         {% include 'partials/blog/taxonomy.html.twig' %}

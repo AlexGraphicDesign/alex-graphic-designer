@@ -1,8 +1,8 @@
 <section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="home">
-    <div class="home__intro col-lg-9" style="margin-bottom: 2rem;">
+    <div class="home__intro col-lg-9">
       <div class="home__scroll">
         <div class="home__scroll__icon">
-          <i class="fa fa-angle-down"><span class="sr-only sr-only-focusable">Navigation vers le bas</span></i>
+          <span class="sr-only sr-only-focusable">Navigation vers le bas</span>
         </div>
       </div>
       {% if page.header.social|length > 0 %}
@@ -12,6 +12,7 @@
             <li class="home__social__item">
               <a class="home__social__link" href="{{ item.socialIconLink }}" title="{{ item.socialIconText }} - {{ config.site.title }} - Nouvelle Fenêtre" target="_blank">
                   <i class="{{ item.socialIconClass }}" aria-hidden="true"></i>
+                  <span class="sr-only sr-only-focusable">{{ item.socialIconText }}</span>
               </a>
             </li>
             {% endfor %}
@@ -22,11 +23,11 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-7 ml-auto">
-          <div class="card" style="border-radius: 4em 4em 4em 0; box-shadow: 0 1rem 3rem rgba(31,45,61,.125)!important; border-color: transparent;">
-            <div class="card-body px-5 py-5">
-              <h1 class="card-title">Titre</h1>
-              <p class="card-text">{{ page.content|striptags }}</p>
-              <a href="#" title="#" class="btn btn-rounded btn-outline-custom-primary card-link">En savoir plus</a>
+          <div class="home__content">
+            <div class="home__content__body px-5 py-5">
+              <h1 class="home__content__title">{{page.header.introText}}</h1>
+              <p class="home__content__text">{{ page.content|striptags }}</p>
+              <a href="{{header.buttonLink}}" title="{{header.buttonTitle}} - {{ config.site.title }}" class="btn btn-rounded btn-outline-custom-primary">{{header.buttonText}}</a>
             </div>
           </div>
         </div>

@@ -7,11 +7,13 @@
 {% set show_pagination = header_var('show_pagination', [page, blog])|defined(true) %}
 
 {% block stylesheets %}
-    {{ parent() }}
+  {{ parent() }}
+  {% do assets.addCss('theme://css/bricklayer.css', 99) %}
 {% endblock %}
 
 {% block javascripts %}
-    {{ parent() }}
+  {% do assets.addJS('//cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.js', {priority: 97}) %}
+  {{ parent() }}
 {% endblock %}
 
 {% block content %}
@@ -25,6 +27,11 @@
                       {% include 'partials/blog-list-item.html.twig' with {blog: page, page: child} %}
                   {% endfor %}
                   </div>
+                  {% if show_pagination and config.plugins.pagination.enabled and collection.params.pagination %}
+                    <div id="listing-footer">
+                        {% include 'partials/pagination.html.twig' with {base_url: page.url, pagination: collection.params.pagination} %}
+                    </div>
+                  {% endif %}
               {% endblock %}
               {% block sidebar %}
                   {% include 'partials/sidebar.html.twig' %}
@@ -33,4 +40,8 @@
           </div>
         </div>
     </section>
+    <script>
+        //Bricklayer
+        var bricklayer = new Bricklayer(document.querySelector('.bricklayer'))
+    </script>
 {% endblock %}

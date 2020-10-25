@@ -11,7 +11,7 @@
   font-size: $btn-font-size;
   letter-spacing: .0892857143em;
   text-transform: uppercase;
-  transition: box-shadow 0.2s ease;
+  @include transition(all .25s ease-in-out);
 
   &-rounded{
     line-height: 1.5;
@@ -19,19 +19,9 @@
     border-radius: $btn-radius;
   }
 
-  &:focus,
-  &.focus{
-    box-shadow: 0 0 0 0.2rem rgba(0,0,0,.2);
+  @include hover{
+    box-shadow: 0 4px 29px 0 rgba(0,0,0,.16);
   }
-}
-
-
-.btn-primary{
-  background: rgb(0,0,0);
-  background: linear-gradient(200deg, rgba(0,0,0,1) 0%, rgba(57,57,57,1) 100%);
-  color: $btn-color;
-  border-color: $btn-primary-border;
-  @include transition;
 }
 
 button, a{

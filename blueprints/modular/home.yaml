@@ -28,6 +28,27 @@ form:
                   - .png
                   - .jpg
 
+            header.introText:
+              type: text
+              label: Titre
+
+            ctaButton:
+              type: section
+              title: Call to Action
+              underline: true
+              fields:
+                header.buttonText:
+                  type: text
+                  label: Texte Call to Action
+
+                header.buttonTitle:
+                  type: text
+                  label: Title Call to Action
+
+                header.buttonLink:
+                  type: text
+                  label: Lien Call to Action
+
             social:
               type: section
               title: Social Icons

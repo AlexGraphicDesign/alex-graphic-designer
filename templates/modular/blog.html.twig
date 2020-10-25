@@ -7,16 +7,20 @@
         </div>
       </div>
     </div>
-    <div class="row align-items-center justify-content-center">
+    <div class="row">
       {% for post in page.find('/blog').children.order('date', 'desc').slice(0, 4) %}
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-          <div class="card" style="box-shadow: 0 0 30px 0 rgba(167,167,167,.16); border:0; border-radius: 2em 2em 2em 0; overflow: hidden;">
-            <img class="card-img-top" src="{{ url('theme://images/default.jpg') }}" alt="Card Image">
+      {% set image = post.media.images|first %}
+        <div class="col-sm-12 col-md-6 col-lg-3">
+          <div class="card mt-4">
+            {% if image %}
+              <a href="{{ post.url }}" title="{{ post.title }}"><img class="card-img" src="{{ image.url }}" alt="Card Image"></a>
+            {% endif %}
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="{{ post.url }}" class="card-link">Card link</a>
+              <h5 class="card-title">{{ post.title }}</h5>
+                {% include 'partials/blog/date.html.twig' %}
+              <p class="card-text">{{ post.content|striptags }}<br/>
+              {{ dump(image.url) }}</p>
+              <a href="{{ post.url }}" title="{{ post.title }}" class="btn btn-outline-custom-primary btn-rounded text-center">Lire l'article</a>
             </div>
           </div>
         </div>
