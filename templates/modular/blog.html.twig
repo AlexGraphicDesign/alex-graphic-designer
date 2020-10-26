@@ -1,5 +1,4 @@
 {% set blog = page.find('/blog').children %}
-
 <section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section blog">
   <div class="container">
     <div class="row align-items-center">
@@ -20,7 +19,7 @@
               {% endif %}
               <div class="card-body">
                 <h5 class="card-title">{{ post.title }}</h5>
-                  {% include 'partials/blog/date.html.twig' with {post_date: page.date} %}
+                {% include 'partials/blog/date.html.twig' with {post_date: post.date} %}
                 <p class="card-text">{{ post.content|striptags }}</p>
                 <a href="{{ post.url }}" title="{{ post.title }}" class="btn btn-outline-custom-primary btn-rounded">Lire l'article</a>
               </div>
