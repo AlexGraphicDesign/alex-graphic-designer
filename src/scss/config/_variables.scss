@@ -92,7 +92,7 @@ $card-spacer-y:                     $spacer !default;
 $card-spacer-x:                     $spacer !default;
 $card-title-spacer-y:               $spacer / 2 !default;
 $card-border-width:                 $border-width !default;
-$card-border-radius:                2em 2em 2em 0;
+$card-border-radius:                1.5em 1.5em 1.5em 0;
 $card-border-color:                 transparent;
 $card-box-shadow:                   0 0 30px 0 rgba(167,167,167,.16);
 $card-inner-border-radius:          subtract($card-border-radius, $card-border-width) !default;

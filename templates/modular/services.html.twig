@@ -1,4 +1,7 @@
 <section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section services">
+  <div class="about-shape" style="position: absolute;top: 50%; transform:translate(0, -50%); left: 0; width: 35%; height: 100%; z-index: -1;">
+    <img class="img-fluid" src="{{ url('theme://images/shape-2.svg') }}"/>
+  </div>
   <div class="container">
     <div class="row align-items-center justify-content-center">
       {% if page.header.services|length > 0 %}
