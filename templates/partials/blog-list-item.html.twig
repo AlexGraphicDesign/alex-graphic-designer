@@ -9,7 +9,7 @@
         {% include 'partials/blog/title.html.twig' with {title_level: 'h5'} %}
     </div>
     <div class="card-body">
-      {% include 'partials/blog/date.html.twig' %}
+      {% include 'partials/blog/date.html.twig' with {post_date: page.date} %}
       <p class="card-text">
         {% if page.summary != page.content %}
             {{ page.summary|striptags }}

@@ -2,7 +2,7 @@
 
 
 //On appelle Gulp
-const {src, dest, task, series, parallel, watch} = require("gulp");
+const {src, dest, task, series, parallel, watch, lastRun} = require("gulp");
 
 
 //Plugins
@@ -19,16 +19,16 @@ const sass = require("gulp-sass"),
 
 //Chemins fichiers sources et de destination
 const paths = {
-      srcBootstrapCss : 'src/scss/bootstrap.scss',
-      srcBootstrapJs: 'node_modules/bootstrap/dist/js/*.js',
 
-      srcStyleCss : 'src/scss/*.scss',
-      srcComposantsCss : 'src/scss/**/*.scss',
+  js: {
+    src: ['node_modules/bootstrap/dist/js/*.js', 'src/js/*.js'],
+    dest: './js'
+  },
+  css: {
+      src: ['src/scss/*.scss', 'src/scss/**/*.scss'],
+      dest: './css'
+  }
 
-      srcJs: 'src/js/*.js',
-
-      distCss : "css",
-      distJs: "js"
 }
 
 //----------------------------------------------------------------
@@ -36,7 +36,7 @@ const paths = {
 //----------------------------------------------------------------
 
 function clean(){
-    return del([paths.distCss, paths.distJs])
+    return del([paths.css.dest, paths.js.dest])
 }
 
 //BrowserSync, création d'un serveur local
@@ -56,7 +56,7 @@ function gulpReload(done){
 //Compilation du SASS de developpement
 function gulpStyle(done){
   //return src([paths.srcStyleCss, paths.srcBootstrapCss], {sourcemaps: true})
-  return src(paths.srcStyleCss, {sourcemaps: true})
+  return src(paths.css.src, {sourcemaps: true})
   .pipe(plumber())
   .pipe(sass({
     errLogToConsole: true
@@ -65,29 +65,27 @@ function gulpStyle(done){
   .pipe(postcss([ autoprefixer() ]))
   .pipe(cssbeautify({indent: '  '})) //indentation de deux espaces
   .pipe(cleanCSS({compatibility: 'ie8'}))
-  .pipe(dest(paths.distCss, {sourcemaps: '.'}))
+  .pipe(dest(paths.css.dest, {sourcemaps: '.'}))
   .pipe(browserSync.stream());
   done();
 }
 
 //Compilation du Javascript de developpement
 function gulpJS(done){
-  return src([paths.srcBootstrapJs, paths.srcJs])
+  return src(paths.js.src)
   .pipe(plumber())
   .pipe(concat('scripts.js'))
-  .pipe(dest(paths.distJs))
+  .pipe(dest(paths.js.dest))
   .pipe(browserSync.stream() );
   done();
 }
 
 //On écoute les modifications de fichiers pour rechargement de la page automatique
 function gulpWatch(){
-  watch([paths.srcStyleCss, paths.srcComposantsCss], series(gulpStyle, gulpReload));
-  watch([paths.srcBootstrapJs, paths.srcJs], series(gulpJS, gulpReload));
+  watch(paths.css.src, series(gulpStyle, gulpReload));
+  watch(paths.js.src, series(gulpJS, gulpReload));
 }
 
 //On liste les tâches
-task("gulpStyle", gulpStyle);
-task("gulpJS", gulpJS);
-task("default", series(clean, parallel(gulpStyle, gulpJS)));
-task("build-dev", parallel(gulpBrowserSync, gulpWatch));
+exports.buildDev = parallel(gulpWatch, gulpBrowserSync);
+exports.default = series(clean, parallel(gulpStyle, gulpJS));
