@@ -19,6 +19,9 @@
 {% block content %}
     <section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section blog-listing">
         <div class="container">
+          {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
+              {% include 'partials/breadcrumbs.html.twig' %}
+          {% endif %}
           <div class="row">
             {% embed 'partials/layout.html.twig' with {blog: page} %}
               {% block item %}

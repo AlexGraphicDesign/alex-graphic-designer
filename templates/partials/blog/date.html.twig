@@ -1,5 +1,5 @@
 {% set post_date = post_date ?: page.date %}
-<span class="blog-date">
+<span class="blog-date" style="font-size: .75rem;">
     <time class="dt-published" datetime="{{ post_date|date("c") }}">
         <i class="fa fa-calendar"></i> {{ post_date|date(system.pages.dateformat.short) }}
     </time>

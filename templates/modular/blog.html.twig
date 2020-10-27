@@ -13,17 +13,19 @@
         {% for post in blog.order('date', 'desc').slice(0, 4) %}
         {% set image = post.media.images|first %}
           <div class="col-sm-12 col-md-6 col-lg-3">
-            <div class="card mt-4">
+            <article class="card mt-4">
               {% if image %}
                 <a href="{{ post.url }}" title="{{ post.title }}"><img class="card-img" src="{{ image.url }}" alt="Card Image"></a>
               {% endif %}
               <div class="card-body">
                 <h5 class="card-title">{{ post.title }}</h5>
-                {% include 'partials/blog/date.html.twig' with {post_date: post.date} %}
                 <p class="card-text">{{ post.content|striptags }}</p>
                 <a href="{{ post.url }}" title="{{ post.title }}" class="btn btn-outline-custom-primary btn-rounded">Lire l'article</a>
+                <div class="text-right mt-2">
+                  {% include 'partials/blog/date.html.twig' with {post_date: post.date} %}
+                </div>
               </div>
-            </div>
+            </article>
           </div>
         {% endfor %}
         {% else %}
