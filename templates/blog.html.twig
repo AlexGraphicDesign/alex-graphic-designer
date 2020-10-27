@@ -25,6 +25,7 @@
           <div class="row">
             {% embed 'partials/layout.html.twig' with {blog: page} %}
               {% block item %}
+                {% if child in collection|length > 0 %}
                   <div class="bricklayer">
                   {% for child in collection %}
                       {% include 'partials/blog-list-item.html.twig' with {blog: page, page: child} %}
@@ -35,6 +36,11 @@
                         {% include 'partials/pagination.html.twig' with {base_url: page.url, pagination: collection.params.pagination} %}
                     </div>
                   {% endif %}
+                  {% else %}
+                  <div class="col-12 text-center">
+                    <p>Pas d'articles à afficher pour l'instant.</p>
+                  </div>
+                {% endif %}
               {% endblock %}
               {% block sidebar %}
                   {% include 'partials/sidebar.html.twig' %}
