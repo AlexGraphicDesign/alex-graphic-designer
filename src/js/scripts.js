@@ -5,7 +5,6 @@ jQuery(document).ready(function($){
   scrolled();
   setMain();
   smoothScroll();
-  setSlider();
   setHomeHeight();
   backToTop();
 
@@ -41,30 +40,7 @@ function setMain(){
   });
 }
 
-//On initialise le slider
-function setSlider(){
-  if ($("#home-slider").length) {
-    var slider = tns({
-      "container": "#home-slider",
-      "items": 1,
-      "lazyload": true,
-      "lazyloadSelector": ".bgImg-lazy",
-      "mouseDrag": true,
-      "swipeAngle": false,
-      "controls": false,
-      "speed": 400,
-      "nav": false,
-      "autoplay": true,
-      "center": true,
-      "autoplayHoverPause": true,
-      "autoplayTimeout": 5000,
-      "autoplayButtonOutput": false,
-      "preventScrollOnTouch": 'auto'
-    })
-  }
-}
-
-//On met la section du slider à 100% du viewport
+//On met la section de la home à 100% du viewport
 function setHomeHeight(){
   $('.home').css({
     'height' : $(window).innerHeight() - $('#header').outerHeight()

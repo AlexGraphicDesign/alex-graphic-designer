@@ -1,3 +1,4 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 <!DOCTYPE html>
 <html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
 <head>
@@ -77,5 +78,3 @@
 
 </body>
 </html>
-
-{{ dump(theme_config.custom_logo) }}

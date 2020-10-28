@@ -7,11 +7,11 @@ custom_logo:
     type: image/png
     size: 5238
     path: user/themes/alex-graphic-designer/images/logo.png
+blog-page: /blog
 footer-text: 'Tous droits réservés.'
 footer-links:
-  - text: CGV
-    url: '#'
-  - text: Mentions légales
+  -
+    text: 'Mentions légales'
     url: '#'
 footer-social:
   -
@@ -22,15 +22,3 @@ footer-social:
     socialIconClass: 'fa fa-twitter'
     socialIconText: Twitter
     socialIconLink: 'https://twitter.com/'
-  -
-    socialIconClass: 'fa fa-instagram'
-    socialIconText: Instagram
-    socialIconLink: '#0'
-  -
-    socialIconClass: 'fa fa-behance'
-    socialIconText: Behance
-    socialIconLink: '#0'
-  -
-    socialIconClass: 'fa fa-github'
-    socialIconText: GitHub
-    socialIconLink: '#0'

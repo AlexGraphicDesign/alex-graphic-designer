@@ -13,7 +13,7 @@ readme: https://github.com/AlexGraphicDesign/grav-theme-alex-graphic-designer/bl
 license: MIT
 
 form:
-  validation: loose
+  validation: strict
 
   fields:
     dropdown.enabled:
@@ -22,8 +22,8 @@ form:
         highlight: 1
         default: 1
         options:
-          1: PLUGIN_ADMIN.ENABLED
-          0: PLUGIN_ADMIN.DISABLED
+          1: Enabled
+          0: Disabled
         validate:
           type: bool
 
