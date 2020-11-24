@@ -23,11 +23,11 @@
               {% include 'partials/breadcrumbs.html.twig' %}
           {% endif %}
           <div class="row">
-            {% embed 'partials/layout.html.twig' with {blog: page} %}
+            {% embed 'partials/blog/layout.html.twig' with {blog: page} %}
               {% block item %}
                   <div class="bricklayer">
                   {% for child in collection %}
-                      {% include 'partials/blog-list-item.html.twig' with {blog: page, page: child} %}
+                      {% include 'partials/blog/blog-list-item.html.twig' with {blog: page, page: child} %}
                   {% endfor %}
                   </div>
                   {% if show_pagination and config.plugins.pagination.enabled and collection.params.pagination %}

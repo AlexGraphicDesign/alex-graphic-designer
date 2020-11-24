@@ -6,6 +6,7 @@
         {% if page.header.subtitle %}
         <h3 >{{ page.header.subtitle }}</h3>
         {% endif %}
+        {% include 'partials/blog/author.html.twig' %}
         {% include 'partials/blog/date.html.twig' with {post_date: page.date} %}
         {% include 'partials/blog/taxonomy.html.twig' %}
     </div>

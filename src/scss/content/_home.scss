@@ -123,7 +123,7 @@
       text-align: center;
       border-radius: 50%;
       background: #fff;
-      @include box-shadow($box-shadow-base);
+      @include box-shadow(0 1rem 3rem rgba(31,45,61,.125));
       @include transition(transform .2s ease-in-out);
       @include hover-focus{
         transform: scale(1.2);

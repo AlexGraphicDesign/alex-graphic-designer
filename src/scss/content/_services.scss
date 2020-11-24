@@ -8,8 +8,8 @@
     background: #fff;
     padding: 30px;
     border:2px solid transparent;
-    border-radius: 2rem;
     box-shadow: 0 0 30px 0 rgba(167,167,167,.16);
+    @include border-radius(2em);
     @include transition;
     @include hover{
       border-color: #000;

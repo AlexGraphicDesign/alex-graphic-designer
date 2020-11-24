@@ -16,7 +16,7 @@
     background: $back-to-top-bg;
     color: $back-to-top-color;
     border-radius: $back-to-top-radius;
-    @include box-shadow;
+    @include box-shadow($box-shadow-base);
     @include transitions(transform .2s ease-out);
 
     &:hover, &:focus{

@@ -1,14 +1,10 @@
 {% set blog = page.find('/blog').children %}
 <section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section blog">
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-12">
-        <div class="section__title text-center pb-5">
-          <h2 class="title">{{page.title|capitalize }}</h2>
-        </div>
-      </div>
+    <div class="section__title title__vertical">
+      <h2 class="title">{{page.title|capitalize }}</h2>
     </div>
-    <div class="row">
+    <div class="row align-items-center">
       {% if blog|length > 0 %}
         {% for post in blog.order('date', 'desc').slice(0, 4) %}
         {% set image = post.media.images|first %}
@@ -28,6 +24,7 @@
                 </p>
                 <a href="{{ post.url }}" title="{{ post.title }}" class="btn btn-outline-custom-primary btn-rounded">Lire l'article</a>
                 <div class="text-right mt-2">
+                  {% include 'partials/blog/author.html.twig' %}
                   {% include 'partials/blog/date.html.twig' with {post_date: post.date} %}
                 </div>
               </div>
@@ -41,7 +38,7 @@
       {% endif %}
     </div>
   </div>
-  <div class="about-shape" style="position: absolute;top: 50%; transform:translate(0, -50%); right: 0; width: 35%; height: 100%; z-index: -1;">
+  {# <div class="about-shape" style="position: absolute;top: 50%; transform:translate(0, -50%); right: 0; width: 35%; height: 100%; z-index: -1;">
     <img class="img-fluid" src="{{ url('theme://images/shape-1.svg') }}"/>
-  </div>
+  </div> #}
 </section>

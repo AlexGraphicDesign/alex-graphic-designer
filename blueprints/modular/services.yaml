@@ -14,7 +14,7 @@ form:
 
         AlexGraphicDesignerSettings:
           type: tab
-          title: Parametres Services
+          title: Services Settings
 
           fields:
             services:
@@ -27,9 +27,15 @@ form:
                   label: Liste de vos services
                   style: vertical
                   fields:
-                    .servicesIconClass:
-                      type: iconpicker
-                      label: Classe de l'icone
+                    .servicesIcon:
+                      type: filepicker
+                      folder: '@self'
+                      label: Image Service
+                      preview_images: true
+                      accept:
+                        - .png
+                        - .jpg
+                        - .svg
                     .servicesTitle:
                       type: text
                       label: Titre du service

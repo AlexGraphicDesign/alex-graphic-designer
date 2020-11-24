@@ -4,5 +4,6 @@
 }
 
 .call-to-action{
+  @extend .card;
   margin-top: -9rem;
 }

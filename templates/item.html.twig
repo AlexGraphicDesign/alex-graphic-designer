@@ -3,13 +3,11 @@
 {% set blog_image = page.media.images[page.header.hero_image] ?: page.media.images|first %}
 
 {% block stylesheets %}
-
     {{ parent() }}
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
-
 {% endblock %}
 
 
@@ -17,9 +15,9 @@
   <section id="body-wrapper" class="section blog-listing">
       <div class="container">
         <div class="row">
-          {% embed 'partials/layout.html.twig' %}
+          {% embed 'partials/blog/layout.html.twig' %}
             {% block item %}
-                {% include 'partials/blog-item.html.twig' %}
+                {% include 'partials/blog/blog-item.html.twig' %}
             {% endblock %}
           {% endembed %}
         </div>

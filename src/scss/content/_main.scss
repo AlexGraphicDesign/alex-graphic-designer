@@ -31,6 +31,10 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 700;
 }
 
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl{
+  position: relative;
+}
+
 .section{
   position: relative;
   padding: 80px 0;
@@ -50,39 +54,54 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
-.section__title{
-  &.text-left{
-    .title{
-      padding-left: 2.5rem;
-      &:before{
-        left: 0;
-        top: 50%;
-        transform: translate(0, -50%);
-      }
-    }
-  }
-
-  &.text-center{
-    .title{
-      &:before{
-        left: 50%;
-        bottom: -1rem;
-        transform: translate(-50%, 0);
-      }
-    }
-  }
-
-  &.text-right{
-    .title{
-      padding-right: 2.5rem;
-      &:before{
-        right: 0;
-        top: 50%;
-        transform: translate(0, -50%);
-      }
+.title__vertical{
+  position: absolute;
+  top: 0;
+  left: 0;
+  .title{
+    padding-left: 2.5rem;
+    &:before{
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
     }
   }
 }
+
+
+// .section__title{
+//   &.text-left{
+//     .title{
+//       padding-left: 2.5rem;
+//       &:before{
+//         left: 0;
+//         top: 50%;
+//         transform: translate(0, -50%);
+//       }
+//     }
+//   }
+//
+//   &.text-center{
+//     .title{
+//       &:before{
+//         left: 50%;
+//         bottom: -1rem;
+//         transform: translate(-50%, 0);
+//       }
+//     }
+//   }
+//
+//   &.text-right{
+//     .title{
+//       padding-right: 2.5rem;
+//       &:before{
+//         right: 0;
+//         top: 50%;
+//         transform: translate(0, -50%);
+//       }
+//     }
+//   }
+// }
 
 #main-content{
   margin-top: 0;
@@ -92,5 +111,13 @@ h1, h2, h3, h4, h5, h6,
 .scrolled{
   #main-content{
     margin-top: -50px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .title__vertical{
+    left: 0;
+    transform-origin: 0%;
+    transform: rotate(-90deg);
   }
 }

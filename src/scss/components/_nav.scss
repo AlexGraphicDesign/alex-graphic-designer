@@ -63,8 +63,8 @@
       width: 80%;
       height: 1px;
       opacity: 0;
-      // transition: opacity .4s ease-out, transform .4s ease-out, width .4s ease-out;
-      @include transitions;
+      @include transitions(#{ opacity .3s ease-out, transform .3s ease-out, width .3s ease-out });
+      transform-origin: 0;
       transform: scaleX(0);
     }
 

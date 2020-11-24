@@ -1,13 +1,17 @@
 <section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section services">
-  <div class="about-shape" style="position: absolute;top: 50%; transform:translate(0, -50%); left: 0; width: 35%; height: 100%; z-index: -1;">
-    <img class="img-fluid" src="{{ url('theme://images/shape-2.svg') }}"/>
-  </div>
   <div class="container">
+    <div class="section__title title__vertical">
+      <h2 class="title">{{page.title|capitalize }}</h2>
+    </div>
     <div class="row align-items-center justify-content-center">
       {% if page.header.services|length > 0 %}
         {% for item in page.header.services %}
+        {% set icon = page.media[item.servicesIcon] %}
           <div class="col-sm-10 col-md-6 col-lg-4">
             <div class="services__item mt-4 text-center">
+              {% if icon %}
+                {{ icon.resize(80, 80).html('', 'test', 'img-fluid')|raw }}
+              {% endif %}
               <div class="services__content mt-4">
                 <h3 class="services__title">{{ item.servicesTitle }}</h3>
                 <p class="services__text">{{ item.servicesDesc }}</p>
