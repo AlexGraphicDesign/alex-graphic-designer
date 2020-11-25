@@ -15,7 +15,7 @@ footer-links:
     url: '#'
 footer-social:
   -
-    socialIconClass: 'fa fa-facebook-square'
+    socialIconClass: 'fa fa-facebook'
     socialIconText: Facebook
     socialIconLink: 'https://www.facebook.com/'
   -

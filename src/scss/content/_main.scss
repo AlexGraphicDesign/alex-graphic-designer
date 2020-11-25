@@ -56,9 +56,10 @@ h1, h2, h3, h4, h5, h6,
 
 .title__vertical{
   position: absolute;
-  top: 0;
+  top: 40px;
   left: 0;
   .title{
+    //font-size: 1.6rem;
     padding-left: 2.5rem;
     &:before{
       left: 0;
@@ -116,7 +117,8 @@ h1, h2, h3, h4, h5, h6,
 
 @include media-breakpoint-up(md) {
   .title__vertical{
-    left: 0;
+    top: 160px;
+    left: 65px;
     transform-origin: 0%;
     transform: rotate(-90deg);
   }

@@ -1,9 +1,9 @@
 {% set blog = page.find('/blog').children %}
 <section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section blog">
+  <div class="section__title title__vertical">
+    <h2 class="title">{{page.title|capitalize }}</h2>
+  </div>
   <div class="container">
-    <div class="section__title title__vertical">
-      <h2 class="title">{{page.title|capitalize }}</h2>
-    </div>
     <div class="row align-items-center">
       {% if blog|length > 0 %}
         {% for post in blog.order('date', 'desc').slice(0, 4) %}

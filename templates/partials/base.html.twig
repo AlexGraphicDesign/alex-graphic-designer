@@ -17,7 +17,7 @@
 
     {% block stylesheets %}
       {# {% do assets.addCss('https://unpkg.com/purecss@1.0.0/build/pure-min.css', 100) %} #}
-      {% do assets.addCss('theme://css/style.css', 99) %}
+      {% do assets.addCss('theme://css/style.min.css', 99) %}
       {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 98) %}
     {% endblock %}
 
@@ -33,7 +33,7 @@
         {% do assets.addJS('https://code.jquery.com/jquery-3.3.1.min.js', {priority: 100, group:'bottom'}) %}
       {% endif %}
         {% do assets.addJS('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', {priority: 99, group:'bottom'}) %}
-        {% do assets.addJS('theme://js/scripts.js', {priority: 98, group:'bottom', loading:'async'}) %}
+        {% do assets.addJS('theme://js/scripts.min.js', {priority: 98, group:'bottom', loading:'async'}) %}
     {% endblock %}
 
     {% block assets deferred %}
