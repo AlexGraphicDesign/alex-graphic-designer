@@ -37,7 +37,6 @@ h1, h2, h3, h4, h5, h6,
 
 .section{
   position: relative;
-  padding: 80px 0;
 }
 
 //Titres section
@@ -54,12 +53,12 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
-.title__vertical{
+.side__title{
   position: absolute;
-  top: 40px;
+  top: 0;
   left: 0;
   .title{
-    //font-size: 1.6rem;
+    font-size: 1.8rem;
     padding-left: 2.5rem;
     &:before{
       left: 0;
@@ -116,10 +115,17 @@ h1, h2, h3, h4, h5, h6,
 }
 
 @include media-breakpoint-up(md) {
-  .title__vertical{
-    top: 160px;
-    left: 65px;
-    transform-origin: 0%;
+
+  .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl{
+    &--sideTitle{
+      padding-left: 60px;
+    }
+  }
+
+  .side__title{
+    top: 150px;
+    left: 0;
+    transform-origin: top left;
     transform: rotate(-90deg);
   }
 }

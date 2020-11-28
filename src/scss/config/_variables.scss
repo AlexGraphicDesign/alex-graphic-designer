@@ -9,8 +9,34 @@ $radius-base:                                               1rem;
 $white:                                                     #fff;
 $black:                                                     #000;
 
-$primary-color:                                             $black;
+$primary:                                                   $black;
 $secondary-color:                                           $white;
+
+$colors: ();
+$colors: map-merge(
+  (
+    "blue":       $blue,
+    "indigo":     $indigo,
+    "purple":     $purple,
+    "pink":       $pink,
+    "red":        $red,
+    "orange":     $orange,
+    "yellow":     $yellow,
+    "green":      $green,
+    "teal":       $teal,
+    "cyan":       $cyan,
+    "white":      $white
+  ),
+  $colors
+);
+
+$primary:       $black;
+$secondary:     $white;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+
 
 //Surcharge variables couleurs bootstrap
 $theme-colors: (
@@ -20,9 +46,7 @@ $theme-colors: (
   "info":       $info,
   "warning":    $warning,
   "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark,
-  "custom-primary": $primary-color
+  "custom-primary": $primary
 );
 
 //Surcharge variables d'espacement Bootstrap
@@ -47,13 +71,13 @@ $focus-base:                                                1px dashed #000;
 $border-radius:                                             $radius-base;
 
 //Body
-$body-color:                                                rgba($primary-color, .8);
+$body-color:                                                rgba($primary, .8);
 
 //Title
-$title-color:                                               $primary-color;
+$title-color:                                               $primary;
 
 //Liens
-$link-color:                                                $primary-color;
+$link-color:                                                $primary;
 $link-hover-color:                                          darken($link-color, 15%);
 
 //header
@@ -63,7 +87,7 @@ $header-logo-height:                                        3rem;
 //nav
 $nav-link-font-size:                                        $font-size-base;
 $nav-link-color-hover:                                      $navbar-light-hover-color;
-$nav-link-color-active:                                     $primary-color;
+$nav-link-color-active:                                     $primary;
 
 //Footer
 $footer-border-top:                                         1px solid lighten($black, 95%);
@@ -85,7 +109,7 @@ $card-box-shadow:                   0 0 30px 0 rgba(167,167,167,.16);
 $card-inner-border-radius:          subtract($card-border-radius, $card-border-width) !default;
 $card-cap-padding-y:                $card-spacer-y / 2 !default;
 $card-cap-padding-x:                $card-spacer-x !default;
-$card-cap-bg:                       rgba($black, .03) !default;
+$card-cap-bg:                       $white;
 $card-cap-color:                    null !default;
 $card-height:                       null !default;
 $card-color:                        null !default;
@@ -143,10 +167,28 @@ $btn-border-radius-lg:        $border-radius-lg !default;
 
 $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
+// Breadcrumbs
+
+$breadcrumb-font-size:              $font-size-base * .8;
+
+$breadcrumb-padding-y:              .75rem !default;
+$breadcrumb-padding-x:              1rem !default;
+$breadcrumb-item-padding:           .5rem !default;
+
+$breadcrumb-margin-bottom:          1rem !default;
+
+$breadcrumb-bg:                     $white;
+$breadcrumb-divider-color:          $gray-600 !default;
+$breadcrumb-active-color:           $gray-600 !default;
+$breadcrumb-divider:                quote("/") !default;
+
+$breadcrumb-border-radius:          $border-radius !default;
+
+
 
 //Back to top
 $back-to-top-bg:                                            $secondary-color;
-$back-to-top-color:                                         $primary-color;
+$back-to-top-color:                                         $primary;
 $back-to-top-size:                                          45px;
 $back-to-top-radius:                                        50%;
 $back-to-top-zindex:                                        $zindex-fixed;

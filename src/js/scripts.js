@@ -43,7 +43,7 @@ function setMain(){
 //On met la section de la home à 100% du viewport
 function setHomeHeight(){
   $('.home').css({
-    'height' : $(window).innerHeight() - $('#header').outerHeight()
+    'min-height' : $(window).innerHeight() - $('#header').outerHeight()
   });
 }
 

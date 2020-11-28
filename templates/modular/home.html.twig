@@ -1,4 +1,4 @@
-<section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="home">
+<section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section home pt-6 py-8">
     <div class="home__intro col-lg-9">
       <div class="home__scroll">
         <div class="home__scroll__icon">
@@ -27,7 +27,7 @@
             <div class="home__content__body px-5 py-5">
               <h1 class="home__content__title">{{page.header.introText}}</h1>
               <p class="home__content__text">{{ page.content|striptags }}</p>
-              <a href="{{header.buttonLink}}" title="{{header.buttonTitle}} - {{ config.site.title }}" class="btn btn-rounded btn-outline-custom-primary">{{header.buttonText}}</a>
+              <a href="{{header.buttonLink}}" title="{{header.buttonTitle}} - {{ config.site.title }}" class="btn btn-rounded btn-outline-primary">{{header.buttonText}}</a>
             </div>
           </div>
         </div>

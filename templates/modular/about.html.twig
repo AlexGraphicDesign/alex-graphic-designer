@@ -1,22 +1,22 @@
 {% set image = page.media[header.img] %}
-<section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section about">
-  <div class="section__title title__vertical">
-    <h2 class="title">{{page.title|capitalize }}</h2>
-  </div>
-  <div class="container">
+<section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section about py-6">
+  <div class="container container--sideTitle">
+    <div class="section__title side__title">
+      <h2 class="title">{{page.title|capitalize }}</h2>
+    </div>
     <div class="row justify-content-center">
       <div class="col-12 col-lg-6">
         <div class="about__content mt-4 mb-4">
           {{ page.content }}
           {% if page.header.buttonLink %}
-          <a href="{{page.header.buttonLink}}" title="{{page.header.buttonTitle}} - {{ config.site.title }}" class="btn btn-rounded btn-outline-custom-primary">{{page.header.buttonText}}</a>
+          <a href="{{page.header.buttonLink}}" title="{{page.header.buttonTitle}} - {{ config.site.title }}" class="btn btn-rounded btn-outline-primary">{{page.header.buttonText}}</a>
           {% endif %}
         </div>
       </div>
       <div class="col-12 col-lg-6">
       {% if image %}
         <div class="about__img">
-          {{ image.cropZoom(540,350).html('', page.header.altImg, 'img-fluid')|raw }}
+          {{ image.cropZoom(540,350).html('', page.header.altImg, 'img-fluid d-block m-auto')|raw }}
         </div>
         {# <img class="img-fluid about__shape" src="{{ url('theme://images/shape-1.svg') }}"/> #}
       {% endif %}

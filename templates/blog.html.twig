@@ -17,11 +17,42 @@
 {% endblock %}
 
 {% block content %}
+  {% for child in collection %}
+      {% if loop.first %}
+
+        <section class="page-header page-hero" style="background-image:url({{ child.media[child.header.hero_image].url() }})">
+
+            <div class="container">
+              <div class="row page-header__content">
+                <article class="col-12">
+                    <div class="page-header__info">
+                        <div class="page-header__cat">
+
+                        </div>
+                        <div class="page-header__date">
+                            {{ child.date|date("F d, Y") }}
+                        </div>
+                    </div>
+
+                    <h1 class="page-header__title">
+                        <a href="{{ child.url }}" title="">
+                            {{ child.title }}
+                        </a>
+                    </h1>
+                    <p>{{ child.content|slice(0, 150) }}...</p>
+                    <p>
+                        <a href="{{ child.url }}" class="btn ">Read More</a>
+                    </p>
+                </article>
+              </div>
+            </div>
+        </section> <!-- end highlighted-post -->
+
+      {% endif %}
+  {% endfor %}
+
     <section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section blog-listing">
         <div class="container">
-          {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
-              {% include 'partials/breadcrumbs.html.twig' %}
-          {% endif %}
           <div class="row">
             {% embed 'partials/blog/layout.html.twig' with {blog: page} %}
               {% block item %}

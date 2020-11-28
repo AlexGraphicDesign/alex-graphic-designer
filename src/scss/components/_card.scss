@@ -4,3 +4,11 @@
   overflow: hidden;
   box-shadow: $card-box-shadow;
 }
+
+.card-title{
+  a{
+    @include hover-focus{
+      text-decoration: none;
+    }
+  }
+}
