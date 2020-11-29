@@ -8,13 +8,14 @@
     {% for crumb in crumbs %}
         {% if not loop.last %}
             <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            {% if loop.first %}
-                {% if breadcrumbs_config.icon_home %}
-                <i class="{{ breadcrumbs_config.icon_home }}"></i>
-                {% endif %}
-            {% endif %}
             {% if crumb.routable %}
-                <a href="{{ crumb.url }}" itemprop="item"><span itemprop="name">{{ crumb.menu }}</span></a>
+                <a href="{{ crumb.url }}" title="{{ crumb.menu }}" itemprop="item">
+                {% if loop.first %}
+                    {% if breadcrumbs_config.icon_home %}
+                    <i class="{{ breadcrumbs_config.icon_home }}"></i>
+                    {% endif %}
+                {% endif %}
+                <span itemprop="name">{{ crumb.menu }}</span></a>
             {% else  %}
                 <span itemprop="name">{{ crumb.menu }}</span>
             {% endif %}
@@ -23,7 +24,7 @@
         {% else %}
             <li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
             {% if breadcrumbs_config.link_trailing %}
-                <a href="{{ crumb.url }}" itemprop="item" aria-current="page"><span itemprop="item">{{ crumb.menu }}</span></a>
+                <a href="{{ crumb.url }}" title="{{ crumb.menu }}" itemprop="item" aria-current="page"><span itemprop="item">{{ crumb.menu }}</span></a>
             {% else %}
                 <span itemprop="title">{{ crumb.menu }}</span>
             {% endif %}

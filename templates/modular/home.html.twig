@@ -18,7 +18,7 @@
             {% endfor %}
         </ul>
       {% endif %}
-      <img src="{{ page.media[header.imageIntro].url }}" alt="#" class="home__img"/>
+      <img src="{{ page.media[header.imageIntro].url }}" alt="Image introduction" class="home__img"/>
     </div>
     <div class="container">
       <div class="row">
@@ -27,7 +27,7 @@
             <div class="home__content__body px-5 py-5">
               <h1 class="home__content__title">{{page.header.introText}}</h1>
               <p class="home__content__text">{{ page.content|striptags }}</p>
-              <a href="{{header.buttonLink}}" title="{{header.buttonTitle}} - {{ config.site.title }}" class="btn btn-rounded btn-outline-primary">{{header.buttonText}}</a>
+              <a href="{{header.buttonLink}}" title="{{header.buttonTitle}} - {{ config.site.title }}" class="btn btn-outline-primary">{{header.buttonText}}</a>
             </div>
           </div>
         </div>

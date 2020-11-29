@@ -1,24 +1,7 @@
 //Bouton personnalisés -- AlexGraphicDesigner-Theme
 
 .btn{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  min-width: $btn-min-width;
-  height: $btn-height;
-  font-size: $btn-font-size;
-  letter-spacing: .0892857143em;
-  text-transform: uppercase;
-  @include transition(all .25s ease-in-out);
-
-  &-rounded{
-    line-height: 1.5;
-    padding: 0 1rem;
-    border-radius: $btn-radius;
-  }
-
+  //text-transform: uppercase;
   @include hover{
     box-shadow: 0 4px 29px 0 rgba(0,0,0,.16);
   }

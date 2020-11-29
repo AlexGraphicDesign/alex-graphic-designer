@@ -4,7 +4,7 @@
       <a href="{{ page.url }}" title="{{ page.title }}">{{ image.cropZoom(800,500).html('', page.title, 'card-img')|raw }}</a>
     {% endif %}
     <div class="card-body">
-      {% include 'partials/blog/title.html.twig' with {title_level: 'h5'} %}
+      {% include 'partials/blog/title.html.twig' with {title_level: 'h4'} %}
       <p class="card-text">
         {% if page.summary != page.content %}
             {{ page.summary|striptags }}
@@ -12,10 +12,10 @@
             {{ page.content|striptags }}
         {% endif %}
       </p>
-      <a href="{{ page.url }}" title="{{ page.title }}" class="btn btn-rounded btn-outline-primary card-link">Lire l'article</a>
+      <a href="{{ page.url }}" title="{{ page.title }}" class="btn btn-outline-primary card-link">Lire l'article</a>
       {% include 'partials/blog/taxonomy.html.twig' %}
     </div>
-    <div class="card-footer text-right">
+    <div class="card-footer meta__elements">
       {% include 'partials/blog/author.html.twig' %}
       {% include 'partials/blog/date.html.twig' with {post_date: post.date} %}
     </div>

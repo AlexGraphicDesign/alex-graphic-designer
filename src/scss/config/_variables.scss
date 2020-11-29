@@ -121,15 +121,6 @@ $card-group-margin:                 $grid-gutter-width / 2 !default;
 // Buttons
 // Surcharges variables Bootstrap + variables perso
 //
-
-$btn-font-size:               $font-size-base * 0.875;
-$btn-min-width:               64px;
-$btn-height:                  36px;
-$btn-radius:                  $btn-height / 2;
-$btn-color:                   secondary-color;
-
-$btn-primary-border:          transparent;
-
 $btn-padding-y:               $input-btn-padding-y !default;
 $btn-padding-x:               $input-btn-padding-x !default;
 $btn-font-family:             $input-btn-font-family !default;
@@ -161,7 +152,7 @@ $btn-link-disabled-color:     $gray-600 !default;
 $btn-block-spacing-y:         .5rem !default;
 
 // Allows for customizing button radius independently from global border radius
-$btn-border-radius:           $border-radius !default;
+$btn-border-radius:           10rem;
 $btn-border-radius-sm:        $border-radius-sm !default;
 $btn-border-radius-lg:        $border-radius-lg !default;
 

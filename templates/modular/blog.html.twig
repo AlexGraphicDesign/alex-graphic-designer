@@ -9,7 +9,7 @@
         {% for post in blog.order('date', 'desc').slice(0, 4) %}
         {% set image = post.media.images|first %}
           <div class="col-sm-12 col-md-6 col-lg-3">
-            <article class="card my-4 blog__item">
+            <article class="card mb-4 blog__item">
               {% if image %}
                 <a href="{{ post.url }}" title="{{ post.title }}">{{ image.cropZoom(800,500).html('', post.title, 'card-img')|raw }}</a>
               {% endif %}
@@ -22,9 +22,9 @@
                       {{ post.content|striptags }}
                   {% endif %}
                 </p>
-                <a href="{{ post.url }}" title="{{ post.title }}" class="btn btn-outline-primary btn-rounded card-link">Lire l'article</a>
+                <a href="{{ post.url }}" title="{{ post.title }}" class="btn btn-outline-primary card-link">Lire l'article</a>
               </div>
-              <div class="card-footer text-right">
+              <div class="card-footer meta__elements">
                 {% include 'partials/blog/author.html.twig' %}
                 {% include 'partials/blog/date.html.twig' with {post_date: post.date} %}
               </div>

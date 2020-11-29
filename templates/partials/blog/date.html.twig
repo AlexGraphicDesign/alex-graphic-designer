@@ -1,6 +1,6 @@
 {% set post_date = post_date ?: page.date %}
-<span class="blog__date">
-    <time class="dt-published" datetime="{{ post_date|date("c") }}">
+<span class="blog__date meta__item">
+    <time datetime="{{ post_date|date("c") }}">
         <i class="fa fa-calendar"></i> {{ post_date|date("d.m.y", "Europe/Paris") }}
     </time>
 </span>

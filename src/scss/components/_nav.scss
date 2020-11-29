@@ -11,9 +11,39 @@
   }
 }
 
+//Menu responsive
 .navbar-toggler{
   border: none;
   border-radius: 0;
+  .toggler-icon{
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 2px;
+    margin: 5px 0;
+    background-color: $navbar-light-color;
+    transition: all .3s ease-out 0s;
+  }
+}
+
+.navbar-toggler{
+  &[aria-expanded="true"]{
+    .toggler-icon{
+      &:nth-of-type(1){
+        transform: rotate(45deg);
+        top: 7px;
+      }
+
+      &:nth-of-type(2){
+        opacity: 0;
+      }
+
+      &:nth-of-type(3){
+        transform: rotate(135deg);
+        top: -7px;
+      }
+    }
+  }
 }
 
 //Dropdown
@@ -57,13 +87,14 @@
     @include transitions;
     &:before{
       content: "";
+      display: block;
       position: absolute;
       bottom: 0;
       left: 0px;
       width: 80%;
       height: 1px;
       opacity: 0;
-      @include transitions(#{ opacity .3s ease-out, transform .3s ease-out, width .3s ease-out });
+      transition: all .3s ease-out;
       transform-origin: 0;
       transform: scaleX(0);
     }

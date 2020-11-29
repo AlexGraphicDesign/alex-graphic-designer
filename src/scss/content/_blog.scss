@@ -15,3 +15,20 @@
     font-size: $font-size-base * .8;
   }
 }
+
+//Blog Meta elements
+.meta{
+  &__elements{
+    text-align: right;
+  }
+
+  &__item{
+    i{
+      margin-right: .3rem;
+    }
+
+    &:last-child{
+      margin-left: .5rem;
+    }
+  }
+}
