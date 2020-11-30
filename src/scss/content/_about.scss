@@ -4,6 +4,9 @@
 
 .about{
 
+  &__content{
+  }
+
   &__img{
     & > img{
       @include border-radius(4em 4em 4em 0);

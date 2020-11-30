@@ -4,7 +4,6 @@ jQuery(document).ready(function($){
 
   scrolled();
   setMain();
-  smoothScroll();
   setHomeHeight();
   backToTop();
 
@@ -61,21 +60,10 @@ function backToTop(){
           goTopButton.fadeOut(fadeOutTime);
       }
   });
-}
 
-//Smoothscroll
-function smoothScroll(){
-  $('.smoothScroll').on('click', function (e) {
-      var target = this.hash,
-          $target = $(target);
-
-      e.preventDefault();
-      e.stopPropagation();
-
-      $('html, body').stop().animate({
-          'scrollTop': $target.offset().top
-      }, 1000, 'swing', function () {
-          window.location.hash = target;
-      });
+  goTopButton.on("click", function() {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 1000);
   });
 }
