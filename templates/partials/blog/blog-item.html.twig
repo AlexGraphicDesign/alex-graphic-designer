@@ -1,15 +1,13 @@
-<div class="content-item h-entry">
-    {% if not hero_image_name %}
-        <div class="content-title text-center">
-            <h1>{{ page.title|capitalize }}</h1>
-            {% if page.header.subtitle %}
-            <h3 >{{ page.header.subtitle }}</h3>
-            {% endif %}
-            {% include 'partials/blog/author.html.twig' %}
-            {% include 'partials/blog/date.html.twig' with {post_date: page.date} %}
-            {% include 'partials/blog/taxonomy.html.twig' %}
-        </div>
-    {% endif %}
+{% if not hero_image_name %}
+    <div class="content-title text-center">
+        <h1>{{ page.title|capitalize }}</h1>
+        {% if page.header.subtitle %}
+        <h3 >{{ page.header.subtitle }}</h3>
+        {% endif %}
+        {% include 'partials/blog/author.html.twig' %}
+        {% include 'partials/blog/date.html.twig' with {post_date: page.date} %}
+        {% include 'partials/blog/taxonomy.html.twig' %}
+    </div>
+{% endif %}
 
-  {{ page.content|raw }}
-</div>
+{{ page.content|raw }}

@@ -16,45 +16,20 @@
   {{ parent() }}
 {% endblock %}
 
-{% block content %}
+{% block hero %}
   {% for child in collection %}
-      {% if loop.first %}
-
-        <section class="page-header page-hero section py-3" style="background-image:url({{ child.media[child.header.hero_image].url() }})">
-            <div class="home__intro col-lg-9">
-              <img src="{{url('theme://images/default.jpg')}}" alt="Image introduction" class="home__img"/>
-            </div>
-            <div class="container">
-              <div class="row page-header__content">
-                <article class="col-lg-12">
-                    <div class="page-header__info">
-                        <div class="page-header__cat">
-
-                        </div>
-                        <div class="page-header__date">
-                            {{ child.date|date("F d, Y") }}
-                        </div>
-                    </div>
-
-                    <h1 class="page-header__title">
-                        <a href="{{ child.url }}" title="">
-                            {{ child.title }}
-                        </a>
-                    </h1>
-                    <p>{{ child.content|slice(0, 150) }}...</p>
-                    <p>
-                        <a href="{{ child.url }}" class="btn btn-outline-primary">Read More</a>
-                    </p>
-                </article>
-              </div>
-            </div>
-        </section> <!-- end highlighted-post -->
-
-      {% endif %}
+    {% if loop.first %}
+      {% include 'partials/hero.html.twig' with {id: 'blog-hero', blog: page, page: child} %}
+    {% endif %}
   {% endfor %}
+{% endblock %}
 
-<section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section blog-listing py-4">
+{% block content %}
+  <section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section blog-listing py-4" itemscope itemtype="http://schema.org/Blog">
         <div class="container">
+          {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
+              {% include 'partials/breadcrumbs.html.twig' %}
+          {% endif %}
           <div class="row">
             {% embed 'partials/blog/layout.html.twig' with {blog: page} %}
               {% block item %}

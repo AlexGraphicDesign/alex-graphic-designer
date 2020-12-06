@@ -3,10 +3,9 @@
 //
 
 .services{
-
   &__item{
     background: #fff;
-    padding: 30px;
+    padding: 3rem 2rem;
     border:2px solid transparent;
     box-shadow: 0 0 30px 0 rgba(167,167,167,.16);
     @include border-radius(2em);
@@ -15,9 +14,4 @@
       border-color: #000;
     }
   }
-
-  &__text{
-    margin-top: 1rem;
-  }
-
 }

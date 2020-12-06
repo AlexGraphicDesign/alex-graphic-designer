@@ -60,10 +60,22 @@ function backToTop(){
           goTopButton.fadeOut(fadeOutTime);
       }
   });
+}
 
-  goTopButton.on("click", function() {
-    $('html, body').animate({
-      scrollTop: 0
-    }, 1000);
+//Smoothscroll
+function jsScroll(){
+  var mainNav_height = $('#header').outerHeight() - 22;
+  $('.js-scroll').on("click", function() {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        var scrollto = target.offset().top - mainNav_height;
+        $('html, body').animate({
+          scrollTop: scrollto
+        }, 1000, "swing");
+        return false;
+      }
+    }
   });
 }

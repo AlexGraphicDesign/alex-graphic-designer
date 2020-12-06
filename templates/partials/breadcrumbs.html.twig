@@ -19,6 +19,7 @@
             {% else  %}
                 <span itemprop="name">{{ crumb.menu }}</span>
             {% endif %}
+            <meta itemprop="position" content="{{loop.index}}" />
             </li>
             {# <i class="{{ divider }}"></i> #}
         {% else %}
@@ -28,6 +29,7 @@
             {% else %}
                 <span itemprop="title">{{ crumb.menu }}</span>
             {% endif %}
+                <meta itemprop="position" content="{{loop.index}}" />
             </li>
         {% endif %}
     {% endfor %}

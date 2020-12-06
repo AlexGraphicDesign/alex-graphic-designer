@@ -2,9 +2,6 @@
 {% set sidebar_col = show_sidebar ? 'col-xs-12 col-sm-12 col-md-3' : 'col-12' %}
 
 <div id="content" class="{{ item_col }}">
-    {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
-        {% include 'partials/breadcrumbs.html.twig' %}
-    {% endif %}
     {% block item %}{% endblock %}
 </div>
 {% if show_sidebar %}

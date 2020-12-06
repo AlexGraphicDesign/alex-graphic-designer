@@ -1,0 +1,24 @@
+{% set hero_image = page.media[page.header.hero_image] %}
+
+<section id="{{ id }}" class="section hero hero__image" {% if hero_image %} style="background-image:url({{hero_image.url() }})" {% else %} style="background-image:url({{ url('theme://images/default.jpg') }});" {% endif %}>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 ml-auto">
+          <article class="hero__content px-5 py-5">
+              <div class="hero__info">
+                  <div class="hero__date">
+                      {{ page.date|date("F d, Y") }}
+                  </div>
+              </div>
+              <h1 class="hero__title">
+                  <a href="{{ page.url }}" title="">
+                      {{ page.title }}
+                  </a>
+              </h1>
+              <p>{{ page.content|slice(0, 150)|striptags }}...</p>
+              <a href="{{ page.url }}" class="btn btn-outline-primary">Lire l'article</a>
+          </article>
+        </div>
+      </div>
+    </div>
+</section>

@@ -1,0 +1,21 @@
+//Hero
+.hero{
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: 6rem;
+  padding-bottom: 7rem;
+
+  &__image{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+  }
+
+  &__content{
+    position: relative;
+    border-radius: 4em 4em 4em 0;
+    box-shadow: 0 1rem 3rem rgba(31,45,61,.125);
+    background: $white;
+  }
+}

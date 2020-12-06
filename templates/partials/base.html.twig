@@ -54,6 +54,8 @@
 
 {% block body %}
   <main id="main-content" role="main">
+    {% block hero %}
+    {% endblock %}
     {% block content %}
     {% endblock %}
   </main>
@@ -65,7 +67,7 @@
       {% include 'partials/footer.html.twig' %}
       </div>
       <div class="back-to-top">
-          <a class="back-to-top__link" title="Retour haut de page" href="#top">
+          <a class="back-to-top__link js-scroll" title="Retour haut de page" href="#top">
               <i class="fa fa-arrow-up" aria-hidden="true"></i>
           </a>
       </div>

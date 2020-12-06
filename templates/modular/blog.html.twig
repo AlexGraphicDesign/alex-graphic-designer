@@ -1,15 +1,15 @@
 {% set blog = page.find('/blog').children %}
 <section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section blog py-6">
-  <div class="container container--sideTitle">
-    <div class="section__title side__title">
+  <div class="container">
+    <div class="section__title mb-4">
       <h2 class="title">{{page.title|capitalize }}</h2>
     </div>
     <div class="row justify-content-start">
       {% if blog|length > 0 %}
         {% for post in blog.order('date', 'desc').slice(0, 4) %}
         {% set image = post.media.images|first %}
-          <div class="col-sm-12 col-md-6 col-lg-3">
-            <article class="card mb-4 blog__item">
+          <div class="col-sm-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+            <article class="card blog__item">
               {% if image %}
                 <a href="{{ post.url }}" title="{{ post.title }}">{{ image.cropZoom(800,500).html('', post.title, 'card-img')|raw }}</a>
               {% endif %}
@@ -32,7 +32,7 @@
           </div>
         {% endfor %}
         {% else %}
-        <div class="col-12 text-center">
+        <div class="col text-center">
           <p>Pas d'articles à afficher pour l'instant.</p>
         </div>
       {% endif %}

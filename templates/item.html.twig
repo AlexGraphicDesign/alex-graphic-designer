@@ -1,5 +1,6 @@
 {% extends 'partials/base.html.twig' %}
 {% set blog = page.find(header_var('blog_url')|defined(theme_var('blog-page'))) %}
+{% set show_sidebar = header_var('show_sidebar', [page, blog])|defined(true)  %}
 {% set blog_image = page.media.images[page.header.hero_image] ?: page.media.images|first %}
 
 {% block stylesheets %}
@@ -18,6 +19,9 @@
           {% embed 'partials/blog/layout.html.twig' %}
             {% block item %}
                 {% include 'partials/blog/blog-item.html.twig' %}
+            {% endblock %}
+            {% block sidebar %}
+                {% include 'partials/sidebar.html.twig' %}
             {% endblock %}
           {% endembed %}
         </div>
