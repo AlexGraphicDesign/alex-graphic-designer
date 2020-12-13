@@ -6,8 +6,17 @@
         {% endif %}
         {% include 'partials/blog/author.html.twig' %}
         {% include 'partials/blog/date.html.twig' with {post_date: page.date} %}
-        {% include 'partials/blog/taxonomy.html.twig' %}
+        {% include 'partials/taxonomy.html.twig' %}
     </div>
 {% endif %}
 
 {{ page.content|raw }}
+
+
+{% if not page.isLast %}
+        <a class="btn btn-outline-primary" href="{{ page.prevSibling.url }}"><i class="fa fa-angle-left"></i> {{ 'THEME_ALEXGRAPHICDESIGNER.BLOG.ITEM.PREV_POST'|t }}</a>
+{% endif %}
+
+{% if not page.isFirst %}
+    <a class="btn btn-outline-primary" href="{{ page.nextSibling.url }}">{{ 'THEME_ALEXGRAPHICDESIGNER.BLOG.ITEM.NEXT_POST'|t }} <i class="fa fa-angle-right"></i></a>
+{% endif %}

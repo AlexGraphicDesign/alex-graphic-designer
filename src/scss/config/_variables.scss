@@ -64,7 +64,7 @@ $spacers: (
 );
 
 $box-shadow-base:                                           0px 12px 28px 0px rgba(0,0,0,0.25);
-$transition-base:                                           all .4s ease-in-out;
+$transition-base:                                           all .3s ease-in-out;
 
 $focus-base:                                                1px dashed #000;
 
@@ -103,7 +103,7 @@ $card-spacer-y:                     $spacer !default;
 $card-spacer-x:                     $spacer !default;
 $card-title-spacer-y:               $spacer / 2 !default;
 $card-border-width:                 $border-width !default;
-$card-border-radius:                2em 0.8em 2em 0;
+$card-border-radius:                2em 0 2em 0;
 $card-border-color:                 transparent;
 $card-box-shadow:                   0 0 30px 0 rgba(167,167,167,.16);
 $card-inner-border-radius:          subtract($card-border-radius, $card-border-width) !default;
@@ -175,6 +175,21 @@ $breadcrumb-divider:                quote("/") !default;
 
 $breadcrumb-border-radius:          $border-radius !default;
 
+// Badges
+
+$badge-font-size:                   75% !default;
+$badge-font-weight:                 $font-weight-normal;
+$badge-padding-y:                   .25em !default;
+$badge-padding-x:                   .4em !default;
+$badge-border-radius:               $border-radius !default;
+
+$badge-transition:                  $btn-transition !default;
+$badge-focus-width:                 $input-btn-focus-width !default;
+
+$badge-pill-padding-x:              .6em !default;
+// Use a higher than normal value to ensure completely rounded edges when
+// customizing padding or font-size on labels.
+$badge-pill-border-radius:          10rem !default;
 
 
 //Back to top

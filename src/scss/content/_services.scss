@@ -8,9 +8,11 @@
     padding: 3rem 2rem;
     border:2px solid transparent;
     box-shadow: 0 0 30px 0 rgba(167,167,167,.16);
-    @include border-radius(2em);
+    transform: translateY(0);
+    @include border-radius(4em 0 4em 0);
     @include transition;
     @include hover{
+      transform: translateY(-1rem);
       border-color: #000;
     }
   }

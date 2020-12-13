@@ -17,11 +17,29 @@
 {% endblock %}
 
 {% block hero %}
-  {% for child in collection %}
-    {% if loop.first %}
-      {% include 'partials/hero.html.twig' with {id: 'blog-hero', blog: page, page: child} %}
-    {% endif %}
-  {% endfor %}
+    {% for child in collection %}
+        {% if loop.first %}
+        {% set content %}
+
+            {# <div class="hero__info">
+                <div class="hero__date">
+                    {{ page.date|date("F d, Y") }}
+                </div>
+            </div>
+            <h1 class="hero__title">
+                <a href="{{ page.url }}" title="">
+                    {{ page.title }}
+                </a>
+            </h1>
+            <p>{{ page.content|slice(0, 150)|striptags }}...</p>
+            <a href="{{ page.url }}" class="btn btn-outline-primary">Lire l'article</a> #}
+
+          <h1 class="hero__title">{{ child.title }}</h1>
+        {% endset %}
+        {% endif %}
+    {% endfor %}
+
+    {% include 'partials/hero.html.twig' with {id: 'blog-hero'} %}
 {% endblock %}
 
 {% block content %}
@@ -31,7 +49,7 @@
               {% include 'partials/breadcrumbs.html.twig' %}
           {% endif %}
           <div class="row">
-            {% embed 'partials/blog/layout.html.twig' with {blog: page} %}
+            {% embed 'partials/layout.html.twig' with {blog: page} %}
               {% block item %}
                   <div class="bricklayer">
                   {% for child in collection %}

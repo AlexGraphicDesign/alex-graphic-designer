@@ -1,0 +1,5 @@
+{% if page.taxonomy.tag %}
+  {% for tag in page.taxonomy.tag %}
+    <a class="badge badge-pill {{ label_style ?: 'badge-secondary' }}" title="{{ tag }}" href="{{ blog.url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ tag }}#main-content">{{ tag }}</a>
+  {% endfor %}
+{% endif %}

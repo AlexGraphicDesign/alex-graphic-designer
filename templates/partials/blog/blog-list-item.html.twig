@@ -4,6 +4,9 @@
       <a href="{{ page.url }}" title="{{ page.title }}" itemprop="url">{{ image.cropZoom(800,500).html('', page.title, 'card-img')|raw }}</a>
     {% endif %}
     <div class="card-body">
+      <div class="card-tags">
+        {% include 'partials/taxonomy.html.twig' %}
+      </div>
       {% include 'partials/blog/title.html.twig' with {title_level: 'h4'} %}
       <p class="card-text" itemprop="description">
         {% if page.summary != page.content %}
@@ -13,7 +16,6 @@
         {% endif %}
       </p>
       <a href="{{ page.url }}" title="{{ page.title }}" class="btn btn-outline-primary card-link">Lire l'article</a>
-      {% include 'partials/blog/taxonomy.html.twig' %}
     </div>
     <div class="card-footer meta__elements">
       {% include 'partials/blog/author.html.twig' %}

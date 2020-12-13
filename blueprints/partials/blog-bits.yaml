@@ -5,12 +5,6 @@ form:
       type: spacer
       title: Hero Section
 
-    header.hero_classes:
-      type: text
-      label: Hero Classes
-      markdown: true
-      description: 'Class hero.'
-
     header.hero_image:
       type: filepicker
       label: Hero Image

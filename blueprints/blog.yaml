@@ -88,5 +88,5 @@ form:
                 type: bool
 
           import@:
-            type: partials/blog
+            type: partials/blog-bits
             context: blueprints://pages

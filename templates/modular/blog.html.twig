@@ -14,7 +14,8 @@
                 <a href="{{ post.url }}" title="{{ post.title }}">{{ image.cropZoom(800,500).html('', post.title, 'card-img')|raw }}</a>
               {% endif %}
               <div class="card-body">
-                <h4 class="card-title mb-3"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title|capitalize }}</a></h4>
+                {% include 'partials/taxonomy.html.twig' with {page: post} %}
+                <h4 class="card-title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title|capitalize }}</a></h4>
                 <p class="card-text text-muted">
                   {% if post.summary != post.content %}
                       {{ post.summary|striptags }}
@@ -38,7 +39,4 @@
       {% endif %}
     </div>
   </div>
-  {# <div class="about-shape" style="position: absolute;top: 50%; transform:translate(0, -50%); right: 0; width: 35%; height: 100%; z-index: -1;">
-    <img class="img-fluid" src="{{ url('theme://images/shape-1.svg') }}"/>
-  </div> #}
 </section>
