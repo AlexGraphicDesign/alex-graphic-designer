@@ -48,24 +48,3 @@ form:
                 header.buttonLink:
                   type: text
                   label: Lien Call to Action
-
-            social:
-              type: section
-              title: Social Icons
-              text: Réseaux sociaux
-              underline: true
-              fields:
-                header.social:
-                  type: list
-                  label: Icones réseaux sociaux
-                  style: vertical
-                  fields:
-                    .socialIconClass:
-                      type: iconpicker
-                      label: Classe de l'icone
-                    .socialIconText:
-                      type: text
-                      label: Nom du réseau
-                    .socialIconLink:
-                      type: text
-                      label: URL

@@ -1,35 +1,15 @@
-{% set blog = page.find('/blog').children %}
-<section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section blog py-6">
+{% set blog = page.find(header_var('blog_url')|defined(theme_var('blog-page'))) %}
+{% set child = blog.children %}
+<section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section blog py-3 py-md-6">
   <div class="container">
     <div class="section__title mb-4">
       <h2 class="title">{{page.title|capitalize }}</h2>
     </div>
     <div class="row justify-content-start">
-      {% if blog|length > 0 %}
-        {% for post in blog.order('date', 'desc').slice(0, 4) %}
-        {% set image = post.media.images|first %}
+      {% if child|length > 0 %}
+        {% for post in child.order('date', 'desc').slice(0, 4) %}
           <div class="col-sm-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
-            <article class="card blog__item">
-              {% if image %}
-                <a href="{{ post.url }}" title="{{ post.title }}">{{ image.cropZoom(800,500).html('', post.title, 'card-img')|raw }}</a>
-              {% endif %}
-              <div class="card-body">
-                {% include 'partials/taxonomy.html.twig' with {page: post} %}
-                <h4 class="card-title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title|capitalize }}</a></h4>
-                <p class="card-text text-muted">
-                  {% if post.summary != post.content %}
-                      {{ post.summary|striptags }}
-                  {% else %}
-                      {{ post.content|striptags }}
-                  {% endif %}
-                </p>
-                <a href="{{ post.url }}" title="{{ post.title }}" class="btn btn-outline-primary card-link">Lire l'article</a>
-              </div>
-              <div class="card-footer meta__elements">
-                {% include 'partials/blog/author.html.twig' %}
-                {% include 'partials/blog/date.html.twig' with {post_date: post.date} %}
-              </div>
-            </article>
+            {% include 'partials/blog/blog-list-item.html.twig' with {page: post} %}
           </div>
         {% endfor %}
         {% else %}

@@ -1,14 +1,14 @@
-<section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section home pt-6 py-8">
+<section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section home pt-3 pt-md-6 py-8">
     <div class="home__intro col-lg-9">
       <div class="home__scroll">
         <div class="home__scroll__icon">
           <span class="sr-only">Navigation vers le bas</span>
         </div>
       </div>
-      {% if page.header.social|length > 0 %}
+      {% if theme_var('footer-social')|length > 0 %}
         <!-- Réseaux sociaux home -->
         <ul class="home__social list-unstyled">
-            {% for item in page.header.social %}
+            {% for item in theme_var('footer-social') %}
             <li class="home__social__item">
               <a class="home__social__link" href="{{ item.socialIconLink }}" title="{{ item.socialIconText }} - {{ config.site.title }} - Nouvelle Fenêtre" target="_blank">
                   <i class="{{ item.socialIconClass }}" aria-hidden="true"></i>
@@ -23,12 +23,10 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-7 ml-auto">
-          <div class="home__content">
-            <div class="home__content__body px-5 py-5">
-              <h1 class="home__content__title">{{page.header.introText}}</h1>
-              <p class="home__content__text">{{ page.content|striptags }}</p>
-              <a href="{{header.buttonLink}}" title="{{header.buttonTitle}} - {{ config.site.title }}" class="btn btn-outline-primary">{{header.buttonText}}</a>
-            </div>
+          <div class="home__content px-5 py-5">
+            <h1 class="home__content__title">{{page.header.introText}}</h1>
+            <p class="home__content__text">{{ page.content|striptags }}</p>
+            <a href="{{header.buttonLink}}" title="{{header.buttonTitle}} - {{ config.site.title }}" class="btn btn-outline-primary">{{header.buttonText}}</a>
           </div>
         </div>
       </div>

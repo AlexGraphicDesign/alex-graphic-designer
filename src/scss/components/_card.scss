@@ -5,6 +5,11 @@
   box-shadow: $card-box-shadow;
 }
 
+.card-img, .card-img-bottom{
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
 .card-title{
   a{
     @include hover-focus{
