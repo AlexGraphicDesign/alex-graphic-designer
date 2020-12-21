@@ -6,6 +6,7 @@ jQuery(document).ready(function($){
   setMain();
   setHomeHeight();
   backToTop();
+  jsScroll();
 
   //On execute la fonction qui doit s'executer au scroll
   $(document).scroll(function() {
