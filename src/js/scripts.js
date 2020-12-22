@@ -7,6 +7,7 @@ jQuery(document).ready(function($){
   setHomeHeight();
   backToTop();
   jsScroll();
+  bricklayer();
 
   //On execute la fonction qui doit s'executer au scroll
   $(document).scroll(function() {
@@ -79,4 +80,10 @@ function jsScroll(){
       }
     }
   });
+}
+
+function bricklayer(){
+  if ($(".bricklayer").length) {
+    var bricklayer = new Bricklayer(document.querySelector('.bricklayer'))
+  }
 }

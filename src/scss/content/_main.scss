@@ -28,6 +28,7 @@ main{
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6{
   font-weight: 700;
+  color: $title-color;
 }
 
 .section{
@@ -38,7 +39,6 @@ h1, h2, h3, h4, h5, h6,
 .section__title{
   .title{
     position: relative;
-    color: $title-color;
     font-size: 1.5rem;
     letter-spacing: .1rem;
     padding-left: 2rem;

@@ -22,11 +22,11 @@ const sass = require("gulp-sass"),
 const paths = {
 
   js: {
-    src: ['node_modules/bootstrap/dist/js/*.js', 'src/js/*.js'],
+    src: ['./src/js/*.js'],
     dest: './js'
   },
   css: {
-      src: ['src/scss/*.scss', 'src/scss/**/*.scss'],
+      src: ['./src/scss/*.scss', './src/scss/**/*.scss'],
       dest: './css'
   },
   images: {
@@ -81,7 +81,6 @@ function gulpJS(done){
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(uglify())
-    .pipe(concat('scripts.js'))
     .pipe(rename({ suffix: ".min" }))
     .pipe(sourcemap.write())
     .pipe(dest(paths.js.dest))

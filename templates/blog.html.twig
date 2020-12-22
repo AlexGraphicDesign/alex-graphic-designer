@@ -12,34 +12,16 @@
 {% endblock %}
 
 {% block javascripts %}
-  {% do assets.addJS('//cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.js', {priority: 97}) %}
   {{ parent() }}
+  {% do assets.addJS('theme://js/bricklayer.min.js', {priority: 96, loading:'async'}) %}
 {% endblock %}
 
 {% block hero %}
-    {% for child in collection %}
-        {% if loop.first %}
-        {% set content %}
-
-            {# <div class="hero__info">
-                <div class="hero__date">
-                    {{ page.date|date("F d, Y") }}
-                </div>
-            </div>
-            <h1 class="hero__title">
-                <a href="{{ page.url }}" title="">
-                    {{ page.title }}
-                </a>
-            </h1>
-            <p>{{ page.content|slice(0, 150)|striptags }}...</p>
-            <a href="{{ page.url }}" class="btn btn-outline-primary">Lire l'article</a> #}
-
-          <h1 class="hero__title">{{ child.title }}</h1>
-        {% endset %}
-        {% endif %}
-    {% endfor %}
-
-    {% include 'partials/hero.html.twig' with {id: 'blog-hero'} %}
+    {% set content %}
+        <h1 class="hero__title">{{ page.title }}</h1>
+        {{ page.content }}
+    {% endset %}
+    {% include 'partials/hero.html.twig' with {id: 'blog-hero', hero_image: blog_image} %}
 {% endblock %}
 
 {% block content %}
@@ -69,8 +51,4 @@
           </div>
         </div>
     </section>
-    <script>
-        //Bricklayer
-        var bricklayer = new Bricklayer(document.querySelector('.bricklayer'))
-    </script>
 {% endblock %}

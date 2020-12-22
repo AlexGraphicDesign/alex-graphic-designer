@@ -1,17 +1,6 @@
-{% if not hero_image_name %}
-    <div class="content-title text-center">
-        <h1>{{ page.title|capitalize }}</h1>
-        {% if page.header.subtitle %}
-        <h3 >{{ page.header.subtitle }}</h3>
-        {% endif %}
-        {% include 'partials/blog/author.html.twig' %}
-        {% include 'partials/blog/date.html.twig' with {post_date: page.date} %}
-        {% include 'partials/taxonomy.html.twig' %}
-    </div>
-{% endif %}
-
-{{ page.content|raw }}
-
+<article>
+  {{ page.content|raw }}
+</article>
 
 {% if not page.isLast %}
         <a class="btn btn-outline-primary" href="{{ page.prevSibling.url }}"><i class="fa fa-angle-left"></i> {{ 'THEME_ALEXGRAPHICDESIGNER.BLOG.ITEM.PREV_POST'|t }}</a>

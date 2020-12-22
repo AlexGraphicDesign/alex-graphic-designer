@@ -1,11 +1,11 @@
-<section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section cta mt-7 py-7" style="background-image:url({{ url('theme://images/default.jpg') }}); background-size: cover; background-repeat: no-repeat;">
+<section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section cta mt-7 py-7" style="background-image:url({{ url('theme://images/default.jpg') }}); background-repeat: no-repeat;">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-sm-12 col-md-10">
         <div class="call-to-action">
           <div class="call-to-action__content row align-items-center px-5 py-5">
             <div class="col-lg-8">
-              <h2 class="title">Call to Action</h2>
+              <h2 class="title">{{ page.title }}</h2>
               {{ page.content }}
             </div>
             <div class="col-lg-4">

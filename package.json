@@ -9,7 +9,7 @@
   "author": "AlexGraphicDesign",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.26.12",
+    "browser-sync": "^2.26.13",
     "del": "^4.1.1",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
@@ -22,7 +22,7 @@
     "gulp-uglify": "^3.0.2"
   },
   "dependencies": {
-    "bootstrap": "^4.5.2",
+    "bootstrap": "^4.5.3",
     "bricklayer": "^0.4.3",
     "jquery": "^3.5.1",
     "kind-of": ">=6.0.3",
