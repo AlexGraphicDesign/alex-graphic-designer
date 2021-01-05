@@ -10,7 +10,7 @@
           <div class="col-sm-10 col-md-6 col-lg-4 mb-4 mb-lg-0">
             <div class="services__item h-100">
               {% if icon %}
-                {{ icon.resize(70, 70).html('', 'test', 'img-fluid', ' mb-4')|raw }}
+                {{ icon.resize(65, 65).html('', item.servicesTitle, 'img-fluid mb-4')|raw }}
               {% endif %}
               <div class="services__content">
                 <h3 class="services__title" itemprop="offers">{{ item.servicesTitle }}</h3>
