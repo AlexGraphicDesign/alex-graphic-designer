@@ -13,7 +13,7 @@
 
 {% block javascripts %}
   {{ parent() }}
-  {% do assets.addJS('theme://js/bricklayer.min.js', {priority: 96, loading:'async'}) %}
+  {% do assets.addJS('theme://js/bricklayer.min.js', {priority: 96}) %}
 {% endblock %}
 
 {% block hero %}

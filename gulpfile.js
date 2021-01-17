@@ -11,6 +11,8 @@ const sass = require("gulp-sass"),
       plumber = require("gulp-plumber"),
       rename = require("gulp-rename"),
       uglify = require("gulp-uglify"),
+      postcss = require('gulp-postcss'),
+      autoprefixer = require('autoprefixer'),
       cleancss = require ("gulp-clean-css"),
       imagemin = require("gulp-imagemin"),
       concat = require("gulp-concat"),
@@ -67,6 +69,7 @@ function gulpStyle(done){
     .pipe(plumber())
     .pipe(sourcemap.init({loadMaps: true}))
     .pipe(sass().on('error', sass.logError))
+    .pipe(postcss([ autoprefixer() ]))
     .pipe(cleancss())
     .pipe(rename({ suffix: ".min" }))
     .pipe(sourcemap.write('./'))

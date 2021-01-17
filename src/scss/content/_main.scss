@@ -22,13 +22,24 @@ body{
 }
 
 main{
-  line-height: 1.7rem;
+  line-height: 1.7;
 }
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6{
   font-weight: 700;
   color: $title-color;
+}
+
+#main-content{
+  margin-top: 0;
+  transition: margin-top .4s ease-in-out;
+}
+
+.scrolled{
+  #main-content{
+    margin-top: -50px;
+  }
 }
 
 .section{
@@ -113,17 +124,6 @@ h1, h2, h3, h4, h5, h6,
     display: block;
     width: 100%;
     height: auto;
-  }
-}
-
-#main-content{
-  margin-top: 0;
-  transition: margin-top .4s ease-in-out;
-}
-
-.scrolled{
-  #main-content{
-    margin-top: -50px;
   }
 }
 
