@@ -33,7 +33,7 @@
           <div class="row">
             {% embed 'partials/layout.html.twig' with {blog: page} %}
               {% block item %}
-                  <div class="bricklayer">
+                  <div class="bricklayer amodifier">
                   {% for child in collection %}
                       {% include 'partials/blog/blog-list-item.html.twig' with {blog: page, page: child} %}
                   {% endfor %}
