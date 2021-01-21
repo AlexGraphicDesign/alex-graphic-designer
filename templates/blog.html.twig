@@ -8,12 +8,10 @@
 
 {% block stylesheets %}
   {{ parent() }}
-  {% do assets.addCss('theme://css/bricklayer.min.css', 99) %}
 {% endblock %}
 
 {% block javascripts %}
   {{ parent() }}
-  {% do assets.addJS('theme://js/bricklayer.min.js', {priority: 96}) %}
 {% endblock %}
 
 {% block hero %}
@@ -33,9 +31,11 @@
           <div class="row">
             {% embed 'partials/layout.html.twig' with {blog: page} %}
               {% block item %}
-                  <div class="bricklayer amodifier">
+                  <div class="bricklayer grid-container">
                   {% for child in collection %}
+                    <div class="grid-item">
                       {% include 'partials/blog/blog-list-item.html.twig' with {blog: page, page: child} %}
+                    </div>
                   {% endfor %}
                   </div>
                   {% if show_pagination and config.plugins.pagination.enabled and collection.params.pagination %}
