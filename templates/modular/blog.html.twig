@@ -2,9 +2,7 @@
 {% set child = blog.children %}
 <section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section blog py-4 py-md-6">
   <div class="container">
-    <div class="section__title mb-4">
-      <h2 class="title">{{page.title|capitalize }}</h2>
-    </div>
+      <h2 class="title mb-4">{{page.title|capitalize }}</h2>
     <div class="row justify-content-start">
       {% if child|length > 0 %}
         {% for post in child.order('date', 'desc').slice(0, 4) %}

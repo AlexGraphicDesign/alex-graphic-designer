@@ -47,55 +47,47 @@ h1, h2, h3, h4, h5, h6,
 }
 
 //Titres section
-.section__title{
-  .title{
-    position: relative;
-    font-size: 1.5rem;
-    letter-spacing: .1rem;
-    padding-left: 2rem;
-    &:before{
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translate(0, -50%);
-      height: 2px;
-      width: 1.5rem;
-      background: #000;
-    }
+.title{
+  position: relative;
+  font-size: 1.5rem;
+  letter-spacing: .1rem;
+  padding-left: 2rem;
+  &:before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    height: 2px;
+    width: 1.5rem;
+    background: #000;
   }
 }
 
-.section__title{
+.title{
   &.text-left{
-    .title{
-      padding-left: 2rem;
-      &:before{
-        left: 0;
-        top: 50%;
-        transform: translate(0, -50%);
-      }
+    padding-left: 2rem;
+    &:before{
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
     }
   }
 
   &.text-center{
-    .title{
-      &:before{
-        left: 50%;
-        bottom: -1rem;
-        transform: translate(-50%, 0);
-      }
+    &:before{
+      left: 50%;
+      bottom: -1rem;
+      transform: translate(-50%, 0);
     }
   }
 
   &.text-right{
-    .title{
-      padding-right: 2rem;
-      &:before{
-        right: 0;
-        top: 50%;
-        transform: translate(0, -50%);
-      }
+    padding-right: 2rem;
+    &:before{
+      right: 0;
+      top: 50%;
+      transform: translate(0, -50%);
     }
   }
 }
@@ -127,17 +119,16 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
-.grid-container{
+.masonry-container{
   display: grid;
-  //grid-template-columns: repeat(auto-fill, minmax(33.33333%, 1fr));
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  // grid-template-columns: repeat(3, 1fr);
   gap: 15px;
   grid-gap: 15px;
   grid-auto-flow: row dense;
+  grid-auto-rows: 0;
 }
 
 //Responsive Desktop & Tablette
 @include media-breakpoint-up(md) {
-  
+
 }

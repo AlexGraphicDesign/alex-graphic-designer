@@ -1,8 +1,6 @@
 <section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section services py-4 py-md-6" itemscope itemtype="http://schema.org/Service">
   <div class="container">
-    <div class="section__title mb-4">
-      <h2 class="title">{{page.title|capitalize }}</h2>
-    </div>
+    <h2 class="title mb-4">{{page.title|capitalize }}</h2>
     <div class="row justify-content-center">
       {% if page.header.services|length > 0 %}
         {% for item in page.header.services %}

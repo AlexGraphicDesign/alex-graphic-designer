@@ -31,9 +31,9 @@
           <div class="row">
             {% embed 'partials/layout.html.twig' with {blog: page} %}
               {% block item %}
-                  <div class="bricklayerenlever grid-container">
+                  <div class="bricklayerenlever masonry-container">
                   {% for child in collection %}
-                    <div class="grid-item">
+                    <div class="masonry-item">
                       {% include 'partials/blog/blog-list-item.html.twig' with {blog: page, page: child} %}
                     </div>
                   {% endfor %}

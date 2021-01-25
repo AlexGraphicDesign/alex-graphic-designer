@@ -8,6 +8,7 @@ jQuery(document).ready(function($){
   backToTop();
   jsScroll();
   bricklayer();
+  resizeAllMasonryItems();
 
   //On execute la fonction qui doit s'executer au scroll
   $(document).scroll(function() {
@@ -85,5 +86,37 @@ function jsScroll(){
 function bricklayer(){
   if ($(".bricklayer").length) {
     var bricklayer = new Bricklayer(document.querySelector('.bricklayer'))
+  }
+}
+
+//Masonry
+
+function resizeMasonryItem(item){
+  /* Get the grid object, its row-gap, and the size of its implicit rows */
+  var grid = $('.masonry-container'),
+      rowGap = grid.css('grid-row-gap'),
+      rowHeight = grid.css('grid-auto-rows');
+
+  /*
+   * Spanning for any brick = S
+   * Grid's row-gap = G
+   * Size of grid's implicitly create row-track = R
+   * Height of item content = H
+   * Net height of the item = H1 = H + G
+   * Net height of the implicit row-track = T = G + R
+   * S = H1 / T
+   */
+  var rowSpan = Math.ceil((item.querySelector('.blog__item').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
+  console.log('blog__item ' + $('.blog__item').height());
+  console.log('rowSpan ' + rowSpan);
+  /* Set the spanning as calculated above (S) */
+  item.style.gridRowEnd = 'span '+ rowSpan;
+}
+
+
+function resizeAllMasonryItems(){
+  var allItems = $('.masonry-item');
+  for(var i=0;i<allItems.length;i++){
+    resizeMasonryItem(allItems[i]);
   }
 }
