@@ -50,8 +50,6 @@
 //Styles Desktop et tablette
 @include media-breakpoint-up(md) {
   .footer{
-    text-align: center;
-
     &__legal{
       flex-direction: row;
     }
