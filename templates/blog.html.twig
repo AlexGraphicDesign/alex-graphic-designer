@@ -12,6 +12,7 @@
 
 {% block javascripts %}
   {{ parent() }}
+  {% do assets.addJS('theme://js/masonry.min.js', {priority: 96, group:'bottom'}) %}
 {% endblock %}
 
 {% block hero %}
