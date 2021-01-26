@@ -31,13 +31,19 @@
           <div class="row">
             {% embed 'partials/layout.html.twig' with {blog: page} %}
               {% block item %}
-                  <div class="bricklayerenlever masonry-container">
-                  {% for child in collection %}
-                    <div class="masonry-item">
-                      {% include 'partials/blog/blog-list-item.html.twig' with {blog: page, page: child} %}
-                    </div>
-                  {% endfor %}
+                {% if collection|length > 0 %}
+                  <div class="masonry-container">
+                    {% for child in collection %}
+                      <div class="masonry-item">
+                        {% include 'partials/blog/blog-list-item.html.twig' with {blog: page, page: child} %}
+                      </div>
+                    {% endfor %}
                   </div>
+                  {% else %}
+                    <div class="col text-center">
+                      <p>Pas d'articles à afficher pour l'instant.</p>
+                    </div>
+                {% endif %}
                   {% if show_pagination and config.plugins.pagination.enabled and collection.params.pagination %}
                     <div id="listing-footer">
                         {% include 'partials/pagination.html.twig' with {base_url: page.url, pagination: collection.params.pagination} %}

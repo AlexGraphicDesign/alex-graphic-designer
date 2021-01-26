@@ -126,7 +126,9 @@ h1, h2, h3, h4, h5, h6,
   grid-gap: 15px;
   grid-auto-flow: row dense;
   grid-auto-rows: 0;
+  justify-content: end;
 }
+
 
 //Responsive Desktop & Tablette
 @include media-breakpoint-up(md) {
