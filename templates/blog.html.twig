@@ -8,6 +8,7 @@
 
 {% block stylesheets %}
   {{ parent() }}
+  {% do assets.addCss('theme://css/masonry.min.css', 99) %}
 {% endblock %}
 
 {% block javascripts %}
@@ -27,7 +28,7 @@
   <section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section blog-listing py-4" itemscope itemtype="http://schema.org/Blog">
         <div class="container">
           {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
-              {% include 'partials/breadcrumbs.html.twig' %}
+              {% include 'partials/plugins/breadcrumbs.html.twig' %}
           {% endif %}
           <div class="row">
             {% embed 'partials/layout.html.twig' with {blog: page} %}

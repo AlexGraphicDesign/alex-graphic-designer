@@ -1,0 +1,2 @@
+.masonry-container{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:15px;grid-gap:15px;grid-auto-flow:row dense;grid-auto-rows:0;-webkit-box-pack:end;-webkit-justify-content:end;-moz-box-pack:end;-ms-flex-pack:end;justify-content:end}
+/*# sourceMappingURL=masonry.min.css.map */

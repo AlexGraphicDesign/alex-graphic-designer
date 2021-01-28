@@ -1,6 +1,7 @@
-{% set post_date = post_date ?: page.date %}
-<span class="blog__date meta__item" itemprop="datePublished" content="{{ post_date|date("c") }}">
-    <time datetime="{{ post_date|date("c") }}">
-        <i class="fa fa-calendar"></i> {{ post_date|date("d.m.y", "Europe/Paris") }}
+<p>Auteur : {{ grav.user.username }}</p>
+{{ dump(grav.user|e) }}
+<span class="blog__date meta__item" itemprop="datePublished" content="{{ page.date|date("c") }}">
+    <time datetime="{{ page.date|date("c") }}">
+        <i class="fa fa-calendar"></i> {{ page.date|date("d.m.y", "Europe/Paris") }}
     </time>
 </span>

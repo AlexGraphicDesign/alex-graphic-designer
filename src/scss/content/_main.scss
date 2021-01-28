@@ -105,11 +105,16 @@ h1, h2, h3, h4, h5, h6,
 //Shape
 .shape{
   position: relative;
+
   &__content{
     position: absolute;
-    bottom:0;
-    left: 0;
-    right: 0;
+    overflow: hidden;
+    &--bottom{
+      right: 0;
+      left: 0;
+      bottom:0;
+      margin-bottom: -1px;
+    }
   }
 
   svg{
@@ -118,17 +123,6 @@ h1, h2, h3, h4, h5, h6,
     height: auto;
   }
 }
-
-.masonry-container{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 15px;
-  grid-gap: 15px;
-  grid-auto-flow: row dense;
-  grid-auto-rows: 0;
-  justify-content: end;
-}
-
 
 //Responsive Desktop & Tablette
 @include media-breakpoint-up(md) {
