@@ -5,8 +5,9 @@ icon: rebel
 author:
   name: Alexandre Denys
   email: alexdesignergraphique@gmail.com
+  url: https://alexandredenys.fr/
 homepage: https://github.com/AlexGraphicDesign/grav-theme-alex-graphic-designer
-demo: http://demo.yoursite.com
+demo: https://alexandredenys.fr/
 keywords: grav, theme, alexgraphicdesigner, html5, css3, twig, gulp4, responsive, bootstrap
 bugs: https://github.com/AlexGraphicDesign/grav-theme-alex-graphic-designer/issues
 readme: https://github.com/AlexGraphicDesign/grav-theme-alex-graphic-designer/blob/develop/README.md
