@@ -87,6 +87,7 @@ form:
               validate:
                 type: bool
 
+
           import@:
             type: partials/blog-bits
             context: blueprints://pages

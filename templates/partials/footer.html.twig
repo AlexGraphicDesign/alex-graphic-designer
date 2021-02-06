@@ -5,7 +5,7 @@
       {% if theme_var('footer-links')|length > 0 %}
         <ul class="footer__legal__list mb-0 list-unstyled text-md-right">
           {% for item in theme_var('footer-links') %}
-          <li class="footer__legal__list__item"><a href="{{ item.url }}" title="{{ item.text }} - {{ config.site.title }}">{{ item.text }}</a></li>
+            <li class="footer__legal__list__item"><a href="{{ item.url }}" title="{{ item.text }} - {{ config.site.title }}">{{ item.text }}</a></li>
           {% endfor %}
         </ul>
       {% endif %}

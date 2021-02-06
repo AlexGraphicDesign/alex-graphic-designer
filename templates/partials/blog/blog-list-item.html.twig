@@ -1,12 +1,10 @@
-<article class="card mb-3 blog__item">
+<article class="card blog__item">
     {% set image = page.media.images|first %}
     {% if image %}
-      <a href="{{ page.url }}" title="{{ page.title }}" itemprop="url">
+      <a href="{{ page.url }}" title="{{ page.title }}" itemprop="url" class="card-img-top">
         {{ image.cropZoom(800,500).html('', page.title, 'card-img')|raw }}
-        <div class="shape">
-          <div class="shape__content shape__content--bottom">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1042 225.9"><defs><style>.cls-1{fill:#fff;}</style></defs><title>shape</title><g id="Calque_2" data-name="Calque 2"><g><g><g><path class="cls-1" d="M0,225.9S657.36,225.9,1042,0V225.9Z"/></g></g></g></g></svg>
-          </div>
+        <div class="shape shape--bottom">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1042 225.9"><defs><style>.cls-1{fill:#fff;}</style></defs><path class="cls-1" d="M0,225.9S657.36,225.9,1042,0V225.9Z"/></svg>
         </div>
       </a>
     {% endif %}

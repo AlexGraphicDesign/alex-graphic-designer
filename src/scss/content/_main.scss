@@ -104,17 +104,14 @@ h1, h2, h3, h4, h5, h6,
 
 //Shape
 .shape{
-  position: relative;
-
-  &__content{
-    position: absolute;
-    overflow: hidden;
-    &--bottom{
-      right: 0;
-      left: 0;
-      bottom:0;
-      margin-bottom: -1px;
-    }
+  position: absolute;
+  overflow: hidden;
+  
+  &--bottom{
+    right: 0;
+    left: 0;
+    bottom:0;
+    margin-bottom: -1px;
   }
 
   svg{
