@@ -13,7 +13,8 @@
 
 {% block javascripts %}
   {{ parent() }}
-  {% do assets.addJS('theme://js/masonry.min.js', {priority: 96, group:'bottom'}) %}
+  {% do assets.addJS('theme://js/masonry.min.js', {priority: 95, group:'bottom'}) %}
+  {% do assets.addJS('https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js', {priority: 96, group:'bottom'}) %}
 {% endblock %}
 
 {% block hero %}

@@ -2,6 +2,13 @@
 // Blog
 //
 
+.blog__article{
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 .blog__item{
   .card-text{
     line-height: 1.7;
