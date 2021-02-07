@@ -32,11 +32,34 @@
 
   &__item{
     i{
-      margin-right: .3rem;
+      margin-right: .25rem;
     }
 
     &:last-child{
       margin-left: .5rem;
     }
+  }
+}
+
+//plugins related-pages
+.related-pages{
+  &__item{
+    display: flex;
+    align-items: start;
+    padding-bottom: .5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba($primary, .1);
+    &:last-child{
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  &__body{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: .25rem;
+    padding-left: .5rem;
   }
 }

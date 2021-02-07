@@ -38,7 +38,7 @@
                   <div class="masonry-container">
                     {% for child in collection %}
                       <div class="masonry-item">
-                        {% include 'partials/blog/blog-list-item.html.twig' with {blog: page, page: child} %}
+                        {% include 'partials/blog/blog-list-item.html.twig' with {page: child} %}
                       </div>
                     {% endfor %}
                   </div>

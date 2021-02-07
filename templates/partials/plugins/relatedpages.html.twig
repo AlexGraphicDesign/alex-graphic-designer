@@ -1,15 +1,24 @@
-<ul class="related-pages menu list-unstyled">
+<ul class="related-pages list-unstyled">
     {% for related_path, score in related_pages %}
         {% set related = grav['pages'].get(related_path) %}
         {% set image = related.media.images|first %}
         {% if related %}
-            <li class="menu-item">
+            <li class="related-pages__item">
+                {% if image %}
+                  <a href="{{ related.url }}" title="{{ related.title }}" class="d-block">
+                    {{ image.cropZoom(64,64).html('', '', 'img-fluid rounded')|raw }}
+                  </a>
+                {% endif %}
+                <div class="related-pages__body">
+                  <a href="{{ related.url }}" title="{{ related.title }}">{{ related.title }}</a>
+                  {% include 'partials/blog/date.html.twig' with {post_date: related.date} %}
+                </div>
                 {% if config.plugins.relatedpages.show_score %}
-                    <div class="menu-badge">
-                        <span class="label lable-primary">{{ score }}</span>
+                    <div class="related-pages__score">
+                        <span class="badge badge-pill-primary">{{ score }}</span>
                     </div>
                 {% endif %}
-                <a href="{{ related.url }}" title="{{ related.title }}">{{ related.title }}</a>
+                {{dump(related.date)}}
             </li>
         {% endif %}
     {% endfor %}
