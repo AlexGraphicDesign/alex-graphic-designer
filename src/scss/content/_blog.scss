@@ -2,6 +2,26 @@
 // Blog
 //
 
+//Layout Blog
+.sidebar{
+  &__title{
+    //position: relative;
+    font-size: $font-size-base;
+    background: #fff;
+    // &:before{
+    //   content: "";
+    //   display: block;
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-50%,-50%);
+    //   width: 100%;
+    //   height: 1px;
+    //   background: #000;
+    // }
+  }
+}
+
 .blog__article{
   img{
     max-width: 100%;
@@ -39,6 +59,11 @@
       margin-left: .5rem;
     }
   }
+}
+
+//Date
+.date{
+  font-size: $font-size-base * .8;
 }
 
 //plugins related-pages

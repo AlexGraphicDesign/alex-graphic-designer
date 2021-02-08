@@ -1,6 +1,8 @@
 {% set post_date = post_date ?: page.date %}
-<span class="blog__date date meta__item" itemprop="datePublished" content="{{ post_date|date("c") }}">
-    <time datetime="{{ post_date|date("c") }}">
-        <i class="fa fa-calendar"></i> {{ post_date|date("d.m.y", "Europe/Paris") }}
-    </time>
-</span>
+{% if post_date %}
+  <span class="blog__date date meta__item" itemprop="datePublished" content="{{ post_date|date("c") }}">
+      <time datetime="{{ post_date|date("c") }}">
+          <i class="fa fa-calendar"></i> {{ post_date|date("d.m.y", "Europe/Paris") }}
+      </time>
+  </span>
+{% endif %}
