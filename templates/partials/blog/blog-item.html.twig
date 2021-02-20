@@ -1,11 +1,17 @@
-<article>
+<div class="content-article">
   {{ page.content|raw }}
-</article>
+</div>
 
-{% if not page.isLast %}
-        <a class="btn btn-outline-primary" href="{{ page.prevSibling.url }}"><i class="fa fa-angle-left"></i> {{ 'THEME_ALEXGRAPHICDESIGNER.BLOG.ITEM.PREV_POST'|t }}</a>
-{% endif %}
+{% if config.plugins.pagination.enabled %}
+<nav class="content-pagination" aria-label="Pagination blog">
+  <ul class="content-pagination__list list-unstyled">
+    {% if not page.isLast %}
+            <li class="content-pagination__item"><a class="btn btn-outline-primary" href="{{ page.prevSibling.url }}" title="{{ 'THEME_ALEXGRAPHICDESIGNER.BLOG.ITEM.PREV_POST'|t }}"><i class="fa fa-angle-left"></i> {{ 'THEME_ALEXGRAPHICDESIGNER.BLOG.ITEM.PREV_POST'|t }}</a></li>
+    {% endif %}
 
-{% if not page.isFirst %}
-    <a class="btn btn-outline-primary" href="{{ page.nextSibling.url }}">{{ 'THEME_ALEXGRAPHICDESIGNER.BLOG.ITEM.NEXT_POST'|t }} <i class="fa fa-angle-right"></i></a>
+    {% if not page.isFirst %}
+        <li class="content-pagination__item"><a class="btn btn-outline-primary" href="{{ page.nextSibling.url }}" title="{{ 'THEME_ALEXGRAPHICDESIGNER.BLOG.ITEM.NEXT_POST'|t }}">{{ 'THEME_ALEXGRAPHICDESIGNER.BLOG.ITEM.NEXT_POST'|t }} <i class="fa fa-angle-right"></i></a></li>
+    {% endif %}
+  </ul>
+</nav>
 {% endif %}

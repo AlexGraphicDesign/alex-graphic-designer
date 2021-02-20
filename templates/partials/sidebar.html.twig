@@ -3,7 +3,7 @@
 
 {% if config.plugins.relatedpages.enabled and related_pages|length > 0 %}
 <div class="sidebar__content mb-5">
-    <h5 class="sidebar__title mb-4">{{ 'THEME_ALEXGRAPHICDESIGNER.SIDEBAR.RELATED_POSTS.HEADLINE'|t }}</h5>
+    <h5 class="sidebar__title mb-4"><span>{{ 'THEME_ALEXGRAPHICDESIGNER.SIDEBAR.RELATED_POSTS.HEADLINE'|t }}</span></h5>
     {% include 'partials/plugins/relatedpages.html.twig' %}
 </div>
 {% endif %}
@@ -12,14 +12,14 @@
 
 {% if config.plugins.taxonomylist.enabled %}
 <div class="sidebar__content mb-5">
-    <h5 class="sidebar__title mb-4">{{ 'THEME_ALEXGRAPHICDESIGNER.SIDEBAR.POPULAR_TAGS.HEADLINE'|t }}</h5>
+    <h5 class="sidebar__title mb-4"><span>{{ 'THEME_ALEXGRAPHICDESIGNER.SIDEBAR.POPULAR_TAGS.HEADLINE'|t }}</span></h5>
     {% include 'partials/plugins/taxonomylist.html.twig' with {'base_url':new_base_url, 'taxonomy':'tag'} %}
 </div>
 {% endif %}
 
 {% if config.plugins.archives.enabled %}
 <div class="sidebar__content mb-5">
-    <h5 class="sidebar__title mb-4">{{ 'THEME_ALEXGRAPHICDESIGNER.SIDEBAR.ARCHIVES.HEADLINE'|t }}</h5>
+    <h5 class="sidebar__title mb-4"><span>{{ 'THEME_ALEXGRAPHICDESIGNER.SIDEBAR.ARCHIVES.HEADLINE'|t }}</span></h5>
 	{% include 'partials/plugins/archives.html.twig' with {'base_url':new_base_url} %}
 </div>
 {% endif %}

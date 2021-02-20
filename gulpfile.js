@@ -24,21 +24,21 @@ const sass = require("gulp-sass"),
 const paths = {
 
   js: {
+    dep: ['./node_modules/jquery/dist/jquery.min.js', './node_modules/popper.js/dist/umd/popper.min.js', './node_modules/bootstrap/dist/js/bootstrap.min.js'],
     src: ['./src/js/*.js'],
-    dest: './js'
+    dest: './js/'
   },
   css: {
       src: ['./src/scss/*.scss', './src/scss/**/*.scss'],
-      dest: './css'
+      dest: './css/'
   },
   images: {
       src: ['./src/img/**/*'],
-      dest: './images'
+      dest: './images/'
   },
   twig:{
     src: ['./templates']
   }
-
 }
 
 //----------------------------------------------------------------
@@ -61,6 +61,13 @@ function gulpBrowserSync(){
 function gulpReload(done){
   browserSync.reload();
 	done();
+}
+
+//On va chercher les dépendances
+function modules(done){
+  return src(paths.js.dep)
+  .pipe(dest(paths.js.dest))
+  done();
 }
 
 //Compilation du SASS de developpement
@@ -107,6 +114,11 @@ function gulpWatch(){
   watch(paths.twig.src, gulpReload);
 }
 
+const dependencies = series(clean, modules);
+const build = series(dependencies, parallel(gulpStyle, gulpJS, gulpImg));
+const dev = series(build, parallel(gulpWatch, gulpBrowserSync));
+
 //On liste les tâches
-exports.buildDev = parallel(gulpWatch, gulpBrowserSync);
-exports.default = series(clean, parallel(gulpStyle, gulpJS, gulpImg));
+exports.dev = dev;
+exports.default = build;
+exports.dependencies = dependencies;

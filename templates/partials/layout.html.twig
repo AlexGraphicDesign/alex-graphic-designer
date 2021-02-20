@@ -1,11 +1,11 @@
-{% set item_col = show_sidebar ? 'col-xs-12 col-sm-12 col-md-9' : 'col-12' %}
+{% set item_col = show_sidebar ? 'content--right col-xs-12 col-sm-12 col-md-9' : 'col-12' %}
 {% set sidebar_col = show_sidebar ? 'col-xs-12 col-sm-12 col-md-3' : 'col-12' %}
 
-<div id="content" class="{{ item_col }}">
+<div id="content" class="content {{ item_col }}">
     {% block item %}{% endblock %}
 </div>
 {% if show_sidebar %}
-<div id="sidebar" class=" {{ sidebar_col }}">
+<div id="sidebar" class="sidebar {{ sidebar_col }}">
     {% block sidebar %}{% endblock %}
 </div>
 {% endif %}

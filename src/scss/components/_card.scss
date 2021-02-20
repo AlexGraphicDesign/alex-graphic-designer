@@ -2,12 +2,16 @@
 
 .card{
   overflow: hidden;
-  box-shadow: $card-box-shadow;
+  //box-shadow: $card-box-shadow;
 }
 
-.card-img, .card-img-bottom{
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+// .card-img, .card-img-bottom{
+//   border-bottom-left-radius: 0;
+//   border-bottom-right-radius: 0;
+// }
+
+.card-img-top{
+  position: relative;
 }
 
 .card-title{
