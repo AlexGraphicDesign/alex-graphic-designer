@@ -26,9 +26,9 @@
   "dependencies": {
     "bootstrap": "^4.5.3",
     "bricklayer": "^0.4.3",
-    "jquery": "^3.5.1",
+    "jquery": "^3.6.0",
     "kind-of": ">=6.0.3",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "popper.js": "^1.16.1",
     "tiny-slider": "^2.9.3"
   },
