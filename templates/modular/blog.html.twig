@@ -5,8 +5,8 @@
       <h2 class="title mb-4">{{page.title|capitalize }}</h2>
     <div class="row justify-content-start">
       {% if child|length > 0 %}
-        {% for post in child.order('date', 'desc').slice(0, 4) %}
-          <div class="col-sm-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+        {% for post in child.order('date', 'desc').slice(0, 3) %}
+          <div class="col-sm-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
             {% include 'partials/blog/blog-list-item.html.twig' with {page: post} %}
           </div>
         {% endfor %}
