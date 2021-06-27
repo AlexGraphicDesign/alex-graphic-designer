@@ -1,5 +1,32 @@
 <section id="{% if page.header.redirect %}{{ page.header.redirect }}{% else %}{{ page.menu|lower|replace({' ': '-'})}}{% endif %}" class="section home pt-3 pt-md-6 py-8">
-    <div class="home__intro col-lg-9">
+    <div class="container">
+      <div class="row">
+        {% if theme_var('footer-social')|length > 0 %}
+          <!-- Réseaux sociaux home -->
+          <ul class="home__social list-unstyled">
+              {% for item in theme_var('footer-social') %}
+              <li class="home__social__item">
+                <a class="home__social__link" href="{{ item.socialIconLink }}" title="{{ item.socialIconText }} - {{ config.site.title }} - Nouvelle Fenêtre" target="_blank">
+                    <i class="{{ item.socialIconClass }}" aria-hidden="true"></i>
+                    <span class="sr-only sr-only-focusable">{{ item.socialIconText }}</span>
+                </a>
+              </li>
+              {% endfor %}
+          </ul>
+        {% endif %}
+        <div class="col-lg-6">
+          <div class="">
+            <h1>{{page.header.introText}}</h1>
+            <p class="home__content__text">{{ page.content|striptags }}</p>
+            <a href="{{header.buttonLink}}" title="{{header.buttonTitle}} - {{ config.site.title }}" class="btn btn-outline-primary">{{header.buttonText}}</a>
+          </div>
+        </div>
+        <div class="col-lg-5 offset-lg-1">
+          <img src="{{ page.media[header.imageIntro].url }}" alt="#" class="img-fluid"/>
+        </div>
+      </div>
+    </div>
+    {# <div class="home__intro col-lg-9">
       <div class="home__scroll">
         <div class="home__scroll__icon">
           <span class="sr-only">Navigation vers le bas</span>
@@ -30,5 +57,5 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> #}
 </section>
